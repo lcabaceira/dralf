@@ -1,0 +1,357 @@
+h1,h2,h3,h4 { font-family: Verdana, Tahoma, sans-serif; color:blueviolet
+
+    margin-top:3px;
+
+    margin-bottom:0px;
+
+}
+
+h3 {
+
+    font-size:14px;
+
+}
+
+body {
+
+    color: #333;
+
+    background: white;
+
+    font-size: 13px;
+
+    font-family: Verdana, Arial, sans-serif;
+
+}
+
+
+
+a:link {
+
+    color: color:blueviolet;
+
+    text-decoration: none ;
+
+}
+
+
+
+a:visited {
+
+    color: color:blueviolet;
+
+    text-decoration: none ;
+
+}
+
+
+
+a:hover {
+
+    text-decoration: underline ;
+
+}
+
+
+
+
+
+
+
+ul {
+
+    list-style: url(bullet1.jpg) disc outside;
+
+    margin-left:10px;
+
+}
+
+li {
+
+    list-style: url(bullet1.jpg) disc outside;
+
+    margin-left:10px;
+
+}
+
+
+
+textarea {
+
+   border: 1px solid #999;
+
+   background-color:#ffffcc;
+
+   font-size:11px;
+
+  font-family: Verdana, arial
+
+}  
+
+/* forms */
+
+input, textarea, select,checkbox {
+
+   border: 1px solid #999;
+
+   background-color:lightyellow;
+
+   font-size:10px;
+
+  
+
+}
+
+form {
+
+   
+
+   background-color:#ffffff;
+
+   font-size:10px;
+
+  
+
+}
+
+.lab{
+
+   font-size:11px;
+
+   font-weight:bold; 
+
+   width:180px;
+
+   float:left; 
+
+}
+
+.des{
+
+   font-size:11px;
+
+   font-style:italic; 
+
+   color:darkolivegreen; 
+
+}
+
+.res{
+
+   background-color:lightyellow;
+
+   font-size:10px;
+
+   font-family:courier;
+
+   overflow: visible;
+
+}
+
+.bloque{
+
+   background-color:lightyellow;
+
+   font-size:10px;
+
+   font-family:courier;
+
+   border: 1px solid #999;
+
+      overflow: visible;
+
+}
+
+.bloque2{
+
+   background-color:lightyellow;
+
+   font-size:10px;
+
+   font-family:courier;
+
+   border: 1px solid #999;
+
+   margin-left:50px;
+
+      overflow: visible;
+
+}
+
+.bloque p{
+
+    margin:0px;
+
+}
+
+.label {
+
+   width:99%;
+
+   color:blue;
+
+   padding:0px 0px 0px 0px;
+
+   margin:0px 0px 0px 0px;
+
+   font-size:10px;
+
+}
+
+.title{
+
+   width:99%;
+
+   color:blue;
+
+   padding:0px;
+
+   font-size:12px;
+
+   font-weight:bold;  
+
+}
+
+.bloque h3{
+
+    display:inline;
+
+    font-size:14px;
+
+}
+
+.bloquelong{
+
+   background-color:lightyellow;
+
+   font-size:10px;
+
+   font-family:courier;
+
+   border: 1px solid #999;
+
+    white-space:nowrap;
+
+    width:100%;
+
+}
+
+.bloquelong p{
+
+    margin:0px;
+
+    padding: 0px 0px 0px 0px;
+
+}
+
+hr{
+
+    color:violetred;
+
+}
+
+#header{
+
+    
+
+    background: url(logo.gif) no-repeat;
+
+    background-color:#666;
+
+    height:50px;
+
+}
+
+#header h1{ 
+
+    text-align:right;
+
+    font-size:16px;
+
+    color:darkgoldenrod;
+
+}
+
+#header a{ 
+
+    color:darkgoldenrod;
+
+}
+
+
+
+#body h2{
+
+    background-color:#666;
+
+    font-size:14px;
+
+    color:white;
+
+
+
+}
+
+.fileproc{
+
+    border: 2px solid #999;
+
+    margin-left:5px;
+
+    margin-bottom:5px;
+
+    margin-top:5px;
+
+
+
+}
+
+.rev{
+
+    background-color:#666;
+
+    font-size:14px;
+
+    color:white;
+
+}
+
+h4 {
+
+    margin-bottom:5px;
+
+}
+
+.params{
+
+    border-color:#666;
+
+    border-width:0px;
+
+    border-style:none;
+
+}
+
+.impar{display: block;  background-color:#f1f1f1; padding: 5px; margin: 1px; border: 1px solid #ccc;}
+
+.par{display: block;  background-color:#fff; padding: 5px; margin: 1px; border: 1px solid #ccc;}
+
+.subhead{
+
+    color:blue;
+
+}
+
+.filename {
+
+    margin-bottom:5px;
+
+    margin-top:5px;
+
+    font-size:15px;
+
+    color:blue;
+
+    font-weight:bold;
+
+}

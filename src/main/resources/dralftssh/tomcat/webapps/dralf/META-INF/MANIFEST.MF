@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Class-Path: vgn-appsvcs-cma.jar thirdparty-combined.jar 
+Created-By: Ant 1.4.1
+Ant-Version: Apache Ant 1.6.5
+Vgn-Product-Name: Vignette Application Services Web Application
+Vgn-Product-Version: 7.2.0
+

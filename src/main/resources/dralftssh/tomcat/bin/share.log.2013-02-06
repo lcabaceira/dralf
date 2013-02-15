@@ -1,0 +1,15 @@
+12:00:07,322 INFO  [org.alfresco.web.site.EditionInterceptor] Successfully retrieved license information from Alfresco.
+12:00:11,914 INFO  [org.alfresco.web.scripts.SyncModeConfig] Successfully retrieved Sync Mode configuration from Alfresco.
+23:06:03,345 INFO  [org.springframework.extensions.webscripts.TemplateProcessorRegistry] Registered template processor freemarker for extension ftl
+23:06:03,406 INFO  [org.springframework.extensions.webscripts.ScriptProcessorRegistry] Registered script processor javascript for extension js
+23:06:03,407 INFO  [org.springframework.extensions.webscripts.TemplateProcessorRegistry] Registered template processor freemarker for extension ftl
+23:06:03,409 INFO  [org.springframework.extensions.webscripts.ScriptProcessorRegistry] Registered script processor javascript for extension js
+23:06:04,942 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] Registered 325 Web Scripts (+0 failed), 337 URLs
+23:06:04,942 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] Registered 8 Package Description Documents (+0 failed) 
+23:06:04,942 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] Registered 0 Schema Description Documents (+0 failed) 
+23:06:05,094 INFO  [org.springframework.extensions.webscripts.AbstractRuntimeContainer] Initialised Spring Surf Container Web Script Container (in 1680.806ms)
+23:06:05,097 INFO  [org.springframework.extensions.webscripts.TemplateProcessorRegistry] Registered template processor freemarker for extension ftl
+23:06:05,100 INFO  [org.springframework.extensions.webscripts.ScriptProcessorRegistry] Registered script processor javascript for extension js
+23:06:20,844 INFO  [org.alfresco.web.site.EditionInterceptor] Successfully retrieved license information from Alfresco.
+23:06:25,308 INFO  [org.alfresco.web.scripts.SyncModeConfig] Successfully retrieved Sync Mode configuration from Alfresco.
+23:27:12,440 INFO  [org.alfresco.web.scripts.DictionaryQuery] Successfully retrieved dictionary information from Alfresco.

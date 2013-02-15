@@ -1,0 +1,860 @@
+[1m[7m%[27m[1m[0m                                                                                ]2;lcabaceira@c02jq9nfdkq2: ~]1;~[0m[27m[24m[J[32m~ [31m»[00m [K[72C[34m~[00m  [75D[0m[27m[24m[J[32m~ [31m»[00m [K[76C[34m~[00m  [79D[0m[27m[24m[J[32m~ [31m»[00m [K[81C[34m~[00m  [84D[0m[27m[24m[J[32m~ [31m»[00m [K[94C[34m~[00m  [97D[0m[27m[24m[J[32m~ [31m»[00m [K[121C[34m~[00m  [124D[0m[27m[24m[J[32m~ [31m»[00m [K[159C[34m~[00m  [162D[0m[27m[24m[J[32m~ [31m»[00m [K[162C[34m~[00m  [165D[0m[27m[24m[J[32m~ [31m»[00m [K[163C[34m~[00m  [166D[0m[27m[24m[J[32m~ [31m»[00m [K[182C[34m~[00m  [185D[0m[27m[24m[J[32m~ [31m»[00m [K[196C[34m~[00m  [199D[0m[27m[24m[J[32m~ [31m»[00m [K[196C[34m~[00m  [199D[0m[27m[24m[J[32m~ [31m»[00m [K[196C[34m~[00m  [199D[0m[27m[24m[J[32m~ [31m»[00m [K[196C[34m~[00m  [199D[0m[27m[24m[J[32m~ [31m»[00m [K[93C[34m~[00m  [96D[0m[27m[24m[J[32m~ [31m»[00m [K[93C[34m~[00m  [96D[0m[27m[24m[J[32m~ [31m»[00m [K[93C[34m~[00m  [96D[0m[27m[24m[J[32m~ [31m»[00m p[K[92C[34m~[00m  [95Dpwd
+]2;pwd]1;pwd/Users/lcabaceira
+[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~]1;~[0m[27m[24m[J[32m~ [31m»[00m [K[93C[34m~[00m  [96D ccd alAlfresco[1m/[0m[0m 
+]2;cd Alfresco]1;cd[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco]1;~/Alfresco[0m[27m[24m[J[32mAlfresco [31m»[00m [K[77C[34m~/Alfresco[00m  [89Dccd prto  ojects[1m/[0m[0m 
+]2;cd projects]1;cd[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects]1;..esco/projects[0m[27m[24m[J[32mprojects [31m»[00m [K[68C[34m~/Alfresco/projects[00m  [89Dlls
+]2;ls -G]1;ls[1m[36mMavenSdkDemoAmp[39;49m[0m [1m[36mluis[39;49m[0m            [1m[36mspringMVC[39;49m[0m
+[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects]1;..esco/projects[0m[27m[24m[J[32mprojects [31m»[00m [K[68C[34m~/Alfresco/projects[00m  [89DMMavenSk dkShare
+]2;MavenSdkShare]1;MavenSdkSharezsh: command not found: MavenSdkShare
+[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects]1;..esco/projects[0m[27m[24m[J[32mprojects [31m»[00m [K[63C[34m~/Alfresco/projects[00m [31m127 ↵[00m [89Dmmkdir MavenSdkShare
+]2;mkdir MavenSdkShare]1;mkdir[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects]1;..esco/projects[0m[27m[24m[J[32mprojects [31m»[00m [K[68C[34m~/Alfresco/projects[00m  [89Dccd MavenSdk´  l KSG H   K kShs are[1m/[0m[0m 
+]2;cd MavenSdkShare]1;cd[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/MavenSdkShare]1;..MavenSdkShare[0m[27m[24m[J[32mMavenSdkShare [31m»[00m [K[49C[34m~/Alfresco/projects/MavenSdkShare[00m  [84Dlls
+]2;ls -G]1;ls[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/MavenSdkShare]1;..MavenSdkShare[0m[27m[24m[J[32mMavenSdkShare [31m»[00m [K[49C[34m~/Alfresco/projects/MavenSdkShare[00m  [84D
+bck-i-search: _[K[A[1Ccd [4mM[24mavenSdkShare[1B[18Dm_[A[3C[4mm[4mv[24mn[24m clean install -Pamp-to-war,purge -DskipTests[1B[49Dv_[A[4mm[4mv[4mn[24m[1Bn_[A[24mm[24mv[24mn[1B[K[A[17C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C -DskipTests [13D -DskipTests [13D -DskipTests [13D -DskipTests [13D -DskipTests [13D -DskipTests [13D[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C          Djety ty.port=8888[1B]2;mvn clean install -Pamp-to-war -Djetty.port=8888]1;mvnshell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+pwd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+pwd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+chdir: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+chdir: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Error occurred during initialization of VM
+java.lang.Error: Properties init: Could not determine current working directory.
+	at java.lang.System.initProperties(Native Method)
+	at java.lang.System.initializeSystemClass(System.java:1115)
+
+[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/MavenSdkShare]1;..MavenSdkShare[0m[27m[24m[J[32mMavenSdkShare [31m»[00m [K[46C[34m~/Alfresco/projects/MavenSdkShare[00m [31m1 ↵[00m [84Dp lls
+]2;ls -G]1;ls[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/MavenSdkShare]1;..MavenSdkShare[0m[27m[24m[J[32mMavenSdkShare [31m»[00m [K[49C[34m~/Alfresco/projects/MavenSdkShare[00m  [84Dccd ..
+]2;cd ..]1;cd[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects]1;..esco/projects[0m[27m[24m[J[32mprojects [31m»[00m [K[68C[34m~/Alfresco/projects[00m  [89Dc lls
+]2;ls -G]1;ls[1m[36mMavenSdkDemoAmp[39;49m[0m [1m[36mMvnSdk4Share[39;49m[0m    [1m[36mluis[39;49m[0m            [1m[36mspringMVC[39;49m[0m
+[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects]1;..esco/projects[0m[27m[24m[J[32mprojects [31m»[00m [K[68C[34m~/Alfresco/projects[00m  [89Dccd MavenSdkDemoAmp[1m/[0m[0m 
+[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects]1;..esco/projects[0m[27m[24m[J[32mprojects [31m»[00m [K[65C[34m~/Alfresco/projects[00m [31m1 ↵[00m [89Dccd MvnSdk4Share[1m/[0m[0m 
+]2;cd MvnSdk4Share]1;cd[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/MvnSdk4Share]1;../MvnSdk4Share[0m[27m[24m[J[32mMvnSdk4Share [31m»[00m [K[51C[34m~/Alfresco/projects/MvnSdk4Share[00m  [85Dcd MvnSdk4Share[15Dls             [13Dcd ..ls   mvn clean install -Pamp-to-war -Djetty.port=8888
+]2;mvn clean install -Pamp-to-war -Djetty.port=8888]1;mvn[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building MvnSdk4Share AMP project 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ MvnSdk4Share ---
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:set-version (default-set-version) @ MvnSdk4Share ---
+[INFO] Removed -SNAPSHOT suffix from version - 1.0
+[INFO] Added timestamp to version - 1.0.1301241637
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/src/main/resources
+[INFO] Copying 3 resources to ../MvnSdk4Share
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (filter-jetty-conf) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ MvnSdk4Share ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ MvnSdk4Share ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ MvnSdk4Share ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.4:unpack (unpack-alfresco) @ MvnSdk4Share ---
+[INFO] Configured Artifact: org.alfresco:share:4.2.b:war
+[INFO] Unpacking /Users/lcabaceira/.m2/repository/org/alfresco/share/4.2.b/share-4.2.b.war to /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war with includes "" and excludes ""
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (copy-alfresco-test-resources) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/src/test/webapp
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/test-classes
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:amp (default-amp) @ MvnSdk4Share ---
+[INFO] Building jar: /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share/lib/MvnSdk4Share.jar
+[INFO] Adding directory to AMP package [ '/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share' '']
+[INFO] Building amp: /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share.amp
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:install (amps-to-war-overlay) @ MvnSdk4Share ---
+[INFO] 
+[INFO] >>> maven-jetty-plugin:6.1.26:run-exploded (run-amp-to-war) @ MvnSdk4Share >>>
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:set-version (default-set-version) @ MvnSdk4Share ---
+[INFO] Removed -SNAPSHOT suffix from version - 1.0
+[INFO] Added timestamp to version - 1.0.1301241637
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/src/main/resources
+[INFO] Copying 3 resources to ../MvnSdk4Share
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (filter-jetty-conf) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ MvnSdk4Share ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ MvnSdk4Share ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ MvnSdk4Share ---
+[INFO] No tests to run.
+[INFO] Skipping execution of surefire because it has already been run for this configuration
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.4:unpack (unpack-alfresco) @ MvnSdk4Share ---
+[INFO] Configured Artifact: org.alfresco:share:4.2.b:war
+> isMarkerOlder:
+  artifact1 = /Users/lcabaceira/.m2/repository/org/alfresco/share/4.2.b/share-4.2.b.war
+  marker    = /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/dependency-maven-plugin-markers/org.alfresco-share-war-4.2.b.marker
+    artifact1 lastModified: 1357689857000
+    marker lastModified: 1357689857000
+< false = marker older than artifact?
+[INFO] share-4.2.b.war already unpacked.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (copy-alfresco-test-resources) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/src/test/webapp
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/test-classes
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:amp (default-amp) @ MvnSdk4Share ---
+[INFO] Building jar: /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share/lib/MvnSdk4Share.jar
+[INFO] Adding directory to AMP package [ '/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share' '']
+[INFO] Building amp: /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share.amp
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:install (amps-to-war-overlay) @ MvnSdk4Share ---
+[INFO] 
+[INFO] <<< maven-jetty-plugin:6.1.26:run-exploded (run-amp-to-war) @ MvnSdk4Share <<<
+[INFO] 
+[INFO] --- maven-jetty-plugin:6.1.26:run-exploded (run-amp-to-war) @ MvnSdk4Share ---
+[INFO] Configuring Jetty for project: MvnSdk4Share AMP project
+[INFO] Configuring Jetty from xml configuration file = /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/jetty.xml
+2013-01-24 16:37:42.716:INFO::Logging to STDERR via org.mortbay.log.StdErrLog
+[INFO] Context path = /MvnSdk4Share
+[INFO] Tmp directory =  determined at runtime
+[INFO] Web defaults = org/mortbay/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] Starting jetty 6.1.26 ...
+2013-01-24 16:37:42.821:INFO::jetty-6.1.26
+2013-01-24 16:37:42.920:INFO::No Transaction manager found - if your webapp requires one, please configure one.
+2013-01-24 16:37:43.573:INFO:/MvnSdk4Share:Initializing Spring root WebApplicationContext
+2013-01-24 16:37:50,952  INFO  [extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+ 2013-01-24 16:37:51,011  INFO  [extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+ 2013-01-24 16:37:51,011  INFO  [extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+ 2013-01-24 16:37:51,015  INFO  [extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+ 2013-01-24 16:37:53,485  INFO  [extensions.webscripts.DeclarativeRegistry] [main] Registered 336 Web Scripts (+0 failed), 349 URLs
+ 2013-01-24 16:37:53,485  INFO  [extensions.webscripts.DeclarativeRegistry] [main] Registered 8 Package Description Documents (+0 failed) 
+ 2013-01-24 16:37:53,485  INFO  [extensions.webscripts.DeclarativeRegistry] [main] Registered 0 Schema Description Documents (+0 failed) 
+ 2013-01-24 16:37:53,690  INFO  [extensions.webscripts.AbstractRuntimeContainer] [main] Initialised Spring Surf Container Web Script Container (in 2665.589ms)
+ 2013-01-24 16:37:53,695  INFO  [extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+ 2013-01-24 16:37:53,698  INFO  [extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+ 2013-01-24 16:37:54.065:INFO:/MvnSdk4Share:org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: loaded (conf ok)
+2013-01-24 16:37:54.110:INFO:/MvnSdk4Share:Initializing Spring FrameworkServlet 'Spring Surf Dispatcher Servlet'
+2013-01-24 16:37:54.138:INFO::Started SelectChannelConnector@0.0.0.0:8888
+[INFO] Started Jetty Server
+2013-01-24 16:38:14,499  INFO  [web.site.EditionInterceptor] [1708496765@qtp-1044497553-0] Successfully retrieved license information from Alfresco.
+ 2013-01-24 16:38:30,268  INFO  [web.scripts.ImapServerStatus] [1708496765@qtp-1044497553-0] Successfully retrieved IMAP server status from Alfresco: disabled
+ 2013-01-24 16:41:35,454  INFO  [web.scripts.GoogleDocsStatus] [1253916668@qtp-1044497553-6] Successfully retrieved Google Docs subsystem status from Alfresco: false
+ 2013-01-24 16:41:37,420  INFO  [web.scripts.DictionaryQuery] [535477079@qtp-1044497553-8] Successfully retrieved Data Dictionary from Alfresco.
+ 2013-01-24 16:42:09,907  INFO  [web.scripts.MimetypesQuery] [1341768097@qtp-1044497553-9] Successfully retrieved mimetypes information from Alfresco.
+ ^C2013-01-24 16:51:17.486:INFO::Shutdown hook executing
+2013-01-24 16:51:17.486:INFO::Stopped SelectChannelConnector@0.0.0.0:8888
+^C2013-01-24 16:51:17.988:INFO:/MvnSdk4Share:org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: destroy called
+2013-01-24 16:51:17.989:INFO:/MvnSdk4Share:Destroying Spring FrameworkServlet 'Spring Surf Dispatcher Servlet'
+2013-01-24 16:51:17.992:INFO:/MvnSdk4Share:Closing Spring root WebApplicationContext
+2013-01-24 16:51:18.094:INFO::Shutdown hook complete[INFO] 
+Jetty server exiting.
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ MvnSdk4Share ---
+[INFO] Installing /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share.amp to /Users/lcabaceira/.m2/repository/org/alfresco/MvnSdk4Share/1.0-SNAPSHOT/MvnSdk4Share-1.0-SNAPSHOT.amp
+[INFO] Installing /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/pom.xml to /Users/lcabaceira/.m2/repository/org/alfresco/MvnSdk4Share/1.0-SNAPSHOT/MvnSdk4Share-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 13:43.117s
+[INFO] Finished at: Thu Jan 24 16:51:18 GMT 2013
+[INFO] Final Memory: 51M/566M
+[INFO] ------------------------------------------------------------------------
+[1m[7m%[27m[1m[0m                                                                                                     ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/MvnSdk4Share]1;../MvnSdk4Share[0m[27m[24m[J[32mMvnSdk4Share [31m»[00m [K[46C[34m~/Alfresco/projects/MvnSdk4Share[00m [31m130 ↵[00m [85Dmvn clean install -Pamp-to-war -Djetty.port=8888[K
+]2;mvn clean install -Pamp-to-war -Djetty.port=8888]1;mvn[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building MvnSdk4Share AMP project 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ MvnSdk4Share ---
+[INFO] Deleting /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:set-version (default-set-version) @ MvnSdk4Share ---
+[INFO] Removed -SNAPSHOT suffix from version - 1.0
+[INFO] Added timestamp to version - 1.0.1301241651
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/src/main/resources
+[INFO] Copying 3 resources to ../MvnSdk4Share
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (filter-jetty-conf) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ MvnSdk4Share ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ MvnSdk4Share ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ MvnSdk4Share ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.4:unpack (unpack-alfresco) @ MvnSdk4Share ---
+[INFO] Configured Artifact: org.alfresco:share:4.2.b:war
+[INFO] Unpacking /Users/lcabaceira/.m2/repository/org/alfresco/share/4.2.b/share-4.2.b.war to /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war with includes "" and excludes ""
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (copy-alfresco-test-resources) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/src/test/webapp
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/test-classes
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:amp (default-amp) @ MvnSdk4Share ---
+[INFO] Building jar: /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share/lib/MvnSdk4Share.jar
+[INFO] Adding directory to AMP package [ '/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share' '']
+[INFO] Building amp: /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share.amp
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:install (amps-to-war-overlay) @ MvnSdk4Share ---
+[INFO] 
+[INFO] >>> maven-jetty-plugin:6.1.26:run-exploded (run-amp-to-war) @ MvnSdk4Share >>>
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:set-version (default-set-version) @ MvnSdk4Share ---
+[INFO] Removed -SNAPSHOT suffix from version - 1.0
+[INFO] Added timestamp to version - 1.0.1301241651
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/src/main/resources
+[INFO] Copying 3 resources to ../MvnSdk4Share
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (filter-jetty-conf) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ MvnSdk4Share ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ MvnSdk4Share ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ MvnSdk4Share ---
+[INFO] No tests to run.
+[INFO] Skipping execution of surefire because it has already been run for this configuration
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.4:unpack (unpack-alfresco) @ MvnSdk4Share ---
+[INFO] Configured Artifact: org.alfresco:share:4.2.b:war
+> isMarkerOlder:
+  artifact1 = /Users/lcabaceira/.m2/repository/org/alfresco/share/4.2.b/share-4.2.b.war
+  marker    = /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/dependency-maven-plugin-markers/org.alfresco-share-war-4.2.b.marker
+    artifact1 lastModified: 1357689857000
+    marker lastModified: 1357689857000
+< false = marker older than artifact?
+[INFO] share-4.2.b.war already unpacked.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (copy-alfresco-test-resources) @ MvnSdk4Share ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/src/test/webapp
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/test-classes
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:amp (default-amp) @ MvnSdk4Share ---
+[INFO] Building jar: /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share/lib/MvnSdk4Share.jar
+[INFO] Adding directory to AMP package [ '/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share' '']
+[INFO] Building amp: /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share.amp
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:install (amps-to-war-overlay) @ MvnSdk4Share ---
+[INFO] 
+[INFO] <<< maven-jetty-plugin:6.1.26:run-exploded (run-amp-to-war) @ MvnSdk4Share <<<
+[INFO] 
+[INFO] --- maven-jetty-plugin:6.1.26:run-exploded (run-amp-to-war) @ MvnSdk4Share ---
+[INFO] Configuring Jetty for project: MvnSdk4Share AMP project
+[INFO] Configuring Jetty from xml configuration file = /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/jetty.xml
+2013-01-24 16:51:30.444:INFO::Logging to STDERR via org.mortbay.log.StdErrLog
+[INFO] Context path = /MvnSdk4Share
+[INFO] Tmp directory =  determined at runtime
+[INFO] Web defaults = org/mortbay/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] Starting jetty 6.1.26 ...
+2013-01-24 16:51:30.533:INFO::jetty-6.1.26
+2013-01-24 16:51:30.619:INFO::No Transaction manager found - if your webapp requires one, please configure one.
+2013-01-24 16:51:31.235:INFO:/MvnSdk4Share:Initializing Spring root WebApplicationContext
+2013-01-24 16:51:40,676  INFO  [extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+ 2013-01-24 16:51:40,753  INFO  [extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+ 2013-01-24 16:51:40,754  INFO  [extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+ 2013-01-24 16:51:40,760  INFO  [extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+ 2013-01-24 16:51:43,764  INFO  [extensions.webscripts.DeclarativeRegistry] [main] Registered 336 Web Scripts (+0 failed), 349 URLs
+ 2013-01-24 16:51:43,764  INFO  [extensions.webscripts.DeclarativeRegistry] [main] Registered 8 Package Description Documents (+0 failed) 
+ 2013-01-24 16:51:43,764  INFO  [extensions.webscripts.DeclarativeRegistry] [main] Registered 0 Schema Description Documents (+0 failed) 
+ 2013-01-24 16:51:44,028  INFO  [extensions.webscripts.AbstractRuntimeContainer] [main] Initialised Spring Surf Container Web Script Container (in 3259.99ms)
+ 2013-01-24 16:51:44,036  INFO  [extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+ 2013-01-24 16:51:44,042  INFO  [extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+ 2013-01-24 16:51:44.512:INFO:/MvnSdk4Share:org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: loaded (conf ok)
+2013-01-24 16:51:44.584:INFO:/MvnSdk4Share:Initializing Spring FrameworkServlet 'Spring Surf Dispatcher Servlet'
+2013-01-24 16:51:44.618:INFO::Started SelectChannelConnector@0.0.0.0:8888
+[INFO] Started Jetty Server
+2013-01-24 16:52:08,678  INFO  [web.site.EditionInterceptor] [1215285986@qtp-466166170-0] Successfully retrieved license information from Alfresco.
+ 2013-01-24 16:52:19,123  INFO  [web.scripts.GoogleDocsStatus] [1434710366@qtp-466166170-2] Successfully retrieved Google Docs subsystem status from Alfresco: false
+ 2013-01-24 16:52:20,801  INFO  [web.scripts.DictionaryQuery] [1009606916@qtp-466166170-4] Successfully retrieved Data Dictionary from Alfresco.
+ 2013-01-24 16:52:33,549  INFO  [web.scripts.ImapServerStatus] [1009606916@qtp-466166170-4] Successfully retrieved IMAP server status from Alfresco: disabled
+ 2013-01-24 16:52:36,983  INFO  [web.scripts.MimetypesQuery] [509250842@qtp-466166170-7] Successfully retrieved mimetypes information from Alfresco.
+ 2013-01-25 11:30:04,579  INFO  [webscripts.connector.RemoteClient] [1546533260@qtp-466166170-61] Error status 503 Connection refused
+ java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:391)
+	at java.net.Socket.connect(Socket.java:579)
+	at sun.reflect.GeneratedMethodAccessor90.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.commons.httpclient.protocol.ReflectionSocketFactory.createSocket(ReflectionSocketFactory.java:140)
+	at org.apache.commons.httpclient.protocol.DefaultProtocolSocketFactory.createSocket(DefaultProtocolSocketFactory.java:125)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:323)
+	at org.springframework.extensions.webscripts.connector.RemoteClient.service(RemoteClient.java:1050)
+	at org.springframework.extensions.webscripts.connector.RemoteClient.service(RemoteClient.java:828)
+	at org.springframework.extensions.webscripts.connector.RemoteClient.call(RemoteClient.java:576)
+	at org.springframework.extensions.webscripts.connector.RemoteClient.call(RemoteClient.java:510)
+	at org.springframework.extensions.webscripts.connector.HttpConnector.call(HttpConnector.java:70)
+	at org.springframework.extensions.webscripts.RequestCachingConnector.call(RequestCachingConnector.java:88)
+	at org.springframework.extensions.webscripts.connector.AuthenticatingConnector.call(AuthenticatingConnector.java:136)
+	at org.springframework.extensions.webscripts.ScriptRemoteConnector.call(ScriptRemoteConnector.java:95)
+	at org.springframework.extensions.webscripts.ScriptRemote.call(ScriptRemote.java:179)
+	at sun.reflect.GeneratedMethodAccessor109.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:155)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:243)
+	at org.mozilla.javascript.optimizer.OptRuntime.call1(OptRuntime.java:66)
+	at org.mozilla.javascript.gen.c19._c25(file:/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/documentlibrary/data/surf-doclist.get.js:905)
+	at org.mozilla.javascript.gen.c19.call(file:/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/documentlibrary/data/surf-doclist.get.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName0(OptRuntime.java:108)
+	at org.mozilla.javascript.gen.c19._c0(file:/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/documentlibrary/data/surf-doclist.get.js:930)
+	at org.mozilla.javascript.gen.c19.call(file:/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/documentlibrary/data/surf-doclist.get.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:393)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:2834)
+	at org.mozilla.javascript.gen.c19.call(file:/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/documentlibrary/data/surf-doclist.get.js)
+	at org.mozilla.javascript.gen.c19.exec(file:/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/documentlibrary/data/surf-doclist.get.js)
+	at org.springframework.extensions.webscripts.processor.JSScriptProcessor.executeScriptImpl(JSScriptProcessor.java:318)
+	at org.springframework.extensions.webscripts.processor.JSScriptProcessor.executeScript(JSScriptProcessor.java:192)
+	at org.springframework.extensions.webscripts.AbstractWebScript.executeScript(AbstractWebScript.java:1305)
+	at org.springframework.extensions.webscripts.DeclarativeWebScript.execute(DeclarativeWebScript.java:86)
+	at org.springframework.extensions.webscripts.PresentationContainer.executeScript(PresentationContainer.java:70)
+	at org.springframework.extensions.webscripts.LocalWebScriptRuntimeContainer.executeScript(LocalWebScriptRuntimeContainer.java:240)
+	at org.springframework.extensions.webscripts.AbstractRuntime.executeScript(AbstractRuntime.java:377)
+	at org.springframework.extensions.webscripts.AbstractRuntime.executeScript(AbstractRuntime.java:209)
+	at org.springframework.extensions.webscripts.servlet.mvc.WebScriptView.renderMergedOutputModel(WebScriptView.java:104)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:250)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1047)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:817)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:719)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:644)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:549)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+	at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:511)
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:401)
+	at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+	at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+	at org.mortbay.jetty.servlet.Dispatcher.forward(Dispatcher.java:327)
+	at org.mortbay.jetty.servlet.Dispatcher.forward(Dispatcher.java:126)
+	at org.tuckey.web.filters.urlrewrite.NormalRewrittenUrl.doRewrite(NormalRewrittenUrl.java:195)
+	at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:159)
+	at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:141)
+	at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:90)
+	at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:417)
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
+	at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+	at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+	at org.mortbay.jetty.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:230)
+	at org.mortbay.jetty.handler.HandlerCollection.handle(HandlerCollection.java:114)
+	at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+	at org.mortbay.jetty.Server.handle(Server.java:326)
+	at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+	at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
+	at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
+	at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
+	at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+	at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+	at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+2013-01-25 11:30:04,579  INFO  [webscripts.connector.RemoteClient] [1379919665@qtp-466166170-47] Error status 503 Connection refused
+ java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:391)
+	at java.net.Socket.connect(Socket.java:579)
+	at sun.reflect.GeneratedMethodAccessor90.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.commons.httpclient.protocol.ReflectionSocketFactory.createSocket(ReflectionSocketFactory.java:140)
+	at org.apache.commons.httpclient.protocol.DefaultProtocolSocketFactory.createSocket(DefaultProtocolSocketFactory.java:125)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:323)
+	at org.springframework.extensions.webscripts.connector.RemoteClient.service(RemoteClient.java:1050)
+	at org.springframework.extensions.webscripts.connector.RemoteClient.service(RemoteClient.java:828)
+	at org.springframework.extensions.webscripts.connector.RemoteClient.call(RemoteClient.java:576)
+	at org.springframework.extensions.webscripts.connector.RemoteClient.call(RemoteClient.java:510)
+	at org.springframework.extensions.webscripts.connector.HttpConnector.call(HttpConnector.java:70)
+	at org.springframework.extensions.webscripts.RequestCachingConnector.call(RequestCachingConnector.java:88)
+	at org.springframework.extensions.webscripts.connector.AuthenticatingConnector.call(AuthenticatingConnector.java:136)
+	at org.springframework.extensions.webscripts.ScriptRemoteConnector.call(ScriptRemoteConnector.java:95)
+	at org.springframework.extensions.webscripts.ScriptRemote.call(ScriptRemote.java:179)
+	at sun.reflect.GeneratedMethodAccessor109.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.mozilla.javascript.MemberBox.invoke(MemberBox.java:155)
+	at org.mozilla.javascript.NativeJavaMethod.call(NativeJavaMethod.java:243)
+	at org.mozilla.javascript.optimizer.OptRuntime.call1(OptRuntime.java:66)
+	at org.mozilla.javascript.gen.c19._c25(file:/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/documentlibrary/data/surf-doclist.get.js:905)
+	at org.mozilla.javascript.gen.c19.call(file:/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/documentlibrary/data/surf-doclist.get.js)
+	at org.mozilla.javascript.optimizer.OptRuntime.callName0(OptRuntime.java:108)
+	at org.mozilla.javascript.gen.c19._c0(file:/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/documentlibrary/data/surf-doclist.get.js:930)
+	at org.mozilla.javascript.gen.c19.call(file:/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/documentlibrary/data/surf-doclist.get.js)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:393)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:2834)
+	at org.mozilla.javascript.gen.c19.call(file:/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/documentlibrary/data/surf-doclist.get.js)
+	at org.mozilla.javascript.gen.c19.exec(file:/Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share-war/WEB-INF/classes/alfresco/site-webscripts/org/alfresco/components/documentlibrary/data/surf-doclist.get.js)
+	at org.springframework.extensions.webscripts.processor.JSScriptProcessor.executeScriptImpl(JSScriptProcessor.java:318)
+	at org.springframework.extensions.webscripts.processor.JSScriptProcessor.executeScript(JSScriptProcessor.java:192)
+	at org.springframework.extensions.webscripts.AbstractWebScript.executeScript(AbstractWebScript.java:1305)
+	at org.springframework.extensions.webscripts.DeclarativeWebScript.execute(DeclarativeWebScript.java:86)
+	at org.springframework.extensions.webscripts.PresentationContainer.executeScript(PresentationContainer.java:70)
+	at org.springframework.extensions.webscripts.LocalWebScriptRuntimeContainer.executeScript(LocalWebScriptRuntimeContainer.java:240)
+	at org.springframework.extensions.webscripts.AbstractRuntime.executeScript(AbstractRuntime.java:377)
+	at org.springframework.extensions.webscripts.AbstractRuntime.executeScript(AbstractRuntime.java:209)
+	at org.springframework.extensions.webscripts.servlet.mvc.WebScriptView.renderMergedOutputModel(WebScriptView.java:104)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:250)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1047)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:817)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:719)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:644)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:549)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+	at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:511)
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:401)
+	at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+	at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+	at org.mortbay.jetty.servlet.Dispatcher.forward(Dispatcher.java:327)
+	at org.mortbay.jetty.servlet.Dispatcher.forward(Dispatcher.java:126)
+	at org.tuckey.web.filters.urlrewrite.NormalRewrittenUrl.doRewrite(NormalRewrittenUrl.java:195)
+	at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:159)
+	at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:141)
+	at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:90)
+	at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:417)
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
+	at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+	at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+	at org.mortbay.jetty.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:230)
+	at org.mortbay.jetty.handler.HandlerCollection.handle(HandlerCollection.java:114)
+	at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+	at org.mortbay.jetty.Server.handle(Server.java:326)
+	at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+	at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928)
+	at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
+	at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
+	at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+	at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+	at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+2013-01-25 11:58:36.213:INFO::org.mortbay.io.nio.SelectorManager$SelectSet@554a8bf9 Busy selector - injecting delay 1 times
+^C2013-01-25 14:58:34.422:INFO::Shutdown hook executing
+2013-01-25 14:58:34.424:INFO::Stopped SelectChannelConnector@0.0.0.0:8888
+2013-01-25 14:58:34.929:INFO:/MvnSdk4Share:org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: destroy called
+2013-01-25 14:58:34.930:INFO:/MvnSdk4Share:Destroying Spring FrameworkServlet 'Spring Surf Dispatcher Servlet'
+2013-01-25 14:58:34.967:INFO:/MvnSdk4Share:Closing Spring root WebApplicationContext
+2013-01-25 14:58:35.081:INFO::Shutdown hook complete
+[INFO] Jetty server exiting.
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ MvnSdk4Share ---
+[INFO] Installing /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/target/MvnSdk4Share.amp to /Users/lcabaceira/.m2/repository/org/alfresco/MvnSdk4Share/1.0-SNAPSHOT/MvnSdk4Share-1.0-SNAPSHOT.amp
+[INFO] Installing /Users/lcabaceira/Alfresco/projects/MvnSdk4Share/pom.xml to /Users/lcabaceira/.m2/repository/org/alfresco/MvnSdk4Share/1.0-SNAPSHOT/MvnSdk4Share-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 22:07:13.123s
+[INFO] Finished at: Fri Jan 25 14:58:35 GMT 2013
+[INFO] Final Memory: 46M/247M
+[INFO] ------------------------------------------------------------------------
+[1m[7m%[27m[1m[0m                                                                                                ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/MvnSdk4Share]1;../MvnSdk4Share[0m[27m[24m[J[32mMvnSdk4Share [31m»[00m [K[41C[34m~/Alfresco/projects/MvnSdk4Share[00m [31m130 ↵[00m [80Dccd /Users/lcabaceira/Alfresco/projects/Al[Kfresco-SJP-order-associations/repository [K--amp
+]2;cd ]1;cd[1m[7m%[27m[1m[0m                                                                                                ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/Alfresco-SJP-order-associations/repository-amp]1;..epository-amp[0m[27m[24m[J[32mrepository-amp [31m»[00m [K[10C[34m~/Alfresco/projects/Alfresco-SJP-order-associations/repository-amp[00m  [78Dccd  ..
+]2;cd ..]1;cd[1m[7m%[27m[1m[0m                                                                                                ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/Alfresco-SJP-order-associations]1;..-associations[0m[27m[24m[J[32mAlfresco-SJP-order-associations [31m»[00m [K[8C[34m~/Alfresco/projects/Alfresco-SJP-order-associations[00m  [61Dccd hsr   shr are-amp[1m/[0m[K[0m 
+]2;cd share-amp]1;cd[1m[7m%[27m[1m[0m                                                                                                ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp]1;..ons/share-amp[0m[27m[24m[J[32mshare-amp [31m»[00m [K[20C[34m~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp[00m  [83D  . /Users/lcabaceira[K/.zshrc
+]2;. /Users/lcabaceira/.zshrc]1;.[1m[7m%[27m[1m[0m                                                                                                ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp]1;..ons/share-amp[0m[27m[24m[J[32mshare-amp [31m»[00m [K[20C[34m~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp[00m  [83Dmmvnshare
+]2;mvn clean install -Pamp-to-war,purge -DskipTests -Djettyport=8888]1;mvnshare[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Alfresco Dashlets deployed on alfresco-share 1.5.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ share-amp ---
+[INFO] Deleting /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.1.1:enforce (enforce-sdk-requirements) @ share-amp ---
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:set-version (default-set-version) @ share-amp ---
+[INFO] Removed -SNAPSHOT suffix from version - 1.5.1
+[INFO] Added timestamp to version - 1.5.1.1301251502
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/src/main/resources
+[INFO] Copying 49 resources to ../share-amp
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (filter-jetty-conf) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ share-amp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ share-amp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ share-amp ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.4:unpack (unpack-alfresco) @ share-amp ---
+[INFO] Configured Artifact: org.alfresco.enterprise:share:4.1.2:war
+[INFO] Unpacking /Users/lcabaceira/.m2/repository/org/alfresco/enterprise/share/4.1.2/share-4.1.2.war to /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp-war with includes "" and excludes ""
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (copy-alfresco-test-resources) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/src/test/webapp
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/test-classes
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:amp (default-amp) @ share-amp ---
+[INFO] Building jar: /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp/lib/share-amp.jar
+[INFO] Adding directory to AMP package [ '/Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp' '']
+[INFO] Building amp: /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp.amp
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:install (amps-to-war-overlay) @ share-amp ---
+[INFO] 
+[INFO] >>> maven-jetty-plugin:6.1.26:run-exploded (run-amp-to-war) @ share-amp >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.1.1:enforce (enforce-sdk-requirements) @ share-amp ---
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:set-version (default-set-version) @ share-amp ---
+[INFO] Removed -SNAPSHOT suffix from version - 1.5.1
+[INFO] Added timestamp to version - 1.5.1.1301251502
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/src/main/resources
+[INFO] Copying 49 resources to ../share-amp
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (filter-jetty-conf) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ share-amp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ share-amp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ share-amp ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.4:unpack (unpack-alfresco) @ share-amp ---
+[INFO] Configured Artifact: org.alfresco.enterprise:share:4.1.2:war
+> isMarkerOlder:
+  artifact1 = /Users/lcabaceira/.m2/repository/org/alfresco/enterprise/share/4.1.2/share-4.1.2.war
+  marker    = /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/dependency-maven-plugin-markers/org.alfresco.enterprise-share-war-4.1.2.marker
+    artifact1 lastModified: 1359125062000
+    marker lastModified: 1359125062000
+< false = marker older than artifact?
+[INFO] share-4.1.2.war already unpacked.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (copy-alfresco-test-resources) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/src/test/webapp
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/test-classes
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:amp (default-amp) @ share-amp ---
+[INFO] Building jar: /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp/lib/share-amp.jar
+[INFO] Adding directory to AMP package [ '/Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp' '']
+[INFO] Building amp: /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp.amp
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:install (amps-to-war-overlay) @ share-amp ---
+[INFO] 
+[INFO] <<< maven-jetty-plugin:6.1.26:run-exploded (run-amp-to-war) @ share-amp <<<
+[INFO] 
+[INFO] --- maven-jetty-plugin:6.1.26:run-exploded (run-amp-to-war) @ share-amp ---
+[INFO] Configuring Jetty for project: Alfresco Dashlets deployed on alfresco-share
+[INFO] Configuring Jetty from xml configuration file = /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/jetty.xml
+2013-01-25 15:02:13.153:INFO::Logging to STDERR via org.mortbay.log.StdErrLog
+[INFO] Context path = /share-amp
+[INFO] Tmp directory =  determined at runtime
+[INFO] Web defaults = org/mortbay/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] Starting jetty 6.1.26 ...
+2013-01-25 15:02:13.317:INFO::jetty-6.1.26
+2013-01-25 15:02:13.486:INFO::No Transaction manager found - if your webapp requires one, please configure one.
+2013-01-25 15:02:14.016:INFO:/share-amp:Initializing Spring root WebApplicationContext
+2013-01-25 15:02:23,811  INFO  [extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+ 2013-01-25 15:02:23,881  INFO  [extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+ 2013-01-25 15:02:23,881  INFO  [extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+ 2013-01-25 15:02:23,885  INFO  [extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+ 2013-01-25 15:02:26,694  INFO  [extensions.webscripts.DeclarativeRegistry] [main] Registered 325 Web Scripts (+0 failed), 337 URLs
+ 2013-01-25 15:02:26,694  INFO  [extensions.webscripts.DeclarativeRegistry] [main] Registered 8 Package Description Documents (+0 failed) 
+ 2013-01-25 15:02:26,694  INFO  [extensions.webscripts.DeclarativeRegistry] [main] Registered 0 Schema Description Documents (+0 failed) 
+ 2013-01-25 15:02:26,923  INFO  [extensions.webscripts.AbstractRuntimeContainer] [main] Initialised Spring Surf Container Web Script Container (in 3031.221ms)
+ 2013-01-25 15:02:26,928  INFO  [extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+ 2013-01-25 15:02:26,933  INFO  [extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+ 2013-01-25 15:02:27.199:INFO:/share-amp:org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: loaded (conf ok)
+2013-01-25 15:02:27.294:INFO:/share-amp:Initializing Spring FrameworkServlet 'Spring Surf Dispatcher Servlet'
+2013-01-25 15:02:27.352:INFO::Started SelectChannelConnector@0.0.0.0:8080
+[INFO] Started Jetty Server
+^C2013-01-25 15:02:40.556:INFO::Shutdown hook executing
+2013-01-25 15:02:40.556:INFO::Stopped SelectChannelConnector@0.0.0.0:8080
+2013-01-25 15:02:41.059:INFO:/share-amp:org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: destroy called
+2013-01-25 15:02:41.059:INFO:/share-amp:Destroying Spring FrameworkServlet 'Spring Surf Dispatcher Servlet'
+2013-01-25 15:02:41.065:INFO:/share-amp:Closing Spring root WebApplicationContext
+2013-01-25 15:02:41.168:INFO::Shutdown hook complete[INFO] 
+Jetty server exiting.
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ share-amp ---
+[INFO] Installing /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp.amp to /Users/lcabaceira/.m2/repository/uk/co/sjp/alfresco/share-amp/1.5.1-SNAPSHOT/share-amp-1.5.1-SNAPSHOT.amp
+[INFO] Installing /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/pom.xml to /Users/lcabaceira/.m2/repository/uk/co/sjp/alfresco/share-amp/1.5.1-SNAPSHOT/share-amp-1.5.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 37.438s
+[INFO] Finished at: Fri Jan 25 15:02:41 GMT 2013
+[INFO] Final Memory: 45M/825M
+[INFO] ------------------------------------------------------------------------
+[1m[7m%[27m[1m[0m                                                                                                ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp]1;..ons/share-amp[0m[27m[24m[J[32mshare-amp [31m»[00m [K[15C[34m~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp[00m [31m130 ↵[00m [83Dmvnshare
+[1m[7m%[27m[1m[0m                                                                                                ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp]1;..ons/share-amp[0m[27m[24m[J[32mshare-amp [31m»[00m [K[15C[34m~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp[00m [31m130 ↵[00m [83Dvi .zshrc[9Dmvnshare repo . /Users/lcabaceira/.zshrc[K
+]2;. /Users/lcabaceira/.zshrc]1;.[1m[7m%[27m[1m[0m                                                                                                ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp]1;..ons/share-amp[0m[27m[24m[J[32mshare-amp [31m»[00m [K[20C[34m~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp[00m  [83D. /Users/lcabaceira/.zshrc[K[26Dvi .zshrc[K[11C[34m~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp[00m  [74D[9Dmvnshare 
+]2;mvn clean install -Pamp-to-war,purge -DskipTests -Djetty.port=8888]1;mvnshare[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Alfresco Dashlets deployed on alfresco-share 1.5.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ share-amp ---
+[INFO] Deleting /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.1.1:enforce (enforce-sdk-requirements) @ share-amp ---
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:set-version (default-set-version) @ share-amp ---
+[INFO] Removed -SNAPSHOT suffix from version - 1.5.1
+[INFO] Added timestamp to version - 1.5.1.1301251503
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/src/main/resources
+[INFO] Copying 49 resources to ../share-amp
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (filter-jetty-conf) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ share-amp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ share-amp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ share-amp ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.4:unpack (unpack-alfresco) @ share-amp ---
+[INFO] Configured Artifact: org.alfresco.enterprise:share:4.1.2:war
+[INFO] Unpacking /Users/lcabaceira/.m2/repository/org/alfresco/enterprise/share/4.1.2/share-4.1.2.war to /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp-war with includes "" and excludes ""
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (copy-alfresco-test-resources) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/src/test/webapp
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/test-classes
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:amp (default-amp) @ share-amp ---
+[INFO] Building jar: /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp/lib/share-amp.jar
+[INFO] Adding directory to AMP package [ '/Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp' '']
+[INFO] Building amp: /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp.amp
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:install (amps-to-war-overlay) @ share-amp ---
+[INFO] 
+[INFO] >>> maven-jetty-plugin:6.1.26:run-exploded (run-amp-to-war) @ share-amp >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.1.1:enforce (enforce-sdk-requirements) @ share-amp ---
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:set-version (default-set-version) @ share-amp ---
+[INFO] Removed -SNAPSHOT suffix from version - 1.5.1
+[INFO] Added timestamp to version - 1.5.1.1301251503
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/src/main/resources
+[INFO] Copying 49 resources to ../share-amp
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (filter-jetty-conf) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ share-amp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ share-amp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ share-amp ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.4:unpack (unpack-alfresco) @ share-amp ---
+[INFO] Configured Artifact: org.alfresco.enterprise:share:4.1.2:war
+> isMarkerOlder:
+  artifact1 = /Users/lcabaceira/.m2/repository/org/alfresco/enterprise/share/4.1.2/share-4.1.2.war
+  marker    = /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/dependency-maven-plugin-markers/org.alfresco.enterprise-share-war-4.1.2.marker
+    artifact1 lastModified: 1359125062000
+    marker lastModified: 1359125062000
+< false = marker older than artifact?
+[INFO] share-4.1.2.war already unpacked.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:copy-resources (copy-alfresco-test-resources) @ share-amp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/src/test/webapp
+[INFO] skip non existing resourceDirectory /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/test-classes
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:amp (default-amp) @ share-amp ---
+[INFO] Building jar: /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp/lib/share-amp.jar
+[INFO] Adding directory to AMP package [ '/Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp' '']
+[INFO] Building amp: /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp.amp
+[INFO] 
+[INFO] --- alfresco-maven-plugin:1.0:install (amps-to-war-overlay) @ share-amp ---
+[INFO] 
+[INFO] <<< maven-jetty-plugin:6.1.26:run-exploded (run-amp-to-war) @ share-amp <<<
+[INFO] 
+[INFO] --- maven-jetty-plugin:6.1.26:run-exploded (run-amp-to-war) @ share-amp ---
+[INFO] Configuring Jetty for project: Alfresco Dashlets deployed on alfresco-share
+[INFO] Configuring Jetty from xml configuration file = /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/jetty.xml
+2013-01-25 15:03:31.538:INFO::Logging to STDERR via org.mortbay.log.StdErrLog
+[INFO] Context path = /share-amp
+[INFO] Tmp directory =  determined at runtime
+[INFO] Web defaults = org/mortbay/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] Starting jetty 6.1.26 ...
+2013-01-25 15:03:31.650:INFO::jetty-6.1.26
+2013-01-25 15:03:31.774:INFO::No Transaction manager found - if your webapp requires one, please configure one.
+2013-01-25 15:03:32.287:INFO:/share-amp:Initializing Spring root WebApplicationContext
+2013-01-25 15:03:41,807  INFO  [extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+ 2013-01-25 15:03:41,874  INFO  [extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+ 2013-01-25 15:03:41,875  INFO  [extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+ 2013-01-25 15:03:41,881  INFO  [extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+ 2013-01-25 15:03:44,695  INFO  [extensions.webscripts.DeclarativeRegistry] [main] Registered 325 Web Scripts (+0 failed), 337 URLs
+ 2013-01-25 15:03:44,695  INFO  [extensions.webscripts.DeclarativeRegistry] [main] Registered 8 Package Description Documents (+0 failed) 
+ 2013-01-25 15:03:44,695  INFO  [extensions.webscripts.DeclarativeRegistry] [main] Registered 0 Schema Description Documents (+0 failed) 
+ 2013-01-25 15:03:44,915  INFO  [extensions.webscripts.AbstractRuntimeContainer] [main] Initialised Spring Surf Container Web Script Container (in 3027.6511ms)
+ 2013-01-25 15:03:44,920  INFO  [extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+ 2013-01-25 15:03:44,924  INFO  [extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+ 2013-01-25 15:03:45.161:INFO:/share-amp:org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: loaded (conf ok)
+2013-01-25 15:03:45.217:INFO:/share-amp:Initializing Spring FrameworkServlet 'Spring Surf Dispatcher Servlet'
+2013-01-25 15:03:45.252:INFO::Started SelectChannelConnector@0.0.0.0:8888
+[INFO] Started Jetty Server
+2013-01-25 15:04:09,009  INFO  [web.site.EditionInterceptor] [257811820@qtp-811873741-0] Successfully retrieved license information from Alfresco.
+ 2013-01-25 15:04:18,004  INFO  [web.scripts.SyncModeConfig] [982721644@qtp-811873741-3] Successfully retrieved Sync Mode configuration from Alfresco.
+ 2013-01-25 15:04:30,223  INFO  [web.scripts.DictionaryQuery] [1385513834@qtp-811873741-6] Successfully retrieved dictionary information from Alfresco.
+ ^C2013-01-25 17:03:42.880:INFO::Shutdown hook executing
+2013-01-25 17:03:42.881:INFO::Stopped SelectChannelConnector@0.0.0.0:8888
+2013-01-25 17:03:43.382:INFO:/share-amp:org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: destroy called
+2013-01-25 17:03:43.383:INFO:/share-amp:Destroying Spring FrameworkServlet 'Spring Surf Dispatcher Servlet'
+2013-01-25 17:03:43.388:INFO:/share-amp:Closing Spring root WebApplicationContext
+[INFO] 2013-01-25 17:03:43.491:INFO::Shutdown hook completeJetty server exiting.
+
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ share-amp ---
+[INFO] Installing /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/target/share-amp.amp to /Users/lcabaceira/.m2/repository/uk/co/sjp/alfresco/share-amp/1.5.1-SNAPSHOT/share-amp-1.5.1-SNAPSHOT.amp
+[INFO] Installing /Users/lcabaceira/Alfresco/projects/Alfresco-SJP-order-associations/share-amp/pom.xml to /Users/lcabaceira/.m2/repository/uk/co/sjp/alfresco/share-amp/1.5.1-SNAPSHOT/share-amp-1.5.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2:00:20.915s
+[INFO] Finished at: Fri Jan 25 17:03:43 GMT 2013
+[INFO] Final Memory: 46M/722M
+[INFO] ------------------------------------------------------------------------
+[1m[7m%[27m[1m[0m                                                                                                ]2;lcabaceira@c02jq9nfdkq2: ~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp]1;..ons/share-amp[0m[27m[24m[J[32mshare-amp [31m»[00m [K[15C[34m~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp[00m [31m130 ↵[00m [83Dmvnshare[8D. /Users/lcabaceira/.zshrc[K[26Dmvnshare[K[7C[34m~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp[00m [31m130 ↵[00m [75D[8D        [8Dmvnshare[8D. /Users/lcabaceira/.zshrc[K[26Dvi .zshrc[K[6C[34m~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp[00m [31m130 ↵[00m [74D[9Dmvnshare repo . /Users/lcabaceira/.zshrc[K[26Dpwd[K[12C[34m~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp[00m [31m130 ↵[00m [80D. /Users/lcabaceira/.zshrc[K           [K[1C[34m~/Alfresco/projects/Alfresco-SJP-order-associations/share-amp[00m [31m130 ↵[00m [69D             

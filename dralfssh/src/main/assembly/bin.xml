@@ -1,0 +1,33 @@
+<assembly> 
+  <id>bin</id> 
+  <formats> 
+    <format>dir</format> 
+  </formats> 
+  <includeBaseDirectory>false</includeBaseDirectory> 
+  <fileSets> 
+    <fileSet> 
+      <directory>src/main/resources</directory> 
+      <outputDirectory>/</outputDirectory> 
+      <includes> 
+        <include>utils/*.*</include> 
+        <include>lib/*.*</include> 
+         <include>tomcat/*.*</include> 
+         <include>tomcat/*</include>
+         <include>tomcat/webapps/dralf/*/*.*</include>
+         <include>tomcat/webapps/dralf/*.*</include>
+         <include>tomcat/webapps/dralf/*/*/*.*</include>
+         <include>tomcat/*/*.*</include>
+         <include>tools/*</include> 
+         <include>*</include>
+      </includes> 
+    </fileSet> 
+ </fileSets>  
+  <files> 
+    <file> 
+      <source>src/main/resources/dralf.sh</source> 
+      <filtered>false</filtered> 
+    </file> 
+  </files> 
+  
+ 
+</assembly> 

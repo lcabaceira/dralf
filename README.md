@@ -27,7 +27,7 @@ Dr. Alf is currently released as a multi-module maven project.
 Dr. Alf should be installed on the same machine where the Alfresco Content server resides. 
 If you have a clustered Alfresco, you need to install Dr Alf on one of the cluster nodes. 
 Changes will propagate to all the nodes. Working with Dr. Alf in a clustered environment is detailed on 
-the Dr. Alf Cluster How to document, that will be release soon.
+the Dr. Alf Cluster How to document, that will be released soon.
 
 The current version only uses the command line
 module, named dralfssh. To build the project you just have to run the following maven command.

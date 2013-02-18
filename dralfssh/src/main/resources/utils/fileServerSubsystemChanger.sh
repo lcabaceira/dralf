@@ -25,7 +25,7 @@ run setCIFSServerEnabled ${cifsvalue}
 quit
 EOF
 ## Execute Command and get the stack Traces
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ./logs/solrChanger.log
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/solrChanger.log
 rm -rf ./alfrescoScript.jmx 
 echo "Also Changing properties in alfresco-global.properties for consistency .... "
 #usage: properties_changer.sh <property> <new value> <path properties file>
@@ -49,7 +49,7 @@ run setFTPServerEnabled ${ftpvalue}
 quit
 EOF
 ## Execute Command and get the stack Traces
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ./logs/solrChanger.log
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/solrChanger.log
 rm -rf ./alfrescoScript.jmx 
 echo "Also Changing properties in alfresco-global.properties for consistency .... "
 #usage: properties_changer.sh <property> <new value> <path properties file>
@@ -73,7 +73,7 @@ run setNFSServerEnabled ${nfsvalue}
 quit
 EOF
 ## Execute Command and get the stack Traces
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ./logs/solrChanger.log
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/solrChanger.log
 rm -rf ./alfrescoScript.jmx 
 echo "Also Changing properties in alfresco-global.properties for consistency .... "
 #./utils/properties_changer.sh index.subsystem.name solr $alfProperties

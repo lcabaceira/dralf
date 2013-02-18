@@ -21,6 +21,6 @@ get Issuer
 quit
 EOF
 ## Execute Command and get the stack Traces
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ./logs/licenseChecker.log 
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/licenseChecker.log 
 rm -rf ./alfrescoScript.jmx
 

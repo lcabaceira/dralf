@@ -9,7 +9,8 @@
 # source the properties
 . dralf.properties
 # TODO1 : If mandatory executables dont exist on the system, prevent DrAlf from running
-# TODO2 : Check if alfresco is stopped and when it has finish starting
+# TODO2 : Check if alfresco is stopped and when it has finish starting, better way to kill alfresco
+# TODO3 : RESTORE with SOLR is different than RESTORE with LUCENE
 
 checkexists() {
     while [ -n "$1" ]; do
@@ -47,9 +48,16 @@ function hotBackup {
     else
     	echo "... Starting Hot Backup , Just lean back and Relax DrAlf will take care of everything ..."  
     	echo "... Running Content Store Cleanup  ..."
-    	./utils/contentCleanUpJobTrigger.sh > ./logs/contentCleanUpJobTrigger.log
+    	${drAlfDir}/utils/contentCleanUpJobTrigger.sh > ${drAlfDir}/logs/contentCleanUpJobTrigger.log
+    if [ $searchengine != 'lucene' ];
+    then 
+      	echo "... Triggering Backup for $searchengine Indexes  ..."
+      	${drAlfDir}/utils/solrBackupTrigger.sh > ${drAlfDir}/logs/solrBackupTrigger.log
+    else
     	echo "... Triggering Backup for $searchengine Indexes  ..."
-    	./utils/searchEngineBackupTrigger.sh > ./logs/searchEngineBackupTrigger.log
+    	${drAlfDir}/utils/searchEngineBackupTrigger.sh > ${drAlfDir}/logs/searchEngineBackupTrigger.log
+    fi
+
     	echo "... Triggering a Hot Backup for $dbtype database  ..."
     	if [ $dbtype != 'mysql' ];
     	then
@@ -62,7 +70,17 @@ function hotBackup {
     		targetBackupFile=${dbname}.sql 
     	fi
     	echo "... Backing Up your repository filesystem  ..."
-    	tar -czvf filesystem.tgz ${alfDataDir}/*
+    	
+    	 if [ $searchengine != 'lucene' ];
+    	then 
+      			echo "... BackingUp $searchengine Indexes. Lucene is part of alfresco filesystem ..."
+      	    	tar -czvf filesystem.tgz ${alfDataDir}/*
+    	else
+    		echo "... BackingUp $searchengine Indexes  ... Including backed up Solr indexes."
+    		tar -czvf filesystem.tgz ${alfDataDir}/* ${solrRoot}/solrdata/workspace/*
+    	fi
+    
+
     	echo "... Building your Alfresco backupfile .abk  ..."
     	tar -cvf ./backups/Backup-$(date +%Y%m%d).abk filesystem.tgz ${targetBackupFile} 
     	rm -rf ./filesystem.tgz  ./${dbname}.sql
@@ -74,7 +92,7 @@ function hotBackup {
 function coldBackup {
     echo "... please wait ... Starting Alfresco Cold Backup   ..."  
     echo "... Executing Content Store Cleaner ..."
-    ./utils/contentCleanUpJobTrigger.sh > ./logs/contentCleanUpJobTrigger.log
+    ${drAlfDir}/utils/contentCleanUpJobTrigger.sh > ${drAlfDir}/logs/contentCleanUpJobTrigger.log
     echo "... Shutting Down alfresco  ..."
       cd ${alfAppServerBin}
       ./shutdown.sh
@@ -88,10 +106,15 @@ function coldBackup {
         echo "... Exiting, Press any key to return to DrAlf menu ..." 
     else
     	echo "... Starting Hot Backup , Just lean back and Relax DrAlf will take care of everything ..."  
-    	echo "... Running Content Store Cleanup  ..."
-    	echo "... Triggering Backup for $searchengine Indexes  ..."
-    	./utils/searchEngineBackupTrigger.sh > ./logs/searchEngineBackupTrigger.log
-    	echo "... Triggering a Hot Backup for $dbtype database  ..."
+    	if [ $searchengine != 'lucene' ];
+   		then 
+      		echo "... Triggering Backup for $searchengine Indexes  ..."
+      		${drAlfDir}/utils/solrBackupTrigger.sh > ${drAlfDir}/logs/solrBackupTrigger.log
+    	else
+    		echo "... Triggering Backup for $searchengine Indexes  ..."
+    		${drAlfDir}/utils/searchEngineBackupTrigger.sh > ${drAlfDir}/logs/searchEngineBackupTrigger.log
+    	fi
+    	echo "... Triggering a Backup for $dbtype database  ..."
     	if [ $dbtype != 'mysql' ];
     	then
     		echo "... PostGres Backup $dbname database  ..."
@@ -115,27 +138,27 @@ function coldBackup {
 }
 
 function readonlyMode {
-	./utils/readOnly.sh > ./logs/readOnly.log
+	${drAlfDir}/utils/readOnly.sh > ${drAlfDir}/logs/readOnly.log
 }
 
 function writeMode {
-	./utils/writeMode.sh > ./logs/writeMode.log
+	${drAlfDir}/utils/writeMode.sh > ${drAlfDir}/logs/writeMode.log
 }
 
 function restoreAlfresco {
       echo "... please wait ... Restoring Alfresco from the last Backup taken with DrAlf  ..." 
       echo "... Changing index.recovery.mode to AUTO using JMX to force index rebuilding   ..."
-      ./utils/indexAutoRecover.sh > ${drAlfDir}/logs/indexAutoRecover.log
+      ${drAlfDir}/utils/indexAutoRecover.sh > ${drAlfDir}/logs/indexAutoRecover.log
       echo "... Shutting Down alfresco  ..."
       cd ${alfAppServerBin}
       ./shutdown.sh
       cd -
       sleep 20
       # getting the latest backup version
-      lastAbkFile=`ls -latr ${drAlfDir}/backups | grep ^- |  tail -n 1 | awk '{print $9}'`
+      lastAbkFile=`ls -latr ${drAlfDir}/backups/*.abk | grep ^- |  tail -n 1 | awk '{print $9}'`
       echo "last backup file is $lastAbkFile" 
       echo "Unzipping Backup File ... " 
-      tar -xvf ./backups/${lastAbkFile} 
+      tar -xvf ${lastAbkFile} 
       echo "Restoring Alfresco Filesystem ( Including search engine Index data )  ... " 
       tar -xvzf ./filesystem.tgz -C /
       echo "Restoring the database  ... " 
@@ -163,34 +186,34 @@ function restoreAlfresco {
 function debugIndexing {
     echo "... please wait ... Debugging Indexing SubSystem ..."
     echo "... Setting Log Levels to DEBUG "
-    ./utils/troubleshootIndexing.sh > ./logs/troubleshootIndexing.log
+    ${drAlfDir}/utils/troubleshootIndexing.sh > ${drAlfDir}/logs/troubleshootIndexing.log
 }
 
 function stopDebugIndexing {
      echo "... please wait ... Stopping the Debug on the Indexing SubSystem ..."
      echo "... Setting Log Levels back to ERROR ..."
-    ./utils/stoptroubleshootIndexing.sh > ./logs/stoptroubleshootIndexing.log
+    ${drAlfDir}/utils/stoptroubleshootIndexing.sh > ${drAlfDir}/logs/stoptroubleshootIndexing.log
 }
 
 
 function jmxSystemReport {
     echo "... please wait ... Generating JmxSystemReport ..." 
-    ./utils/jmxSystemReport.sh > ./logs/jmxSystemReport.log        
+    ${drAlfDir}/utils/jmxSystemReport.sh > ${drAlfDir}/logs/jmxSystemReport.log        
 }
 
 function invalidateUserSessions {
     echo "... please wait ... Invalidating User Sessions ..." 
-    ./utils/invalidateUserSessions.sh > ./logs/invalidateUserSessions.log        
+    ${drAlfDir}/utils/invalidateUserSessions.sh > ${drAlfDir}/logs/invalidateUserSessions.log        
 }
 
 function databaseCheck {
     echo "... please wait ... Checking Database Schema ..."
-    ./utils/schemaValidator.sh > ./logs/schemaValidator.log
+    ${drAlfDir}/utils/schemaValidator.sh > ${drAlfDir}/logs/schemaValidator.log
 }
 
 function executeContentStoreCleaner {
     echo "... please wait ... Executing Content Store Cleaner ..."
-    ./utils/contentCleanUpJobTrigger.sh > ./logs/contentCleanUpJobTrigger.log
+    ${drAlfDir}/utils/contentCleanUpJobTrigger.sh > ${drAlfDir}/logs/contentCleanUpJobTrigger.log
 }
 
 function bounceAlfresco {
@@ -206,27 +229,27 @@ function bounceAlfresco {
 
 function manageSchedulerJobs {
     echo "... Scheduler Jobs Manager  ..."
-    ./utils/scheduleJobsManager.sh > ./logs/scheduleJobsManager.log 
+    ${drAlfDir}/utils/scheduleJobsManager.sh > ${drAlfDir}/logs/scheduleJobsManager.log 
 }
 
 function manageFileServers {
          echo " Managing FileServers ....  "
-         ./utils/fileServerSubsystemChanger.sh > ./logs/fileServerSubsystemChanger.log            
+         ${drAlfDir}/utils/fileServerSubsystemChanger.sh > ${drAlfDir}/logs/fileServerSubsystemChanger.log            
 }
 
 function onDemandTroubleShooter {
     echo "... OnDemand TroubleShooter - Helping you to Debug ..."   
-    ./utils/onDemandTroubleShooter.sh > ./logs/onDemandTroubleShooter.log     
+    ${drAlfDir}/utils/onDemandTroubleShooter.sh > ${drAlfDir}/logs/onDemandTroubleShooter.log     
 }
 
 function searchSubsystemChanger {
 	echo "To what search manager to you want to change [solr | lucene] ? "
-    ./utils/searchSubSystemChanger.sh > ./logs/searchSubSystemChanger.log        
+    ${drAlfDir}/utils/searchSubSystemChanger.sh > ${drAlfDir}/logs/searchSubSystemChanger.log        
 }
 
 function licenseChecker {
     echo "... please wait ... Checking Alfresco License.."     
-    ./utils/licenseChecker.sh > ./logs/licenseChecker.log   
+    ${drAlfDir}/utils/licenseChecker.sh > ${drAlfDir}/logs/licenseChecker.log   
 }
 
 

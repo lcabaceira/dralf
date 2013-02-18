@@ -1,8 +1,6 @@
 #!/bin/bash
 # source the properties:
-. dumper.properties 
-
-
+. dralf.properties
 
 function die() { echo $1 ; exit 1 ; }
 function checkexe() { [ -x `which $1` ] || die "cant find executable program $1"; }
@@ -20,22 +18,22 @@ quit
 EOF
 
 ## get the stack traces
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user}  -i ./myscript.jmx > ./jmxThreadDumperOut.txt
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user}  -i ./myscript.jmx > ${drAlfDir}/logs/jmxThreadDumperOut.txt
 
-grep "threadId" ./jmxThreadDumperOut.txt || die "stack trace get seemed to fail ?!"
+grep "threadId" ${drAlfDir}/logs/jmxThreadDumperOut.txt || die "stack trace get seemed to fail ?!"
 
 ## turn them into xml
-cat ./jmxThreadDumperOut.txt  | sed -e "s|\[ |<array>|g" -e "s| \]|</array>|g" -e "s|{|<obj>|g" 
+cat ${drAlfDir}/logs/jmxThreadDumperOut.txt  | sed -e "s|\[ |<array>|g" -e "s| \]|</array>|g" -e "s|{|<obj>|g" 
 sed -e "s|}|</obj>|g" 
 sed -e "s|\([^ <>]*\) = \([^ <>]*\);|<\1>\2</\1>|g"
 sed -e "s|\([^ ]*\) = \([^;]*\) *;|<\1>\2</\1>|g" | tr '\r\n\t' ' ' | tr -s ' ' | 
 sed -e "s|\([^ =]*\) = \([^;=]*\);|<\1>\2</\1>|g" 
 sed -e "s|\([^ ]*\) = \([^;]*\);|<\1>\2</\1>|g" 
-sed -e "s| *, *||g" > ./allthreads.xml
+sed -e "s| *, *||g" > ${drAlfDir}/logs/allthreads.xml
 
 
 ## xsl to convert xml-ified stack traces to simpler format
-cat >./jmxterm_threads.xslt<<EOF
+cat >${drAlfDir}/logs/jmxterm_threads.xslt<<EOF
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -71,6 +69,6 @@ line="{lineNumber}"/>
 EOF
 
 ## simplify xml
-xsltproc ./jmxterm_threads.xslt ./allthreads.xml | xmllint --format - > ./allthreads_simple.xml
+xsltproc ${drAlfDir}/logs/jmxterm_threads.xslt ${drAlfDir}/logs/allthreads.xml | xmllint --format - > ${drAlfDir}/logs/allthreads_simple.xml
 
-cat ./allthreads_simple.xml > mylist.xml
+cat ${drAlfDir}/logs/allthreads_simple.xml > mylist.xml

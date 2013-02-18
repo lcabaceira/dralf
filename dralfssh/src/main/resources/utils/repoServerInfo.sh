@@ -18,6 +18,6 @@ run invalidateTicketsAll
 quit
 EOF
 ## Execute Command and get the stack Traces
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx >  ../logs/RepoServerInfoOut.txt
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx >  ${drAlfDir}/logs/RepoServerInfoOut.txt
 rm -rf ./alfrescoScript.jmx
 

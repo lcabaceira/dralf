@@ -27,14 +27,14 @@ run start
 quit
 EOF
 ## Execute Command and get the stack Traces
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ./logs/solrChanger.log
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/solrChanger.log
 rm -rf ./alfrescoScript.jmx 
 echo "Also Changing properties in alfresco-global.properties for consistency .... "
-./utils/properties_changer.sh index.subsystem.name solr $alfProperties
-./utils/properties_changer.sh solr.host $solrhost $alfProperties
-./utils/properties_changer.sh solr.port $solrport $alfProperties
-./utils/properties_changer.sh solr.port.ssl $solrsslport $alfProperties
-./utils/properties_changer.sh solr.secureComms https $alfProperties
+${drAlfDir}/utils/properties_changer.sh index.subsystem.name solr $alfProperties
+${drAlfDir}/utils/properties_changer.sh solr.host $solrhost $alfProperties
+${drAlfDir}/utils/properties_changer.sh solr.port $solrport $alfProperties
+${drAlfDir}/utils/properties_changer.sh solr.port.ssl $solrsslport $alfProperties
+${drAlfDir}/utils/properties_changer.sh solr.secureComms https $alfProperties
 }
 
 function lucenechanger {
@@ -72,11 +72,11 @@ run start
 quit
 EOF
 ## Execute Command and get the stack Traces
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ./logs/solrChanger.log
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/solrChanger.log
 rm -rf ./alfrescoScript.jmx 
 echo "Also Changing properties in alfresco-global.properties for consistency .... "
 #usage: properties_changer.sh <property> <new value> <path properties file>
-./utils/properties_changer.sh index.subsystem.name lucene $alfProperties
+${drAlfDir}/utils/properties_changer.sh index.subsystem.name lucene $alfProperties
 }
 
 clear

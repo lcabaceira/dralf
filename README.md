@@ -22,6 +22,21 @@ It uses jmxterm as a command line jmx client , you can find documentation on jmx
 ----------------------
 1 - Installing Dr Alf. 
 ----------------------
+Dr. Alf is currently released as a multi-module maven project. 
+
+Dr. Alf should be installed on the same machine where the Alfresco Content server resides. 
+If you have a clustered Alfresco, you need to install Dr Alf on one of the cluster nodes. 
+Changes will propagate to all the nodes. Working with Dr. Alf in a clustered environment is detailed on 
+the Dr. Alf Cluster How to document, that will be release soon.
+
+The current version only uses the command line
+module, named dralfssh. To build the project you just have to run the following maven command.
+
+mvn clean install
+
+This will build 2 modules, and you will be using dralfssh.
+
+After the build is complete, go to the target/dralfssh directory you are ready to proceed to the next step.
 
 -----------------------------------------
 2 - Configure for the target environment
@@ -30,6 +45,8 @@ It uses jmxterm as a command line jmx client , you can find documentation on jmx
 Dr. Alf works directly with your alfresco, and has the ability to read the properties configured either in 
 the alfresco-global.properties on in the repository.properties file of Alfresco. There are a few
 initial properties that have to be set to have a fully functional version of Dr. Alf.
+
+Locate and open dralf.properties and adapt the properties to reflect you local environment.
 
 -----------------------
 3 - Accessing the tool

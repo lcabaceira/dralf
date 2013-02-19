@@ -46,14 +46,15 @@ Dr. Alf works directly with your alfresco, and has the ability to read the prope
 the alfresco-global.properties on in the repository.properties file of Alfresco. There are a few
 initial properties that have to be set to have a fully functional version of Dr. Alf.
 
-Locate and open dralf.properties and adapt the properties to reflect you local environment.
+Change to dralfssh/target/dralfssh-0.1-bin and open dralf.properties for editing.
+Adapt the properties to reflect you local alfresco environment.
 
 -----------------------
 3 - Accessing the tool
 -----------------------
 
     * Go to the installation directory of Dr Alf.
-    * Change to dralfssh 
+    * Change to dralfssh/target/dralfssh-0.1-bin
     * run ./dralf.sh menu
     
 ------------------------------------    

@@ -98,7 +98,8 @@ Adapt the properties to reflect you local alfresco environment.
 
     * Go to the installation directory of Dr Alf.
     * Change to dralfssh/target/dralfssh-0.1-bin
-    * run - `./dralf.sh menu` 
+    * run 
+        - `./dralf.sh menu` 
     
 ------------------------------------    
 Future view

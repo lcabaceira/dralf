@@ -13,5 +13,5 @@ EOF
 ## Execute Command and get the stack Traces
 java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx 
 rm -rf ./alfrescoScript.jmx
-tail -q -n6 ${alfRootDir}/tomcat/logs/catalina.out > ./logs/schemaValidator.log
+tail -q -n6 ${alfRootDir}/tomcat/logs/catalina.out > ${drAlfDir}/logs/schemaValidator.log
 

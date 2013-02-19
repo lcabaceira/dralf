@@ -9,16 +9,7 @@
       <directory>src/main/resources</directory> 
       <outputDirectory>/</outputDirectory> 
       <includes> 
-        <include>utils/*.*</include> 
-        <include>lib/*.*</include> 
-         <include>tomcat/*.*</include> 
-         <include>tomcat/*</include>
-         <include>tomcat/webapps/dralf/*/*.*</include>
-         <include>tomcat/webapps/dralf/*.*</include>
-         <include>tomcat/webapps/dralf/*/*/*.*</include>
-         <include>tomcat/*/*.*</include>
-         <include>tools/*</include> 
-         <include>*</include>
+         <include>**</include>
       </includes> 
     </fileSet> 
  </fileSets>  

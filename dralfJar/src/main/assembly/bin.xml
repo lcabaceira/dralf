@@ -1,31 +1,17 @@
 <assembly> 
   <id>bin</id> 
- 
+    <formats>
+    <format>jar</format>
+  </formats>
   <includeBaseDirectory>false</includeBaseDirectory> 
-  <fileSets> 
-    <fileSet> 
-      <directory>src/main/java</directory> 
-      <outputDirectory>/</outputDirectory> 
-      <includes> 
-        <include>*</include> 
-      </includes> 
-    </fileSet> 
-    <fileSet> 
-      <directory>target</directory> 
-      <outputDirectory></outputDirectory> 
-      <includes> 
-        <include>${artifactId}-${version}.jar</include> 
-      </includes> 
-    </fileSet> 
-  </fileSets> 
-  <files> 
-  </files> 
   <dependencySets> 
     <dependencySet> 
       <outputDirectory>lib</outputDirectory> 
       <unpack>false</unpack> 
       <outputFileNameMapping> 
-        ${artifactId}-${baseVersion}.${extension}</outputFileNameMapping> 
+        ${artifactId}.${extension}</outputFileNameMapping> 
     </dependencySet> 
   </dependencySets> 
+
+      
 </assembly> 

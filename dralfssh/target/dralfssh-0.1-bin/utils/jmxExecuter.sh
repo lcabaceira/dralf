@@ -2,8 +2,6 @@
 # source the properties:
 . dralf.properties 
 
-
-
 function die() { echo $1 ; exit 1 ; }
 function checkexe() { [ -x `which $1` ] || die "cant find executable program $1"
 ; }
@@ -13,7 +11,7 @@ for P in $PROGS ; do checkexe $P ; done
 [ -f ${cmdLineJMXJar}] || die "can't see jar file $JARFILE"
 
 ## jmxterm commands to get thread stack dump
-cat >/tmp/myscript.jmx<<EOF
+cat >${drAlfDir}/tmp/myscript.jmx<<EOF
 domain java.lang
 bean java.lang:type=Threading
 run dumpAllThreads 1 1
@@ -21,12 +19,12 @@ quit
 EOF
 
 ## get the stack traces
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user}  -i /tmp/myscript.jmx > ./jmxExecutorOut.txt
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user}  -i ${drAlfDir}/tmp/myscript.jmx > ${drAlfDir}/logs/jmxExecutorOut.txt
 
-grep "threadId" /tmp/allthreads.txt || die "stack trace get seemed to fail ?!"
+grep "threadId" ${drAlfDir}/tmp/allthreads.txt || die "stack trace get seemed to fail ?!"
 
 ## turn them into xml
-cat /tmp/allthreads.txt | \
+cat ${drAlfDir}/tmp/allthreads.txt | \
 sed \
 -e "s|\[ |<array>|g" -e "s| \]|</array>|g" \
 -e "s|{|<obj>|g" -e "s|}|</obj>|g" \
@@ -36,10 +34,10 @@ tr '\r\n\t' ' ' | tr -s ' ' | \
 sed \
 -e "s|\([^ =]*\) = \([^;=]*\);|<\1>\2</\1>|g" \
 -e "s|\([^ ]*\) = \([^;]*\);|<\1>\2</\1>|g"\
--e "s| *, *||g" > /tmp/allthreads.xml
+-e "s| *, *||g" > ${drAlfDir}/tmp/allthreads.xml
 
 ## xsl to convert xml-ified stack traces to simpler format
-cat >/tmp/jmxterm_threads.xslt<<EOF
+cat >${drAlfDir}/tmp/jmxterm_threads.xslt<<EOF
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -75,7 +73,7 @@ line="{lineNumber}"/>
 EOF
 
 ## simplify xml
-xsltproc /tmp/jmxterm_threads.xslt /tmp/allthreads.xml | xmllint --format - >
-/tmp/allthreads_simple.xml
+xsltproc ${drAlfDir}/tmp/jmxterm_threads.xslt ${drAlfDir}/tmp/allthreads.xml | xmllint --format - >
+${drAlfDir}/tmp/allthreads_simple.xml
 
-cat /tmp/allthreads_simple.xml
+cat ${drAlfDir}/tmp/allthreads_simple.xml

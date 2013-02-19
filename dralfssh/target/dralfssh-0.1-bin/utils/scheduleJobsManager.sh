@@ -45,7 +45,7 @@ else
     quit
 EOF
 ## Execute Command and write the report
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ./logs/ContentStoreCleanerReport.log
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/ContentStoreCleanerReport.log
 rm -rf ./alfrescoScript.jmx
 fi
 }
@@ -92,7 +92,7 @@ else
     quit
 EOF
 ## Execute Command and write the report
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ./logs/NodeServiceCleanerReport.log
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/NodeServiceCleanerReport.log
 rm -rf ./alfrescoScript.jmx
 fi
 }
@@ -138,7 +138,7 @@ else
     quit
 EOF
 ## Execute Command and write the report
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ./logs/indexBackupReport.log
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/indexBackupReport.log
 rm -rf ./alfrescoScript.jmx
 fi
 }
@@ -185,7 +185,7 @@ else
     quit
 EOF
 ## Execute Command and write the report
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ./logs/TemporaryFilesCleanerReport.log
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/TemporaryFilesCleanerReport.log
 rm -rf ./alfrescoScript.jmx
 fi
 }
@@ -200,7 +200,7 @@ function ldapUserSync {
     quit
 EOF
 ## Execute Command and write the report
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ./logs/ldapUserSync.log
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/ldapUserSync.log
 rm -rf ./alfrescoScript.jmx
 }
 

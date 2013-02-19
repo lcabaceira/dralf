@@ -28,6 +28,38 @@ Overall we can define Dr. Alf as :
     * JMX Encapsulator
     * Alfresco Backup Manager Tool
     * Alfresco Troubleshooting Tool
+
+--------------------
+Suported Databases :
+--------------------
+
+The current early bird version of Dr. Alf supports the following databases :
+
+    * MySql Database
+    * PostGres Sql Database
+
+Note : This restriction is related to the procedures on how to perform Hot Backups. Oracle and SQL Server have their own
+Hot backup tools, and those currently are not integrated with the tool.
+
+--------------------
+Suported OS        :
+--------------------
+
+The current early bird version supports the following Operating Systems :
+
+    * Mac OSx
+    * Mostly all Linux distributions ( Ubunto, Red Hat, etc ) 
+
+Note : Dr. Alf can run on windows, but if requires cygwin installed and configured.    
+
+--------------------
+Pre-Requirements   :
+--------------------
+
+Dr. Alf has the following pre-requirements :
+
+    * Maven 2
+    * Jdk 1.6+
     
 ----------------------
 1 - Installing Dr Alf. 

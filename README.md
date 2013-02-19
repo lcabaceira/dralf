@@ -7,21 +7,32 @@ Dr Alf - 0.1
 -----------------
 Target Audience :
 -----------------
+
     Alfresco Administrators 
     Alfresco developers and students
     
 -------------
 Introduction :
 ------------- 
+
 Dr. Alf is mostly a Jmx encapsulator that communicates with Alfresco via JMX. It targets and automate specific
 JMX actions giving the user a most rewarding experience on administration and troubleshooting tasks within Alfresco.
 
-It also automates processes such as hot backups, cold backups , alfresco restores and other handy operations. 
+It automates Alfresco backup and restore processes, allowing operations such as hot backups, cold backups , restores and other handy operations. 
 It uses jmxterm as a command line jmx client , you can find documentation on jmxterm at http://wiki.cyclopsgroup.org/jmxterm/features
 
+It is also a very nice tool for troubleshooting and system analysis.
+
+Overall we can define Dr. Alf as :
+
+    * JMX Encapsulator
+    * Alfresco Backup Manager Tool
+    * Alfresco Troubleshooting Tool
+    
 ----------------------
 1 - Installing Dr Alf. 
 ----------------------
+
 Dr. Alf is currently released as a multi-module maven project. 
 
 Dr. Alf should be installed on the same machine where the Alfresco Content server resides. 

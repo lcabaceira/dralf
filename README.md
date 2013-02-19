@@ -75,7 +75,7 @@ the Dr. Alf Cluster How to document, that will be released soon.
 The current version only uses the command line
 module, named dralfssh. To build the project you just have to run the following maven command.
 
-mvn clean install
+- `mvn clean install` 
 
 This will build 2 modules, and you will be using dralfssh.
 
@@ -98,7 +98,7 @@ Adapt the properties to reflect you local alfresco environment.
 
     * Go to the installation directory of Dr Alf.
     * Change to dralfssh/target/dralfssh-0.1-bin
-    * run ./dralf.sh menu
+    * run - `./dralf.sh menu` 
     
 ------------------------------------    
 Future view

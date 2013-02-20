@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:  
-. dralf.properties 
+. ./dralf.properties 
 echo "Invalidating all Alfresco user Sessions...."
 cat >./alfrescoScript.jmx<<EOF
 domain Alfresco

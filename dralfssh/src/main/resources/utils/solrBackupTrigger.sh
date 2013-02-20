@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:  
-. dralf.properties 
+. ./dralf.properties 
 echo "Running indexBackupTrigger...."
 cat >./solrBackupTrigger.jmx<<EOF
 domain Alfresco

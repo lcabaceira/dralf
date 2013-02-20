@@ -1,13 +1,13 @@
 #!/bin/bash
 #########################################################################################
-# Main Script for Dr. Alf Processor
+# Main Script for DrAlf Processor
 # Developed by Luis Cabaceira 28/02/2013
 # DrAlf uses jmxterm -  documentation at http://wiki.cyclopsgroup.org/jmxterm/features
 #########################################################################################
 # IMPORTANT : Configure properties in drAlf.properties to match your environment details
 ########################################################################3################
 # source the properties
-. dralf.properties
+. ./dralf.properties
 # TODO1 : If mandatory executables dont exist on the system, prevent DrAlf from running
 # TODO2 : Check if alfresco is stopped and when it has finish starting, better way to kill alfresco
 # TODO3 : RESTORE with SOLR is different than RESTORE with LUCENE
@@ -29,14 +29,21 @@ fi
 # checking drAlf directory structure
 
 	if [[ ! -e backups ]]; then
-		echo "Backups directory does not exist, DrAlf is creating that directory for you"
-		mkdir -p ./backups 
+		echo "Backups directory does not exist, creating directory"
+		mkdir -p ${drAlfDir}/backups 
 	fi
 	if [[ ! -e logs ]]; then
-		echo "Logs directory does not exist, DrAlf is creating that directory for you"
-		mkdir -p ./logs 
+		echo "Logs directory does not exist, creating directory"
+		mkdir -p ${drAlfDir}/logs 
 	fi
-
+	if [[ ! -e tmp ]]; then
+		echo "Tmp directory does not exist, creating directory"
+		mkdir -p ${drAlfDir}/tmp 
+	fi
+	if [[ ! -e reports ]]; then
+		echo "Reports directory does not exist, creating directory"
+		mkdir -p ${drAlfDir}/reports 
+	fi
 
 function hotBackup {
     echo "... please wait ... Starting Alfresco Hot Backup   ..."  
@@ -46,7 +53,7 @@ function hotBackup {
         echo "... You should use the specific database tools to perform an Hot Backup on $dbtype " 
         echo "... Exiting, Press any key to return to DrAlf menu ..." 
     else
-    	echo "... Starting Hot Backup , Just lean back and Relax DrAlf will take care of everything ..."  
+    	echo "... Starting Hot Backup , lean back and Relax DrAlf is working ..."  
     	echo "... Running Content Store Cleanup  ..."
     	${drAlfDir}/utils/contentCleanUpJobTrigger.sh > ${drAlfDir}/logs/contentCleanUpJobTrigger.log
     if [ $searchengine != 'lucene' ];
@@ -71,7 +78,7 @@ function hotBackup {
     	fi
     	echo "... Backing Up your repository filesystem  ..."
     	
-    	 if [ $searchengine != 'lucene' ];
+    	if [ $searchengine != 'lucene' ];
     	then 
       			echo "... BackingUp $searchengine Indexes. Lucene is part of alfresco filesystem ..."
       	    	tar -czvf filesystem.tgz ${alfDataDir}/*
@@ -126,7 +133,15 @@ function coldBackup {
     		targetBackupFile=${dbname}.sql 
     	fi
     	echo "... Backing Up your repository filesystem  ..."
-    	tar -czvf filesystem.tgz ${alfDataDir}/*
+    	if [ $searchengine != 'lucene' ];
+    	then 
+      			echo "... BackingUp $searchengine Indexes. Lucene is part of alfresco filesystem ..."
+      	    	tar -czvf filesystem.tgz ${alfDataDir}/*
+    	else
+    		echo "... BackingUp $searchengine Indexes  ... Including backed up Solr indexes."
+    		tar -czvf filesystem.tgz ${alfDataDir}/* ${solrRoot}/solrdata/workspace/*
+    	fi
+    	
     	echo "... Building your Alfresco backupfile .abk  ..."
     	tar -cvf ./backups/Backup-$(date +%Y%m%d).abk filesystem.tgz ${targetBackupFile} 
     	rm -rf ./filesystem.tgz  ./${dbname}.sql
@@ -286,14 +301,21 @@ clear
 echo " Managing your authentication Chain Tool .... "
 }
 
-
-
-
-
 function evtValidate {
 clear
-./evtExecuter.sh
+  ${drAlfDir}/evtExecuter.sh
 }
+
+function rebuildSolrIndexes {
+clear
+  ${drAlfDir}/utils/rebuildSolrIndexes.sh
+}
+
+function troubleshootSolr {
+clear
+  ${drAlfDir}/utils/troubleshootSolr.sh
+}
+
 
    
 function showHeaders {
@@ -308,6 +330,8 @@ function showHeaders {
 
 
 
+if [ $searchengine != 'solr' ];
+then
 
 function showOptions {
     echo "1)  Hot Backup                                              11) Bounce Alfresco"
@@ -315,7 +339,7 @@ function showOptions {
     echo "3)  Restore Alfresco                                        13) Manage Authentication Chain"
     echo "4)  Set Alfresto to ReadOnly Mode                           14) Manage Scheduler Jobs"
     echo "5)  Set Alfresco to Write Mode                              15) File Servers Configuration"
-    echo "6)  Troubleshoot Indexing                                   16) OnDemand TroubleShooter"
+    echo "6)  Troubleshoot Lucene Indexing                            16) OnDemand TroubleShooter"
     echo "7)  Stop Troubleshoot Indexing                              17) Change Search SubSystem"
     echo "8)  Jmx System Report                                       18) Alfresco License checker"
     echo "9)  Database Check                                          19) EvtValidate"                                                       
@@ -328,14 +352,14 @@ function showOptions {
 
 
 function mainMenu {
-    select selection in "Hot Backup" "Cold Backup" "Restore Alfresco" "Set Alfresto to ReadOnly" "Set Alfresco to Write Mode" "Troubleshoot Indexing" "Stop Troubleshoot Indexing" "Jmx System Report" "Database Check" "Execute Content Store Cleaner" "Bounce Alfresco" "Invalidate User Sessions" "Manage Authentication Chain" "Manage Scheduler Jobs" "File Servers Configuration" "OnDemand TroubleShooter" "Change Search SubSystem" "Alfresco License checker" "EvtValidate" "Quit"; do
+    select selection in "Hot Backup" "Cold Backup" "Restore Alfresco" "Set Alfresto to ReadOnly" "Set Alfresco to Write Mode" "Troubleshoot Lucene Indexing" "Stop Troubleshoot Indexing" "Jmx System Report" "Database Check" "Execute Content Store Cleaner" "Bounce Alfresco" "Invalidate User Sessions" "Manage Authentication Chain" "Manage Scheduler Jobs" "File Servers Configuration" "OnDemand TroubleShooter" "Change Search SubSystem" "Alfresco License checker" "EvtValidate" "Quit"; do
         case "$selection" in
             "Hot Backup"                     ) hotBackup;;
             "Cold Backup"                    ) coldBackup;;
             "Restore Alfresco"               ) restoreAlfresco;;
             "Set Alfresto to ReadOnly"       ) readonlyMode;;
             "Set Alfresco to Write Mode"     ) writeMode;;
-            "Troubleshoot Indexing"          ) debugIndexing;;
+            "Troubleshoot Lucene Indexing"   ) debugIndexing;;
             "Stop Troubleshoot Indexing"     ) stopDebugIndexing;;
             "Jmx System Report"              ) jmxSystemReport;;
             "Database Check"                 ) databaseCheck;;
@@ -359,6 +383,62 @@ function mainMenu {
     done
 }
 
+else
+# WITH SOLR MENU
+function showOptions {
+    echo "1)  Hot Backup                                              11) Bounce Alfresco"
+    echo "2)  Cold Backup                                             12) Invalidate User Sessions"
+    echo "3)  Restore Alfresco                                        13) Manage Authentication Chain"
+    echo "4)  Set Alfresto to ReadOnly Mode                           14) Manage Scheduler Jobs"
+    echo "5)  Set Alfresco to Write Mode                              15) File Servers Configuration"
+    echo "6)  Troubleshoot Solr                                       16) OnDemand TroubleShooter"
+    echo "7)  Rebuild Solr Indexes                                    17) Change Search SubSystem"
+    echo "8)  Jmx System Report                                       18) Alfresco License checker"
+    echo "9)  Database Check                                          19) EvtValidate"                                                       
+    echo "10) Execute Content Store Cleaner                           20) Quit" 
+    echo ''
+    echo "Select an option:"
+    echo ''
+
+}
+
+
+function mainMenu {
+    select selection in "Hot Backup" "Cold Backup" "Restore Alfresco" "Set Alfresto to ReadOnly" "Set Alfresco to Write Mode" "Troubleshoot Solr" "Rebuild Solr Indexes" "Jmx System Report" "Database Check" "Execute Content Store Cleaner" "Bounce Alfresco" "Invalidate User Sessions" "Manage Authentication Chain" "Manage Scheduler Jobs" "File Servers Configuration" "OnDemand TroubleShooter" "Change Search SubSystem" "Alfresco License checker" "EvtValidate" "Quit"; do
+        case "$selection" in
+            "Hot Backup"                     ) hotBackup;;
+            "Cold Backup"                    ) coldBackup;;
+            "Restore Alfresco"               ) restoreAlfresco;;
+            "Set Alfresto to ReadOnly"       ) readonlyMode;;
+            "Set Alfresco to Write Mode"     ) writeMode;;
+            "Troubleshoot Solr"              ) troubleshootSolr;;
+            "Rebuild Solr Indexes"           ) rebuildSolrIndexes;;
+            "Jmx System Report"              ) jmxSystemReport;;
+            "Database Check"                 ) databaseCheck;;
+            "Execute Content Store Cleaner"  ) executeContentStoreCleaner;;
+            "Bounce Alfresco"                ) bounceAlfresco;;
+            "Invalidate User Sessions"       ) invalidateUserSessions;;
+            "Manage Authentication Chain"    ) manageAutenticationChain;;
+            "Manage Scheduler Jobs"          ) manageSchedulerJobs;;
+            "File Servers Configuration"     ) manageFileServers;;
+            "OnDemand TroubleShooter"        ) onDemandTroubleShooter;;
+            "Change Search SubSystem"        ) searchSubsystemChanger;;
+            "Alfresco License checker"       ) licenseChecker;;
+            "EvtValidate"                    ) evtValidate;;
+            "Quit"                           ) endIt;;
+            * ) echo 'Invalid Option';;  
+    esac
+    stty -icanon
+    Keypress=$(head -c1)
+    showHeaders
+    showOptions
+    done
+}
+
+
+	
+fi
+    	
 
 showUsage() {
    echo Usage:
@@ -377,4 +457,8 @@ case $ACTION in
     \?       ) showUsage;;
     *        ) showUsage;;
 esac
+
+
+
+
 

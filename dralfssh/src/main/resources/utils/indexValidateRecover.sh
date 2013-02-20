@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:  
-. dralf.properties 
+. ./dralf.properties 
 echo "Setting Index Recover Mode to Validate...."
 cat >./alfrescoScript.jmx<<EOF
 domain Alfresco

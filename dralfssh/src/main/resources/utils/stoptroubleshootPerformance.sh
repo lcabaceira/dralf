@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:  
-. dralf.properties 
+. ./dralf.properties 
 echo "Setting LOG Levels to ERROR....."
 cat >./alfrescoScript.jmx<<EOF
 domain log4j

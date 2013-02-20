@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:  
-. dralf.properties 
+. ./dralf.properties 
 echo "Running contentStoreCleanerTrigger...."
 cat >./alfrescoScript.jmx<<EOF
 domain Alfresco

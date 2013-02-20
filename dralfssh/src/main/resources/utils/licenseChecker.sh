@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:  
-. dralf.properties 
+. ./dralf.properties 
 echo "Checking Alfresco License..."
 cat >./alfrescoScript.jmx<<EOF
 domain Alfresco
@@ -21,6 +21,6 @@ get Issuer
 quit
 EOF
 ## Execute Command and get the stack Traces
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/licenseChecker.log 
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/reports/licenseCheckerReport.log 
 rm -rf ./alfrescoScript.jmx
 

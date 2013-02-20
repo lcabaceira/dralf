@@ -9,7 +9,8 @@ Target Audience :
 -----------------
 
     Alfresco Administrators 
-    Alfresco developers and students
+    Alfresco developers and Alfresco Students
+    A Tool for Alfresco Support Team
     
 -------------
 Introduction :
@@ -21,7 +22,7 @@ JMX actions giving the user a most rewarding experience on administration and tr
 It automates Alfresco backup and restore processes, allowing operations such as hot backups, cold backups , restores and other handy operations. 
 It uses jmxterm as a command line jmx client , you can find documentation on jmxterm at http://wiki.cyclopsgroup.org/jmxterm/features
 
-It is also a very nice tool for troubleshooting and system analysis.
+It is also a very nice tool for troubleshooting and system analysis as it embeds the well known Alfresco Valitation tool ( EVT )
 
 Overall we can define Dr. Alf as :
 
@@ -99,9 +100,32 @@ Adapt the properties to reflect you local alfresco environment.
     * Go to the installation directory of Dr Alf.
     * Change to dralfssh/target/dralfssh-0.1-bin
     * run ./dralf.sh menu
-    
+
+------------------------------------    
+Strong Features
+------------------------------------
+   
+   * OnDemand troubleshooting of several Alfresco components
+   * Ability to automate complex sub-system changes
+   * Automates Backup and restore procedures, eliminating the probability of human errors.
+   * Performs automatic Hot Backups to the hole Alfresco implementation
+   * Strong focus on troubleshooting Solr and Lucene Indexing / Searching and Tracking
+   * Able to comunicate and operate on both Alfresco and SOLR jmx servers
+   * Not intrusive of abusive to any environment, easy installation and maintenance.
+
+------------------------------------    
+Weak Points 
+------------------------------------
+   
+   * NO GUI ( command line tool ) 
+   * Decoupled from Share admin interface.
+   * Does not support Oracle of Sql Servers Databases
+   
 ------------------------------------    
 Future view
 ------------------------------------
-The idea is to integrate Dr. Alf within Share, along with the other administrator tasks.
+The idea is to integrate Dr. Alf within Share as a plugin, extendind the existing administration tasks.
 It will be distributed as software package + an AMP file for the share UI adaptations.
+
+
+

@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:  
-. dralf.properties 
+. ./dralf.properties 
 echo "Welcome to the OnDemand Troubleshooter ..."
 
 # If cache not working you have this last resource
@@ -185,6 +185,12 @@ EOF
 ## Execute Command and get the stack Traces
 java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx 
 rm -rf ./alfrescoScript.jmx
+}
+
+function endIt {
+         echo " Exiting Tool .... "
+         break
+         exit 0
 }
 
 function webscriptsDebug {  

@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:  
-. dralf.properties 
+. ./dralf.properties 
 
 function endIt {
          echo "  ... Exiting search SubSystem Changer.... "

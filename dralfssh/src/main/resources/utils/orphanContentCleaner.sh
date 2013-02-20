@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:  
-. dralf.properties 
+. ./dralf.properties 
 echo "Executing the Orphan Content Store Cleaner ..."
 cat >./alfrescoScript.jmx<<EOF
 domain Alfresco

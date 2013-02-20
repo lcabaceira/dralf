@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:  
-. dralf.properties 
+. ./dralf.properties 
 echo "Generating System Report from the Monitoring Beans...."
 cat >./alfrescoScript.jmx<<EOF
 domain Alfresco
@@ -63,6 +63,6 @@ get UsedSize
 quit
 EOF
 ## Execute Command and get the stack Traces
-java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/logs/monitoringSystemReport.log
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx > ${drAlfDir}/reports/jmxSystemReport.log
 rm -rf ./alfrescoScript.jmx
 

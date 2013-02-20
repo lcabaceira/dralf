@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:
-. dralf.properties
+. ./dralf.properties
 
 function die() { echo $1 ; exit 1 ; }
 function checkexe() { [ -x `which $1` ] || die "cant find executable program $1"; }

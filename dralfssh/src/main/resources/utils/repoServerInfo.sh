@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:  
-. dumper.properties 
+. ./dumper.properties 
 echo "Reading Information on the Repository Server..."
 cat >./alfrescoScript.jmx<<EOF
 domain Alfresco

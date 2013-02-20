@@ -1,6 +1,6 @@
 #!/bin/bash
 # source the properties:  
-. dralf.properties 
+. ./dralf.properties 
 echo "Welcome to the Alfresco Schedule Jobs Manager ..."
 
 

@@ -127,5 +127,10 @@ Future view
 The idea is to integrate Dr. Alf within Share as a plugin, extendind the existing administration tasks.
 It will be distributed as software package + an AMP file for the share UI adaptations.
 
+------------------------------------    
+About Jmxterm
+------------------------------------
+Jmxterm is an open source command line based interactive JMX client. It allows you to easily navigate JMX MBeans on remote servers without running 
+a graphical interface or opening a JMX port. It can also be integrated with script languages such as Bash, Perl, Python, Ruby, etc. 
 
 

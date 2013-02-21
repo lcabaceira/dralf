@@ -112,6 +112,8 @@ Strong Features
    * Strong focus on troubleshooting Solr and Lucene Indexing / Searching and Tracking
    * Able to comunicate and operate on both Alfresco and SOLR jmx servers
    * Not intrusive of abusive to any environment, easy installation and maintenance.
+   * Jmx changes also update the values in alfresco-global.properties
+   * Jmx changes are cluster wide
 
 ------------------------------------    
 Weak Points 
@@ -120,6 +122,7 @@ Weak Points
    * NO GUI ( command line tool ) 
    * Decoupled from Share admin interface.
    * Does not support Oracle of Sql Servers Databases
+   * Reports contain relevant information and should be xml or html instead of plain text
    
 ------------------------------------    
 Future view

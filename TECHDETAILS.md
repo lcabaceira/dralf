@@ -23,6 +23,24 @@ Target Audience :
     * Jmx Server  : N/A   
     * Jmx Domain  : N/A  
 
+This script automates a full Alfresco Backup according to the recommended best practices.
+
+    - Run the Content Store Cleanup Scheduled Job
+    - Trigger the Search Sub System Indexes Backup Scheduled Job
+    - Execute the database Hot Backup procedure
+    - Backup the repository filesystem
+    - Backup Search Sub System Indexes
+    - Build the backup bundel (.abk file)
+
+The backups are created as a single .abk file ( Alfresco Backup File ). The backup files follow a
+naming convention that uses the current timestamp to differentiate backup file.
+
+    - "Backup-YYYYmmddhhmm.abk". 
+    -  YYYY - current year, mm current month, dd current day, hh current hour, mm current minute.
+    
+The backup file it's built using the Linux command 'tar'. This command allow us to generate a package, that once 
+uncompressed will place the files on the correct locations with little effort.
+       
 -----------------
 2 - COLD BACKUP :
 ----------------- 
@@ -32,7 +50,27 @@ Target Audience :
     * Bean Id     : N/A
     * Bean Type   : N/A
     * Jmx Server  : N/A   
-    * Jmx Domain  : N/A    
+    * Jmx Domain  : N/A   
+    
+    This script automates a full Alfresco Backup according to the recommended best practices.
+
+    - Run the Content Store Cleanup Scheduled Job
+    - Shutdown Alfresco 
+    - Trigger the Search Sub System Indexes Backup Scheduled Job
+    - Execute the database Hot Backup procedure
+    - Backup the repository filesystem
+    - Backup Search Sub System Indexes
+    - Build the backup bundel (.abk file)
+    - Start Alfresco 
+
+The backups are created as a single .abk file ( Alfresco Backup File ). The backup files follow a
+naming convention that uses the current timestamp to differentiate backup file.
+
+    - "Backup-YYYYmmddhhmm.abk". 
+    -  YYYY - current year, mm current month, dd current day, hh current hour, mm current minute.
+    
+The backup file it's built using the Linux command 'tar'. This command allow us to generate a package, that once 
+uncompressed will place the files on the correct locations with little effort. 
     
 ----------------------
 3 - RESTORE ALFRESCO :

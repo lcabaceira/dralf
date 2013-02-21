@@ -123,12 +123,33 @@ Weak Points
    * Decoupled from Share admin interface.
    * Does not support Oracle of Sql Servers Databases
    * Reports contain relevant information and should be xml or html instead of plain text
-   
+ 
+ 
+------------------------------------    
+Decoupled Actions Architecture
+------------------------------------
+  
+  DrAlf is basically a group of scripts that execute certain actions such as performing a Hot Backup or troubleshoot
+  the Search subsystem. Each one of this actions is coded in a separated .sh script, allowing it to be executed as 
+  a separate unit. This highly decoupled architecture allows the enduser to easily extend DrAlf by developing their
+  own jmx driven scrips.
+  
+----------------------------------------------------------    
+DrAlf Technical documentation ( Actions explained 1 by 1 ) 
+----------------------------------------------------------
+
+  If you want to check the details of the implementation on each one of the actions, you should click on the following link.
+  
+[Technical Documentation on the DrAlf actions - Individual Action Explanation ](TECHDETAILS.md)
+
 ------------------------------------    
 Future view
 ------------------------------------
-The idea is to integrate Dr. Alf within Share as a plugin, extendind the existing administration tasks.
+The idea is to integrate Dr. Alf within Share as a plugin, extending the existing administration tasks.
 It will be distributed as software package + an AMP file for the share UI adaptations.
+
+Also, when using Solr, Dralf has the ability to connect to the Solr Mbeans, and this feature can be explored to
+fine tune Solr in read time using Jmx.
 
 ------------------------------------    
 About Jmxterm

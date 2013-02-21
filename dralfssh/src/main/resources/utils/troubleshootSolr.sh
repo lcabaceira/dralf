@@ -30,7 +30,7 @@ else
 fi
 echo "Stopping Solr...."
 ${solrAppServerBin}/shutdown.sh
-sleep 20
+sleep 15
 echo "Starting Solr...."
 ${solrAppServerBin}/startup.sh
 echo "Press any key to return...."
@@ -76,7 +76,7 @@ else
 fi
 echo "Stopping Solr...."
 ${solrAppServerBin}/shutdown.sh
-sleep 20
+sleep 15
 echo "Starting Solr...."
 ${solrAppServerBin}/startup.sh
 echo "Press any key to return...."
@@ -95,7 +95,7 @@ else
 fi
 echo "Stopping Solr...."
 ${solrAppServerBin}/shutdown.sh
-sleep 20
+sleep 15
 echo "Starting Solr...."
 ${solrAppServerBin}/startup.sh
 echo "Press any key to return...."
@@ -144,12 +144,31 @@ if grep "log4j.logger.org.alfresco.solr.tracker.CoreTrackerJob" ${solrLog4j} ;th
 fi
 echo "Stopping Solr...."
 ${solrAppServerBin}/shutdown.sh
-sleep 20
+sleep 15
 echo "Starting Solr...."
 ${solrAppServerBin}/startup.sh
 echo "Press any key to return...."
 }
 
+# SOLR MBEANS 
+#
+# Filter Cache - LRU Cache 
+# Solr caches popular filter query (fq=category:IT) attributes as unordered sets of document ids. 
+# This technique significantly improves search filtering/faceting performance. size is the current number of cached filter queries. 
+# cumulative_hitratio represents if this cache is successfully utilized by giving the ratio of successful cache hits to overall number of lookups.
+# If it's low (such as < 0.3 or 30%) over long period of time then you might want either increase cache size or disable it at all to 
+# reduce performance overhead. 
+
+# Query Result Cache - LRU Cache 
+# This cache stores ordered sets of document IDs and the top N results of a query ordered by some criteria. 
+# It has the same attributes as filterCache. 
+
+# Document Cache - LRU Cache  
+# The documentCache stores Lucene Document objects that have been fetched from disk.
+
+# SolrIndexSearcher
+# Number of indexed documents
+# Start time
 
 function coreStatusSummary {  
 echo "Generating SOLR status summary for cores ... "

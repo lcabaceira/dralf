@@ -35,6 +35,11 @@ ${drAlfDir}/utils/properties_changer.sh solr.host $solrhost $alfProperties
 ${drAlfDir}/utils/properties_changer.sh solr.port $solrport $alfProperties
 ${drAlfDir}/utils/properties_changer.sh solr.port.ssl $solrsslport $alfProperties
 ${drAlfDir}/utils/properties_changer.sh solr.secureComms https $alfProperties
+echo "Also Changing properties in dralf.properties for consistency .... "
+${drAlfDir}/utils/properties_changer.sh searchengine solr ${drAlfDir}/dralf.properties
+exit
+exit
+./dralf.sh menu
 }
 
 function lucenechanger {
@@ -77,6 +82,8 @@ rm -rf ./alfrescoScript.jmx
 echo "Also Changing properties in alfresco-global.properties for consistency .... "
 #usage: properties_changer.sh <property> <new value> <path properties file>
 ${drAlfDir}/utils/properties_changer.sh index.subsystem.name lucene $alfProperties
+${drAlfDir}/utils/properties_changer.sh searchengine lucene ${drAlfDir}/dralf.properties
+exit 0
 }
 
 clear

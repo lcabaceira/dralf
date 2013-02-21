@@ -46,110 +46,13 @@ fi
 	fi
 
 function hotBackup {
-    echo "... please wait ... Starting Alfresco Hot Backup   ..."  
-    if [ $dbtype != 'mysql' -a $dbtype != 'postgres' ];
-    then
-        echo "... Sorry, currently DrAlf supports Hot Backup only on mysql or postgressql databases   ..." 
-        echo "... You should use the specific database tools to perform an Hot Backup on $dbtype " 
-        echo "... Exiting, Press any key to return to DrAlf menu ..." 
-    else
-    	echo "... Starting Hot Backup , lean back and Relax DrAlf is working ..."  
-    	echo "... Running Content Store Cleanup  ..."
-    	${drAlfDir}/utils/contentCleanUpJobTrigger.sh > ${drAlfDir}/logs/contentCleanUpJobTrigger.log
-    if [ $searchengine != 'lucene' ];
-    then 
-      	echo "... Triggering Backup for $searchengine Indexes  ..."
-      	${drAlfDir}/utils/solrBackupTrigger.sh > ${drAlfDir}/logs/solrBackupTrigger.log
-    else
-    	echo "... Triggering Backup for $searchengine Indexes  ..."
-    	${drAlfDir}/utils/searchEngineBackupTrigger.sh > ${drAlfDir}/logs/searchEngineBackupTrigger.log
-    fi
-
-    	echo "... Triggering a Hot Backup for $dbtype database  ..."
-    	if [ $dbtype != 'mysql' ];
-    	then
-    		echo "... PostGres Backup $dbname database  ..."
-    		pg_dump -Fc  ${dbname} > ./${dbname}.pgd
-    		targetBackupFile=${dbname}.pgd 
-    	else
-    		echo "... MySql Hot Backup $dbname database  ..."
-    		mysqldump -q -u ${dbuser} -p${dbpass} ${dbname} > ./${dbname}.sql 
-    		targetBackupFile=${dbname}.sql 
-    	fi
-    	echo "... Backing Up your repository filesystem  ..."
-    	
-    	if [ $searchengine != 'lucene' ];
-    	then 
-      			echo "... BackingUp $searchengine Indexes. Lucene is part of alfresco filesystem ..."
-      	    	tar -czvf filesystem.tgz ${alfDataDir}/*
-    	else
-    		echo "... BackingUp $searchengine Indexes  ... Including backed up Solr indexes."
-    		tar -czvf filesystem.tgz ${alfDataDir}/* ${solrRoot}/solrdata/workspace/*
-    	fi
-    
-
-    	echo "... Building your Alfresco backupfile .abk  ..."
-    	tar -cvf ./backups/Backup-$(date +%Y%m%d).abk filesystem.tgz ${targetBackupFile} 
-    	rm -rf ./filesystem.tgz  ./${dbname}.sql
-    	echo "... Press any key to continue ..."
-    fi
+    echo "... please wait ... Executing Alfresco cold Backup ..."
+    ${drAlfDir}/utils/hotBackup.sh > ${drAlfDir}/logs/hotBackup.log 
 }
 
-
 function coldBackup {
-    echo "... please wait ... Starting Alfresco Cold Backup   ..."  
-    echo "... Executing Content Store Cleaner ..."
-    ${drAlfDir}/utils/contentCleanUpJobTrigger.sh > ${drAlfDir}/logs/contentCleanUpJobTrigger.log
-    echo "... Shutting Down alfresco  ..."
-      cd ${alfAppServerBin}
-      ./shutdown.sh
-      cd -
-      # TODO check when alfresco has finished its shutdown processes
-      sleep 20
-    if [ $dbtype != 'mysql' -a $dbtype != 'postgres' ];
-    then
-        echo "... Sorry, currently DrAlf supports Cold Backup only on mysql or postgressql databases   ..." 
-        echo "... You should use the specific database tools to perform an Hot Backup on $dbtype " 
-        echo "... Exiting, Press any key to return to DrAlf menu ..." 
-    else
-    	echo "... Starting Hot Backup , Just lean back and Relax DrAlf will take care of everything ..."  
-    	if [ $searchengine != 'lucene' ];
-   		then 
-      		echo "... Triggering Backup for $searchengine Indexes  ..."
-      		${drAlfDir}/utils/solrBackupTrigger.sh > ${drAlfDir}/logs/solrBackupTrigger.log
-    	else
-    		echo "... Triggering Backup for $searchengine Indexes  ..."
-    		${drAlfDir}/utils/searchEngineBackupTrigger.sh > ${drAlfDir}/logs/searchEngineBackupTrigger.log
-    	fi
-    	echo "... Triggering a Backup for $dbtype database  ..."
-    	if [ $dbtype != 'mysql' ];
-    	then
-    		echo "... PostGres Backup $dbname database  ..."
-    		pg_dump -Fc  ${dbname} > ./${dbname}.pgd
-    		targetBackupFile=${dbname}.pgd 
-    	else
-    		echo "... MySql Hot Backup $dbname database  ..."
-    		mysqldump -q -u ${dbuser} -p${dbpass} ${dbname} > ./${dbname}.sql 
-    		targetBackupFile=${dbname}.sql 
-    	fi
-    	echo "... Backing Up your repository filesystem  ..."
-    	if [ $searchengine != 'lucene' ];
-    	then 
-      			echo "... BackingUp $searchengine Indexes. Lucene is part of alfresco filesystem ..."
-      	    	tar -czvf filesystem.tgz ${alfDataDir}/*
-    	else
-    		echo "... BackingUp $searchengine Indexes  ... Including backed up Solr indexes."
-    		tar -czvf filesystem.tgz ${alfDataDir}/* ${solrRoot}/solrdata/workspace/*
-    	fi
-    	
-    	echo "... Building your Alfresco backupfile .abk  ..."
-    	tar -cvf ./backups/Backup-$(date +%Y%m%d).abk filesystem.tgz ${targetBackupFile} 
-    	rm -rf ./filesystem.tgz  ./${dbname}.sql
-    	echo "... Cold Backup Complete ... Starting Alfresco ..."
-    	cd ${alfAppServerBin}
-     	./startup.sh
-     	echo "... Alfresco is Starting, press any key to return to DrAlf menu..."
-    fi
+    echo "... please wait ... Executing Alfresco cold Backup ..."
+    ${drAlfDir}/utils/coldBackup.sh > ${drAlfDir}/logs/coldBackup.log 
 }
 
 function readonlyMode {
@@ -161,42 +64,9 @@ function writeMode {
 }
 
 function restoreAlfresco {
-      echo "... please wait ... Restoring Alfresco from the last Backup taken with DrAlf  ..." 
-      echo "... Changing index.recovery.mode to AUTO using JMX to force index rebuilding   ..."
-      ${drAlfDir}/utils/indexAutoRecover.sh > ${drAlfDir}/logs/indexAutoRecover.log
-      echo "... Shutting Down alfresco  ..."
-      cd ${alfAppServerBin}
-      ./shutdown.sh
-      cd -
-      sleep 20
-      # getting the latest backup version
-      lastAbkFile=`ls -latr ${drAlfDir}/backups/*.abk | grep ^- |  tail -n 1 | awk '{print $9}'`
-      echo "last backup file is $lastAbkFile" 
-      echo "Unzipping Backup File ... " 
-      tar -xvf ${lastAbkFile} 
-      echo "Restoring Alfresco Filesystem ( Including search engine Index data )  ... " 
-      tar -xvzf ./filesystem.tgz -C /
-      echo "Restoring the database  ... " 
-      if [ $dbtype != 'mysql' ];
-    	then
-    		echo "... Restoring PostGres Backup   ..."
-    		pg_restore -d ${dbname} ./${dbname}.pgd
-    		rm -rf ./${dbname}.pgd
-    	else
-    		echo "... Restoring MySql Backup   ..."
-    		mysql -u ${dbrootuser} -p${dbrootpassword} ${dbname} < ${dbname}.sql
-    		rm -rf ./${dbname}.sql
-    	fi
-     rm -rf ./filesystem.tgz
-     echo "Restoring the search engine Indexes from the backup directory ... "
-     cp -R ${alfDataDir}/backup-lucene-indexes ${alfDataDir}/lucene-indexes
-     echo "DrAlf is Starting up your restored Alfresco System....  "
-     cd ${alfAppServerBin}
-     ./startup.sh
-     echo "... Alfresco is Starting, press any key to return to DrAlf menu..."
+    echo "... please wait ... Restoring Alfresco from the last backup taken..."
+    ${drAlfDir}/utils/restoreAlfresco.sh > ${drAlfDir}/logs/restoreAlfresco.log 
 }
-
-
 
 function debugIndexing {
     echo "... please wait ... Debugging Indexing SubSystem ..."
@@ -232,14 +102,8 @@ function executeContentStoreCleaner {
 }
 
 function bounceAlfresco {
-         echo " Boucing Application Server with Alfresco .... check logs "
-         cd ${alfAppServerBin}
-      	 ./shutdown.sh
-      	 # TODO check when alfresco has finished its shutdown processes
-      	 sleep 20   
-     	 ./startup.sh
-     	 cd -
-     	 echo "... Alfresco is Starting, press any key to return to DrAlf menu..."    
+      echo "... please wait ... Bouncing Alfresco ..."
+      ${drAlfDir}/utils/bounceAlfresco.sh > ${drAlfDir}/logs/bounceAlfresco.log
 }
 
 function manageSchedulerJobs {
@@ -268,41 +132,20 @@ function licenseChecker {
 }
 
 
-function checkLock {
-    if [ ! -r ToolRunner.lck ]
-    then
-        ant lockStart > lockStart.log
-    else
-        echo "DrAlf is in Use, wait until other user finishes"
-    exit -1
-    fi
-}
-
-
-function checkOptionLock {
-    if [ -r "$1"Runner.lck ]
-    then
-         echo "The option "$1" is being run by another user, please wait and try again later"
-         exit -1
-    fi
-}
-
-
-
 function endIt {
-         echo " Exiting Tool .... "
-         break
-         exit 0
+  echo " Exiting Tool .... "
+  break
+  exit 0
 }
 
 
 function manageAutenticationChain {
-clear
-echo " Managing your authentication Chain Tool .... "
+  clear
+  echo " Managing your authentication Chain Tool .... "
 }
 
 function evtValidate {
-clear
+  clear
   ${drAlfDir}/evtExecuter.sh
 }
 
@@ -315,9 +158,7 @@ function troubleshootSolr {
 clear
   ${drAlfDir}/utils/troubleshootSolr.sh
 }
-
-
-   
+  
 function showHeaders {
     clear
     echo '*********************************************************************************************'
@@ -327,8 +168,6 @@ function showHeaders {
     echo '*********************************************************************************************'
     # Load the properties file
 }
-
-
 
 if [ $searchengine != 'solr' ];
 then
@@ -382,7 +221,6 @@ function mainMenu {
     showOptions
     done
 }
-
 else
 # WITH SOLR MENU
 function showOptions {
@@ -401,8 +239,6 @@ function showOptions {
     echo ''
 
 }
-
-
 function mainMenu {
     select selection in "Hot Backup" "Cold Backup" "Restore Alfresco" "Set Alfresto to ReadOnly" "Set Alfresco to Write Mode" "Troubleshoot Solr" "Rebuild Solr Indexes" "Jmx System Report" "Database Check" "Execute Content Store Cleaner" "Bounce Alfresco" "Invalidate User Sessions" "Manage Authentication Chain" "Manage Scheduler Jobs" "File Servers Configuration" "OnDemand TroubleShooter" "Change Search SubSystem" "Alfresco License checker" "EvtValidate" "Quit"; do
         case "$selection" in
@@ -433,13 +269,8 @@ function mainMenu {
     showHeaders
     showOptions
     done
-}
-
-
-	
+}	
 fi
-    	
-
 showUsage() {
    echo Usage:
    echo     $0 menu
@@ -457,8 +288,3 @@ case $ACTION in
     \?       ) showUsage;;
     *        ) showUsage;;
 esac
-
-
-
-
-

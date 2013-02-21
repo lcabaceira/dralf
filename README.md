@@ -114,6 +114,7 @@ Strong Features
    * Not intrusive of abusive to any environment, easy installation and maintenance.
    * Jmx changes also update the values in alfresco-global.properties
    * Jmx changes are cluster wide
+   * Ability to perform sub-system changes without stopping alfresco.
 
 ------------------------------------    
 Weak Points 
@@ -132,7 +133,7 @@ Decoupled Actions Architecture
   DrAlf is basically a group of scripts that execute certain actions such as performing a Hot Backup or troubleshoot
   the Search subsystem. Each one of this actions is coded in a separated .sh script, allowing it to be executed as 
   a separate unit. This highly decoupled architecture allows the enduser to easily extend DrAlf by developing their
-  own jmx driven scrips.
+  own jmx driven scrips and action sequences.
   
 ----------------------------------------------------------    
 DrAlf Technical documentation ( Actions explained 1 by 1 ) 

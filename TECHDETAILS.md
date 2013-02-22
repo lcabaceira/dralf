@@ -662,7 +662,7 @@ makes a call to jmxTerm, connect to the alfresco jmx server, and pass the .jmx f
 
 . ./dralf.properties <br/>
 echo "< What does your extension does ? >...."<br/>
-cat >./alfrescoScript.jmx<<EOF<br/>
+cat >./alfrescoScript.jmx<br/>
 domain \<enter domain name for your target bean\><br/>
 bean \<enter full bean idenfification here\><br/>
 \<set ... \><br/>
@@ -716,7 +716,7 @@ makes a call to jmxTerm, connect to the Solr jmx server, and pass the .jmx file 
   
 . ./dralf.properties <br/>
 echo "< What does your extension does ? >...."<br/>
-cat >./solrScript.jmx<<EOF<br/>
+cat >./solrScript.jmx<br/>
 domain \<enter domain name for your target bean\><br/>
 bean \<enter full bean idenfification here\><br/>
 \<set ... \><br/>

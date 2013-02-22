@@ -49,7 +49,8 @@ It executes the same action that you can see on the following jconsole screensho
     * Jmx Server  : N/A   
     * Jmx Domain  : N/A  
 
-Description : This script automates a full Alfresco Backup according to the recommended best practices.
+Description : This script automates a full Alfresco Backup according to the recommended best practices. Backups are stored in the
+backups directory of DrAlf.
 
     - Run the Content Store Cleanup Scheduled Job
     - Trigger the Search Sub System Indexes Backup Scheduled Job
@@ -96,7 +97,8 @@ has added the file too late to be included in a backup.
     * Jmx Domain  : N/A   
     
 Description: This script automates a full Alfresco Backup according to the recommended best practices. Its exaclty the same procedure 
-as the Hot backup with the only difference that it stops alfresco during the backup execution.
+as the Hot backup with the only difference that it stops alfresco during the backup execution.Backups are stored in the backups directory 
+of DrAlf.
     
 ----------------------
 3 - RESTORE ALFRESCO :
@@ -210,7 +212,6 @@ quit<br/>
 8 - JMX SYSTEM REPORT
 ------------------------------------- 
 
-
     * Script Name : jmxSystemReport.sh
     * Location    : <drAlfInstallDir>/utils
     * Bean Id     : bean Alfresco:Name=RepositoryDescriptor,Type=Server
@@ -225,7 +226,8 @@ quit<br/>
     * Jmx Server  : Alfresco application Server   
     * Jmx Domain  : Alfresco 
 
-Description: Generates System Report from the Monitoring Beans targeting specific pre-defined Beans. This report includes the following :
+Description: Generates System Report from the Monitoring Beans targeting specific pre-defined Beans. Reports are stored in the reports directory
+of DrAlf. This report includes the following :
 
     - Alfresco Edition ( Community | Enterprise )
     - Alfresco Total Memory
@@ -312,7 +314,7 @@ quit<br/>
     * Jmx Server  : Alfresco application Server   
     * Jmx Domain  : Alfresco 
 
-Description: Validates Database and dumps validated schema as XML
+Description: Validates Database and dumps validated schema as XML. This action generates a report a in the reports directory of DrAlf.
 
 * Action Jmx Code *
     
@@ -423,6 +425,22 @@ bean Alfresco:Name=RepoServerMgmt<br/>
 run invalidateTicketsAll<br/>
 quit<br/>
 
+--------------------------------
+13 - MANAGE AUTHENTICATION CHAIN
+--------------------------------
+
+    * Script Name : authenticationChainManager.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : 
+    * Jmx Server  : Alfresco application Server   
+    * Jmx Domain  : Alfresco 
+
+Description: Allows the user to manage the authentication chain used by alfresco
+
+* Action Jmx Code *
+
+
+
 -----------------------------
 14 - MANAGE SCHEDULER JOBS
 -----------------------------
@@ -476,3 +494,153 @@ Creates a safe backup of the Lucene/Solr directories.
 
 Triggers a Users/Groups Ldap synchronization
 
+v
+
+This action compromises several sub-actions depending on the user selections. To see the jmx code used, open the scheduleJobsManager.sh file.
+
+--------------------------------
+15 - FILE SERVERS CONFIGURATION
+--------------------------------
+
+    * Script Name : fileServerSubsystemChanger.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : Alfresco:Name=FileServerConfig
+    * Jmx Server  : Alfresco application Server   
+    * Jmx Domain  : Alfresco 
+
+
+Description: Allows the user to Enable or disable de several supported file servers. CIFS, NFS and FTP
+
+* Action Jmx Code - SAMPLE FOR CIFS *
+
+domain Alfresco
+bean Alfresco:Name=FileServerConfig
+run setNFSServerEnabled true 
+quit
+
+--------------------------------
+16 - ONDEMAND TROUBLESHOOTER
+--------------------------------
+
+    * Script Name : onDemandTroubleShooter.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : log4j:logger=org.alfresco.smb.protocol
+    * Bean Id     : log4j:logger=org.alfresco.ftp.protocol
+    * Bean Id     : log4j:logger=org.alfresco.webdav.protocol
+    * Bean Id     : log4j:logger=org.alfresco.fileserver
+    * Bean Id     : log4j:logger=org.alfresco.web.ui.repo.component.property.UIAssociation
+    * Bean Id     : log4j:logger=org.alfresco.web.ui.repo.component.property.UIChildAssociation
+    * Bean Id     : log4j:logger=org.alfresco.repo.dictionary
+    * Bean Id     : log4j:logger=org.alfresco.repo.dictionary.types.period
+    * Bean Id     : log4j:logger=org.alfresco.repo.content.ReplicatingContentStore
+    * Bean Id     : log4j:logger=org.alfresco.repo.content.replication
+    * Bean Id     : log4j:logger=net.sf.ehcache.distribution
+    * Bean Id     : log4j:logger=org.alfresco.repo.node.index.IndexTransactionTracker
+    * Bean Id     : log4j:logger=org.alfresco.repo.node.index.AVMRemoteSnapshotTracker
+    * Bean Id     : log4j:logger=org.alfresco.repo.jgroups
+    * Bean Id     : log4j:logger=org.alfresco.enterprise.repo.cache.jgroups
+    * Bean Id     : log4j:logger=org.alfresco.opencmis.AlfrescoCmisServiceInterceptor
+    * Bean Id     : log4j:logger=org.alfresco.cmis    
+    * Bean Id     : log4j:logger=org.alfresco.cmis.dictionary
+    * Bean Id     : log4j:logger=org.apache.chemistry.opencmis
+    * Bean Id     : log4j:logger=org.alfresco.repo.forms
+    * Bean Id     : log4j:logger=org.alfresco.web.config.forms
+    * Bean Id     : log4j:logger=org.alfresco.web.scripts.forms  
+    * Bean Id     : log4j:logger=org.alfresco.repo.imap 
+    * Bean Id     : log4j:logger=org.jbpm.graph.def.GraphElement  
+    * Bean Id     : log4j:logger=org.alfresco.repo.activities  
+    * Bean Id     : log4j:logger=org.springframework.extensions.webscripts 
+    * Bean Id     : log4j:logger=org.springframework.extensions.webscripts.ScriptLogger  
+    * Bean Id     : log4j:logger=org.springframework.extensions.webscripts.ScriptDebugger  
+    * Bean Id     : log4j:logger=org.alfresco.repo.content.metadata.AbstractMappingMetadataExtracter  
+    * Jmx Server  : Alfresco application Server   
+    * Jmx Domain  : Alfresco 
+    
+Description: One of the coolest features of DrAlf. Allows the user to debug specific Alfresco components ( without stopping alfresco ). 
+The current version targets Cifs debug, Ftp debug, Webdab debug, General File Servers Debug, Content Modeling Debug, Clustering Debug,
+Forms Engine Debug, CMIS Debug, Email/Imap Debug, Workflow Debug, Webscripts Debug and MetaData Extraction Debug.
+It contains a very nice feature "Expert User Options" where you can enter a class name (org.alfresco... ) to immediate Debug. It allows
+to immediate Stop of all Debugging actions, reverting all the logs levels to their initial status.
+
+* Action Jmx Code - SAMPLE FOR CIFS *
+
+domain Alfresco
+bean log4j:logger=org.alfresco.smb.protocol
+set priority DEBUG
+quit
+
+--------------------------------
+17 - CHANGE SEARCH SUB-SYSTEM
+--------------------------------
+
+    * Script Name : searchSubSystemChanger.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : Alfresco:Type=Configuration,Category=Search,id1=manager
+    * Bean Id     : Alfresco:Type=Configuration,Category=Search,id1=managed,id2=solr
+    * Bean Id     : Alfresco:Type=Configuration,Category=Search,id1=managed,id2=lucene 
+    * Jmx Server  : Alfresco application Server   
+    * Jmx Domain  : Alfresco 
+    
+    
+Description: It allows the user to change the search subsystem implementation from lucene to Solr and vice-versa. This option
+will only work if the user has pre-configured solr to allow this swapping to happen. It has options on index rebuilding. This
+action starts the new search subsystem and also updates the properties on alfresco-global.properties to allow consistency.
+
+* Action Jmx Code - Changing to Solr *
+
+domain Alfresco
+bean Alfresco:Type=Configuration,Category=Search,id1=manager
+set sourceBeanName solr
+bean Alfresco:Type=Configuration,Category=Search,id1=managed,id2=solr
+set solr.host ${solrhost}
+set solr.port ${solrport}
+set solr.port.ssl ${solrsslport}
+bean Alfresco:Type=Configuration,Category=Search,id1=manager
+run stop
+run start
+
+--------------------------------
+18 - Alfresco License checker
+--------------------------------
+
+    * Script Name : searchSubSystemChanger.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : Alfresco:Type=Configuration,Category=Search,id1=manager
+    * Bean Id     : Alfresco:Type=Configuration,Category=Search,id1=managed,id2=solr
+    * Bean Id     : Alfresco:Type=Configuration,Category=Search,id1=managed,id2=lucene 
+    * Jmx Server  : Alfresco application Server   
+    * Jmx Domain  : Alfresco 
+ 
+Description: Checks the alfresco license and generates a report on the DrAlf reports folder.
+  
+* Action Jmx Code *
+
+domain Alfresco
+bean Alfresco:Name=License
+bean
+get Subject
+get Days
+get HeartBeatDisabled
+get MaxUsers
+get CloudSyncKeyAvailable
+get LicenseMode
+get Holder
+get ValidUntil
+get RemainingDays
+get MaxDocs
+get Issued
+get Issuer
+quit
+EOF
+
+--------------------------------
+19 - EVT VALIDATE
+--------------------------------
+
+    * Script Name : evtExecuter.sh
+    * Location    : <drAlfInstallDir>
+    * Bean Id     : N/A
+    * Jmx Server  : N/A  
+    * Jmx Domain  : N/A
+
+Description: Executes the embebed Environment Validation Tool from Alfresco. More details at http://code.google.com/p/alfresco-environment-validation/

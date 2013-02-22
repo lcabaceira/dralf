@@ -255,8 +255,8 @@ get TotalMemory<br/>
 get MaxMemory<br/>
 get FreeMemory<br/>
 ...
-... more details just open the jmxSystemReport.sh
-...
+... more details just open the jmxSystemReport.sh<br/>
+...<br/>
 quit<br/>
 
 -------------------------------------

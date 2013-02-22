@@ -302,24 +302,24 @@ content is the job of the contentStoreCleaner.
 
 In the default configuration, the contentStoreCleanerTrigger fires the contentStoreCleaner bean.
 
-  <bean id="contentStoreCleaner" class="org.alfresco.repo.content.cleanup.ContentStoreCleaner" \>
-     ...
-     \<property name="protectDays" \>
-        \<value\>14\</value\>
-     \</property\>
-     \<property name="stores" \>
-        \<list\>
-           \<ref bean="fileContentStore" /\>
-        \</list\>
-     \</property\>
-     \<property name="listeners" \>
-        \<list\>
-           \<ref bean="deletedContentBackupListener" /\>
-        \</list\>
-     \</property\>
-  \</bean\>
+  \<bean id="contentStoreCleaner" class="org.alfresco.repo.content.cleanup.ContentStoreCleaner" \><br/>
+     ...<br/>
+     \<property name="protectDays" \><br/>
+        \<value\>14\</value\><br/>
+     \</property\><br/>
+     \<property name="stores" \><br/>
+        \<list\><br/>
+           \<ref bean="fileContentStore" /\><br/>
+        \</list\><br/>
+     \</property\><br/>
+     \<property name="listeners" \><br/>
+        \<list\><br/>
+           \<ref bean="deletedContentBackupListener" /\><br/>
+        \</list\><br/>
+     \</property\><br/>
+  \</bean\><br/>
 
-This DrAlf action can be extended to cope with the user business needs by setting the following properties  :
+This action can be extended to cope with the user business needs by setting the following properties  :
 
 - protectDays
         

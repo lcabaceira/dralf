@@ -732,6 +732,35 @@ java -jar ${cmdLineJMXJar} -l localhost:${solrJmxPort} -i ./solrScript.jmx > ${d
 rm -rf ./solrScript.jmx
 
 --------------------------------------------------
+Other available Tools for your extensions
+--------------------------------------------------
+
+    * parser.sh
+    
+DrAlf includes a parser that is able to read properties from a properties file, for example the alfresco-global.properties.
+The script is called parser.sh. 
+
+* USAGE * 
+
+    ./parser.sh <VAR_NAME> <PROPERTIES FILE>
+
+Example #./parser.sh db.url ${alfProperties}
+
+    * properties_changer.sh
+    
+DrAlf includes a script that is able to update the properties from a properties file, for example the alfresco-global.properties.
+This is handy especially when you want to align the JMX values persisted in the database with the values written in your alfresco-global.properties.
+
+The script is properties_changer.sh. 
+
+* USAGE * 
+
+    ./properties_changer.sh <property> <new value> <path to properties file> 
+
+Example # ./properties_changer.sh solr.port 8080
+
+
+--------------------------------------------------
 How to Participate and Contribute 
 --------------------------------------------------
 

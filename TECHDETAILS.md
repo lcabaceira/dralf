@@ -555,7 +555,7 @@ quit<br/>
     * Jmx Domain  : Alfresco 
     
 Description: One of the coolest features of DrAlf. Allows the user to debug specific Alfresco components (without stopping alfresco). 
-The current version targets Cifs debug, Ftp debug, Webdab debug, General File Servers Debug, Content Modeling Debug, Clustering Debug,
+The current version targets Cifs debug, Ftp debug, Webdav debug, General File Servers Debug, Content Modeling Debug, Clustering Debug,
 Forms Engine Debug, CMIS Debug, Email/Imap Debug, Workflow Debug, Webscripts Debug and MetaData Extraction Debug.
 It contains a very nice feature "Expert User Options" where you can enter a class name (org.alfresco... ) to immediate Debug. It allows
 to immediate Stop of all Debugging actions, reverting all the logs levels to their initial status.

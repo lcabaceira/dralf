@@ -335,6 +335,52 @@ quit<br/>
 
 Description: Triggers the execution of the Content Store Cleaner Scheduled Job
 
+"Guidelines" 
+
+Cleaning up Orphaned Content (Purge)
+Once all references to a content binary have been removed from the metadata, the content is said to be orphaned. Orphaned content can 
+be deleted or purged from the content store while the system is running. Identifying and either sequestering or deleting the orphaned 
+content is the job of the contentStoreCleaner.
+
+In the default configuration, the contentStoreCleanerTrigger fires the contentStoreCleaner bean. This bean 
+
+  <bean id="contentStoreCleaner" class="org.alfresco.repo.content.cleanup.ContentStoreCleaner" >
+     ...
+     <property name="protectDays" >
+        <value>14</value>
+     </property>
+     <property name="stores" >
+        <list>
+           <ref bean="fileContentStore" />
+        </list>
+     </property>
+     <property name="listeners" >
+        <list>
+           <ref bean="deletedContentBackupListener" />
+        </list>
+     </property>
+  </bean>
+
+This DrAlf action can be extended to cope with the user business needs by setting the following properties  :
+
+- protectDays
+        
+Use this property to dictate the minimum time that content binaries should be kept in the contentStore. In the above example,if a file is created
+and immediately deleted, it will not be cleaned from the contentStore for at least 14 days. The value should be adjusted to account for backup 
+strategies, average content size and available disk space. Setting this value to zero will result in a system warning as it breaks the transaction
+model and it is possible to lose content if the orphaned content cleaner runs whilst content is being loaded into the system. If the system backup
+strategy is just to make regular copies, then this value should also be greater than the number of days between successive backup runs.
+
+- store
+
+This is a list of ContentStore beans to scour for orphaned content.
+
+- listeners
+
+When orphaned content is located, these listeners are notified. In this example, the deletedContentBackupListener copies the orphaned content to a separate
+deletedContentStore.Note that this configuration will not actually remove the files from the file system but rather moves them to the designated deletedContentStore,
+usually contentstore.deleted. The files can be removed from the deletedContentStore via script or cron job once an appropriate backup has been performed.
+
 * Action Jmx Code *
     
 domain Alfresco<br/>
@@ -376,3 +422,57 @@ domain Alfresco<br/>
 bean Alfresco:Name=RepoServerMgmt<br/>
 run invalidateTicketsAll<br/>
 quit<br/>
+
+-----------------------------
+14 - MANAGE SCHEDULER JOBS
+-----------------------------
+
+    * Script Name : scheduleJobsManager.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=contentStoreCleanerTrigger
+    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=nodeServiceCleanupTrigger
+    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=search.alfrescoCoreBackupTrigger
+    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=tempFileCleanerTrigger
+    * Bean Id     : Alfresco:Type=Configuration,Category=Synchronization,id1=default
+    * Jmx Server  : Alfresco application Server   
+    * Jmx Domain  : Alfresco 
+
+
+Description: Allows Immediate control over the execution of the Alfresco common schedule Jobs. It allows the user to execute 
+the content store cleaner, the node service cleaner, the index backup trigger, the temporary files cleaner and to perform the
+ldap user/group synchronization.
+
+- About the Node Service Cleaner
+    
+The Node service cleaner is a scheduled job that runs to tidy up the database. This clean-up job executes every day at 21:00 (bean 'nodeServiceCleanupTrigger')
+leading to bean 'nodeServiceCleanupJobDetail'), and performs the work found inside 'DeletedNodeCleanupWorker'.
+After 30 days from when the 'node_deleted' field was set to '1', this process considers it safe to truly delete the node with a call to the DAO service purge.
+Note: it doesn't use the audit_modifed date, since this wasn't changed when the row was marked for deletion. Instead, it uses the commit_time_ms transaction time 
+from the alf_transaction table. This job also removes old transactions from the alf_transaction table. Transactions are considerd old using the same property as node
+removal work: '30 days'; Defined using the property 'index.tracking.minRecordPurgeAgeDays').
+
+Performs cleanup operations on DM node data, including old deleted nodes and old transactions. In a clustered environment, this job could be enabled on a headless 
+(non-public) node only, which will improve efficiently.
+
+Note : You can debug the Node service cleaner job by enabling log4j.logger.org.alfresco.repo.node.cleanup.NodeCleanupJob=DEBUG
+
+- About the Content Store Cleaner
+
+Launches the contentStoreCleaner bean, which identifies, and deletes or purges orphaned content from the content store while the system is running. Content is said 
+to be orphaned when all references to a content binary have been removed from the metadata. By default, this job is triggered at 4:00 am each day. In a clustered 
+environment, this job could be enabled on a headless (non-public) node only, which will improve efficiently.
+
+- About the Temporary Files Cleaner
+
+Cleans up all Alfresco temporary files that are older than the given number of hours. Subdirectories are also emptied and all directories below the primary temporary 
+subdirectory are removed. The job data must include the protectHours property, which is the number of hours to protect a temporary file from deletion since its last 
+modification.
+
+- About the Index Backup Trigger
+
+Creates a safe backup of the Lucene/Solr directories.
+
+- About the Ldap User Syncronization
+
+Triggers a Users/Groups Ldap syncronization
+

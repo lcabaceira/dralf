@@ -162,5 +162,5 @@ a graphical interface or opening a JMX port. It can also be integrated with scri
 DrAlf Sample Screenshot
 ------------------------------------
 
-[[dr_alf_0_1.png]]
+<img align="left" src="[[dr_alf_0_1.png]]" alt="tool Menu"/> 
 

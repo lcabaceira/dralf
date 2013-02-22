@@ -300,24 +300,24 @@ Once all references to a content binary have been removed from the metadata, the
 be deleted or purged from the content store while the system is running. Identifying and either sequestering or deleting the orphaned 
 content is the job of the contentStoreCleaner.
 
-In the default configuration, the contentStoreCleanerTrigger fires the contentStoreCleaner bean. This bean 
+In the default configuration, the contentStoreCleanerTrigger fires the contentStoreCleaner bean.
 
-  <bean id="contentStoreCleaner" class="org.alfresco.repo.content.cleanup.ContentStoreCleaner" >
+  <bean id="contentStoreCleaner" class="org.alfresco.repo.content.cleanup.ContentStoreCleaner" \>
      ...
-     <property name="protectDays" >
-        <value>14</value>
-     </property>
-     <property name="stores" >
-        <list>
-           <ref bean="fileContentStore" />
-        </list>
-     </property>
-     <property name="listeners" >
-        <list>
-           <ref bean="deletedContentBackupListener" />
-        </list>
-     </property>
-  </bean>
+     \<property name="protectDays" \>
+        \<value\>14\</value\>
+     \</property\>
+     \<property name="stores" \>
+        \<list\>
+           \<ref bean="fileContentStore" /\>
+        \</list\>
+     \</property\>
+     \<property name="listeners" \>
+        \<list\>
+           \<ref bean="deletedContentBackupListener" /\>
+        \</list\>
+     \</property\>
+  \</bean\>
 
 This DrAlf action can be extended to cope with the user business needs by setting the following properties  :
 

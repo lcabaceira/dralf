@@ -101,7 +101,6 @@ bean log4j:logger=org.alfresco.repo.content.ReplicatingContentStore
 set priority DEBUG
 bean log4j:logger=org.alfresco.repo.content.replication
 set priority DEBUG
-
 bean log4j:logger=net.sf.ehcache.distribution
 set priority DEBUG
 bean log4j:logger=org.alfresco.repo.node.index.IndexTransactionTracker
@@ -310,7 +309,7 @@ select yn in "CIFS Debug" "FTP Debug" "Webdav Debug" "File Servers" "Content Mod
         "FTP Debug"  ) ftpDebug; break;;
         "Webdav Debug"  ) webdavDebug; break;;
         "File Servers"  ) fsDebug; break;;
-        "Content Modelling Debug"  ) modelingDebug; break;;
+        "Content Modeling Debug"  ) modelingDebug; break;;
         "Clustering Debug" ) clusterDebug; break;;
         "Forms Engine Debug" ) formsDebug; break;;
         "CMIS Debug" ) cmisDebug; break;;

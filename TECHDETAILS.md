@@ -641,3 +641,105 @@ quit<br/>
     * Jmx Domain  : N/A
 
 Description: Executes the embebed Environment Validation Tool from Alfresco. More details at http://code.google.com/p/alfresco-environment-validation/
+
+
+--------------------------------------------------
+Extending and Customizing Dralf for Alfresco Core
+--------------------------------------------------
+
+DrAlf is opensource and really easy to extend due to the decoupled actions architecture. 
+We invite you to contribute to the development of DrAlf with your ideas and custom extensions.
+
+The extension model is really simple. Create your new action by copying the actionTemplate.sh available in the utils folder of DrAlf.
+
+<drAlfDir/utils># cp jmxActionTemplate.sh myCustomAction.sh
+<drAlfDir/utils># vim myCustomAction.sh
+
+In your custom action you can define a set of jmx commands to execute against your target jmx beans. When executed, your action 
+makes a call to jmxTerm, connect to the alfresco jmx server, and pass the .jmx file with your logic inside. Once executed the temporary
+.jmx file is deleted. As simple as that.
+
+#!/bin/bash<br/>
+# source the properties: <br/> 
+. ./dralf.properties <br/>
+echo "< What does your extension does ? >...."<br/>
+cat >./alfrescoScript.jmx<<EOF<br/>
+domain <enter domain name for your target bean><br/>
+bean <enter full bean idenfification here><br/>
+<set ... ><br/>
+<get ... ><br/>
+<execute ...><br/>
+<info ... ><br/>
+....<br/>
+quit<br/>
+EOF<br/>
+## Execute Command and get the stack Traces<br/>
+java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx 
+rm -rf ./alfrescoScript.jmx
+
+"Note" : To execute your action as a singleton you should issue the execution it in the same directory where dralf.properties is stored. The reason
+for this is that we are including the .properties with the linux source command "." and that is expecting to find dralf.properties in the same
+path of the executer. Since Dralf starting point is the menu, and that menu exists in the root directory of the installation, every call 
+to the actions inside the utils directory will be executed from the root, where the dralf.properties file is located.
+
+--------------------------------------------------
+Extending and Customizing Dralf for Solr Actions
+--------------------------------------------------
+
+The extension model to interact with Solr Managed Beans via JMX is also very simple.
+There is one extra step that you need to do in order to be able to execute your Solr Dralf actions.
+
+Include the following JAVA_OPTS on the solr startup.sh script of Tomcat :
+
+    * -Dcom.sun.management.jmxremote=true
+    * -Dcom.sun.management.jmxremote.authenticate=false"
+    * -Dcom.sun.management.jmxremote.ssl=false
+    * -Dcom.sun.management.jmxremote.port=<your_port>";
+
+This will enable Jmx on the Solr server, note that <your_port> represents the port you are assigning to the new JMX Server. 
+
+Update your dralf.properties to include the details for your Solr jmx server. The propertie solrJmxPort should match <your_port>.
+
+Once Solr is started with those options, it will be exposing it's beans via JMX and you can safely execute actions against it.
+
+ - Creating your custom Solr Action -
+  
+Create your new action by copying the actionTemplate.sh available in the utils folder of DrAlf.
+
+<drAlfDir/utils># cp jmxSolrActionTemplate.sh myCustomSolrAction.sh<br/>
+<drAlfDir/utils># vim myCustomSolrAction.sh<br/>
+
+In your custom action you can define a set of jmx commands to execute against the target Solr jmx beans. When executed, your action 
+makes a call to jmxTerm, connect to the Solr jmx server, and pass the .jmx file with your logic inside. Once executed the temporary
+.jmx file is deleted.As simple as that.
+
+#!/bin/bash<br/>
+# source the properties:<br/>  
+. ./dralf.properties <br/>
+echo "< What does your extension does ? >...."<br/>
+cat >./solrScript.jmx<<EOF<br/>
+domain <enter domain name for your target bean><br/>
+bean <enter full bean idenfification here><br/>
+<set><br/>
+<get><br/>
+<execute><br/>
+<info><br/>
+....<br/>
+quit<br/>
+EOF<br/>
+## Execute Command and get the stack Traces<br/>
+java -jar ${cmdLineJMXJar} -l localhost:${solrJmxPort} -i ./solrScript.jmx > ${drAlfDir}/reports/solrIndexesReport.txt
+rm -rf ./solrScript.jmx
+
+--------------------------------------------------
+How to Participate and Contribute 
+--------------------------------------------------
+
+If you are interested in helping out we would be delighted to have you on board.
+Write one email to luis.cabaceira@alfresco.com with your name, contact and ideas and we will go from there.
+
+-------------------------------------------------------------------------------------------------------------------------
+OpenSource License 
+--------------------------------------------------------------------------------------------------------------------------
+You can use, extend and distribute DrAlf in your projects as long as you commit your extensions to the DrAlf GitHub project
+

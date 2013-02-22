@@ -221,8 +221,7 @@ quit<br/>
     * Bean Id     : Alfresco:Name=ContentTransformer,Type=pdf2swf
     * Bean Id     : Alfresco:Name=LuceneIndexes,Index=workspace/SpacesStore 
     * Bean Id     : Alfresco:Name=LuceneIndexes,Index=archive/SpacesStore 
-    * Bean Id     : Alfresco:Name=LuceneIndexes,Index=user/alfrescoUserStore
-    
+    * Bean Id     : Alfresco:Name=LuceneIndexes,Index=user/alfrescoUserStore 
     * Jmx Server  : Alfresco application Server   
     * Jmx Domain  : Alfresco 
 
@@ -302,3 +301,78 @@ get NumberOfIndexedFields<br/>
 get UsedSize<br/>
 quit<br/>
 
+-------------------------------------
+9 - DATABASE CHECK 
+------------------------------------- 
+
+    * Script Name : schemaValidator.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : Alfresco:Name=DatabaseInformation,Tool=SchemaValidator 
+    * Bean Id     : Alfresco:Name=DatabaseInformation,Tool=SchemaExport
+    * Jmx Server  : Alfresco application Server   
+    * Jmx Domain  : Alfresco 
+
+Description: Validates Database and dumps validated schema as XML
+
+* Action Jmx Code *
+    
+domain Alfresco<br/>
+bean Alfresco:Name=DatabaseInformation,Tool=SchemaValidator<br/> 
+run validateSchema<br/>
+bean Alfresco:Name=DatabaseInformation,Tool=SchemaExport<br/>
+run dumpSchemaToXML<br/>
+quit<br/>
+
+-------------------------------------
+10 - EXECUTE CONTENT STORE CLEANER
+------------------------------------- 
+
+    * Script Name : contentCleanUpJobTrigger.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=contentStoreCleanerTrigger
+    * Jmx Server  : Alfresco application Server   
+    * Jmx Domain  : Alfresco 
+
+Description: Triggers the execution of the Content Store Cleaner Scheduled Job
+
+* Action Jmx Code *
+    
+domain Alfresco<br/>
+bean Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=contentStoreCleanerTrigger<br/>
+run executeNow<br/>
+quit<br/>
+
+-------------------------------------
+11 - BOUNCE ALFRESCO
+------------------------------------- 
+
+    * Script Name : bounceAlfresco.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : N/A
+    * Jmx Server  : N/A   
+    * Jmx Domain  : N/A
+
+Description: Restarts your alfresco application server
+
+* Action Jmx Code *
+    
+N/A
+
+-----------------------------
+12 - INVALIDATE USER SESSIONS
+-----------------------------
+
+    * Script Name : bounceAlfresco.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : Alfresco:Name=RepoServerMgmt
+    * Jmx Server  : Alfresco application Server   
+    * Jmx Domain  : Alfresco 
+
+Description: Invalidates all current user sessions.
+
+* Action Jmx Code *
+
+domain Alfresco<br/>
+bean Alfresco:Name=RepoServerMgmt<br/>
+run invalidateTicketsAll<br/>
+quit<br/>

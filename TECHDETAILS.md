@@ -672,11 +672,12 @@ bean <\enter full bean idenfification here\><br/>
 ....<br/>
 quit<br/>
 EOF<br/>
-## Execute Command and get the stack Traces<br/>
+
 java -jar ${cmdLineJMXJar} -l service:jmx:rmi:///jndi/rmi://${jmxHost}:${port}/alfresco/jmxrmi -p ${password} -u ${user} -i ./alfrescoScript.jmx 
 rm -rf ./alfrescoScript.jmx
 
-"Note" : To execute your action as a singleton you should issue the execution it in the same directory where dralf.properties is stored. The reason
+##"Note" 
+To execute your action as a singleton you should issue it's execution in the same directory where dralf.properties is stored. The reason
 for this is that we are including the .properties with the linux source command "." and that is expecting to find dralf.properties in the same
 path of the executer. Since Dralf starting point is the menu, and that menu exists in the root directory of the installation, every call 
 to the actions inside the utils directory will be executed from the root, where the dralf.properties file is located.
@@ -725,7 +726,6 @@ bean \<enter full bean idenfification here\><br/>
 ....<br/>
 quit<br/>
 EOF<br/>
-## Execute Command and get the stack Traces<br/>
 java -jar ${cmdLineJMXJar} -l localhost:${solrJmxPort} -i ./solrScript.jmx > ${drAlfDir}/reports/solrIndexesReport.txt
 rm -rf ./solrScript.jmx
 

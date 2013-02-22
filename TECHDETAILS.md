@@ -136,9 +136,9 @@ Description: Sets alfresco to ReadOnly mode.
 
 * Action Jmx Code * 
  
-domain Alfresco
-bean Alfresco:Type=Configuration,Category=sysAdmin,id1=default
-set server.allowWrite false
+domain Alfresco<br/>
+bean Alfresco:Type=Configuration,Category=sysAdmin,id1=default<br/>
+set server.allowWrite false<br/>
 quit
 
 -----------------------------------
@@ -156,9 +156,9 @@ Description: Sets alfresco to Write mode.
 
 * Action Jmx Code *
   
-domain Alfresco
-bean Alfresco:Type=Configuration,Category=sysAdmin,id1=default
-set server.allowWrite true
+domain Alfresco<br/>
+bean Alfresco:Type=Configuration,Category=sysAdmin,id1=default<br/>
+set server.allowWrite true<br/>
 quit
 
 -----------------------------------
@@ -179,13 +179,13 @@ tailing the alfresco log file and getting detailed logs for a controlled period 
 
 * Action Jmx Code *
     
-domain log4j
-bean log4j:logger=org.alfresco.repo.search.Indexer
-set priority DEBUG
-bean log4j:logger=org.alfresco.repo.search.impl.lucene.fts.FullTextSearchIndexerImpl
-set priority DEBUG
-bean log4j:logger=org.alfresco.repo.search.impl.lucene.index
-set priority DEBUG
+domain log4j<br/>
+bean log4j:logger=org.alfresco.repo.search.Indexer<br/>
+set priority DEBUG<br/>
+bean log4j:logger=org.alfresco.repo.search.impl.lucene.fts.FullTextSearchIndexerImpl<br/>
+set priority DEBUG<br/>
+bean log4j:logger=org.alfresco.repo.search.impl.lucene.index<br/>
+set priority DEBUG<br/>
 quit
 
 -------------------------------------
@@ -205,12 +205,12 @@ Description: Stops the troubleshoot on Lucene Indexing by setting the FullTextSe
 
 * Action Jmx Code *
     
-domain log4j
-bean log4j:logger=org.alfresco.repo.search.Indexer
-set priority ERROR
-bean log4j:logger=org.alfresco.repo.search.impl.lucene.fts.FullTextSearchIndexerImpl
-set priority ERROR
-bean log4j:logger=org.alfresco.repo.search.impl.lucene.index
-set priority ERROR
-quit
+domain log4j<br/>
+bean log4j:logger=org.alfresco.repo.search.Indexer<br/>
+set priority ERROR<br/>
+bean log4j:logger=org.alfresco.repo.search.impl.lucene.fts.FullTextSearchIndexerImpl<br/>
+set priority ERROR<br/>
+bean log4j:logger=org.alfresco.repo.search.impl.lucene.index<br/>
+set priority ERROR<br/>
+quit<br/>
 

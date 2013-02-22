@@ -254,53 +254,9 @@ bean<br/>
 get TotalMemory<br/>
 get MaxMemory<br/>
 get FreeMemory<br/>
-bean Alfresco:Name=Authority<br/>
-bean<br/>
-get NumberOfGroups<br/>
-get NumberOfUsers<br/>
-bean Alfresco:Name=ConnectionPool<br/>
-bean<br/>
-get NumActive<br/>
-get NumIdle<br/>
-get InitialSize<br/>
-get MaxActive<br/>
-get MaxIdle<br/>
-get MaxWait<br/>
-bean Alfresco:Name=ContentTransformer,Type=ImageMagick<br/>
-bean<br/>
-get Available<br/>
-get VersionString<br/>
-bean Alfresco:Name=ContentTransformer,Type=pdf2swf<br/>
-bean<br/>
-get Available<br/>
-get VersionString<br/>
-bean Alfresco:Name=LuceneIndexes,Index=workspace/SpacesStore<br/>
-bean<br/>
-get ActualSize<br/>
-get EntryStatus<br/>
-get EventCounts<br/>
-get NumberOfDocuments<br/>
-get NumberOfFields<br/>
-get NumberOfIndexedFields<br/>
-get UsedSize<br/>
-bean Alfresco:Name=LuceneIndexes,Index=archive/SpacesStore<br/>
-bean<br/>
-get ActualSize<br/>
-get EntryStatus<br/>
-get EventCounts<br/>
-get NumberOfDocuments<br/>
-get NumberOfFields<br/>
-get NumberOfIndexedFields<br/>
-get UsedSize<br/>
-bean Alfresco:Name=LuceneIndexes,Index=user/alfrescoUserStore<br/>
-bean<br/>
-get ActualSize<br/>
-get EntryStatus<br/>
-get EventCounts<br/>
-get NumberOfDocuments<br/>
-get NumberOfFields<br/>
-get NumberOfIndexedFields<br/>
-get UsedSize<br/>
+...
+... more details just open the jmxSystemReport.sh
+...
 quit<br/>
 
 -------------------------------------

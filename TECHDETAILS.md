@@ -659,8 +659,7 @@ In your custom action you can define a set of jmx commands to execute against yo
 makes a call to jmxTerm, connect to the alfresco jmx server, and pass the .jmx file with your logic inside. Once executed the temporary
 .jmx file is deleted. As simple as that.
 
-#!/bin/bash<br/>
-# source the properties: <br/> 
+
 . ./dralf.properties <br/>
 echo "< What does your extension does ? >...."<br/>
 cat >./alfrescoScript.jmx<<EOF<br/>
@@ -713,8 +712,7 @@ In your custom action you can define a set of jmx commands to execute against th
 makes a call to jmxTerm, connect to the Solr jmx server, and pass the .jmx file with your logic inside. Once executed the temporary
 .jmx file is deleted.As simple as that.
 
-#!/bin/bash<br/>
-# source the properties:<br/>  
+  
 . ./dralf.properties <br/>
 echo "< What does your extension does ? >...."<br/>
 cat >./solrScript.jmx<<EOF<br/>

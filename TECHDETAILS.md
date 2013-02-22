@@ -442,7 +442,7 @@ Description: Allows Immediate control over the execution of the Alfresco common 
 the content store cleaner, the node service cleaner, the index backup trigger, the temporary files cleaner and to perform the
 ldap user/group synchronization.
 
-- About the Node Service Cleaner
+- <b>About the Node Service Cleaner</b>
     
 The Node service cleaner is a scheduled job that runs to tidy up the database. This clean-up job executes every day at 21:00 (bean 'nodeServiceCleanupTrigger')
 leading to bean 'nodeServiceCleanupJobDetail'), and performs the work found inside 'DeletedNodeCleanupWorker'.
@@ -456,23 +456,23 @@ Performs cleanup operations on DM node data, including old deleted nodes and old
 
 Note : You can debug the Node service cleaner job by enabling log4j.logger.org.alfresco.repo.node.cleanup.NodeCleanupJob=DEBUG
 
-- About the Content Store Cleaner
+- <b>About the Content Store Cleaner</b>
 
 Launches the contentStoreCleaner bean, which identifies, and deletes or purges orphaned content from the content store while the system is running. Content is said 
 to be orphaned when all references to a content binary have been removed from the metadata. By default, this job is triggered at 4:00 am each day. In a clustered 
 environment, this job could be enabled on a headless (non-public) node only, which will improve efficiently.
 
-- About the Temporary Files Cleaner
+- <b>About the Temporary Files Cleaner</b>
 
 Cleans up all Alfresco temporary files that are older than the given number of hours. Subdirectories are also emptied and all directories below the primary temporary 
 subdirectory are removed. The job data must include the protectHours property, which is the number of hours to protect a temporary file from deletion since its last 
 modification.
 
-- About the Index Backup Trigger
+- <b>About the Index Backup Trigger</b>
 
 Creates a safe backup of the Lucene/Solr directories.
 
-- About the Ldap User Syncronization
+- <b>About the Ldap User Synchronization</b>
 
-Triggers a Users/Groups Ldap syncronization
+Triggers a Users/Groups Ldap synchronization
 

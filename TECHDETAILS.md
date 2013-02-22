@@ -494,8 +494,6 @@ Creates a safe backup of the Lucene/Solr directories.
 
 Triggers a Users/Groups Ldap synchronization
 
-v
-
 This action compromises several sub-actions depending on the user selections. To see the jmx code used, open the scheduleJobsManager.sh file.
 
 --------------------------------
@@ -513,10 +511,10 @@ Description: Allows the user to Enable or disable de several supported file serv
 
 * Action Jmx Code - SAMPLE FOR CIFS *
 
-domain Alfresco
-bean Alfresco:Name=FileServerConfig
-run setNFSServerEnabled true 
-quit
+domain Alfresco<br/>
+bean Alfresco:Name=FileServerConfig<br/>
+run setNFSServerEnabled true <br/>
+quit<br/>
 
 --------------------------------
 16 - ONDEMAND TROUBLESHOOTER
@@ -556,7 +554,7 @@ quit
     * Jmx Server  : Alfresco application Server   
     * Jmx Domain  : Alfresco 
     
-Description: One of the coolest features of DrAlf. Allows the user to debug specific Alfresco components ( without stopping alfresco ). 
+Description: One of the coolest features of DrAlf. Allows the user to debug specific Alfresco components (without stopping alfresco). 
 The current version targets Cifs debug, Ftp debug, Webdab debug, General File Servers Debug, Content Modeling Debug, Clustering Debug,
 Forms Engine Debug, CMIS Debug, Email/Imap Debug, Workflow Debug, Webscripts Debug and MetaData Extraction Debug.
 It contains a very nice feature "Expert User Options" where you can enter a class name (org.alfresco... ) to immediate Debug. It allows
@@ -564,10 +562,10 @@ to immediate Stop of all Debugging actions, reverting all the logs levels to the
 
 * Action Jmx Code - SAMPLE FOR CIFS *
 
-domain Alfresco
-bean log4j:logger=org.alfresco.smb.protocol
-set priority DEBUG
-quit
+domain Alfresco<br/>
+bean log4j:logger=org.alfresco.smb.protocol<br/>
+set priority DEBUG<br/>
+quit<br/>
 
 --------------------------------
 17 - CHANGE SEARCH SUB-SYSTEM
@@ -588,16 +586,16 @@ action starts the new search subsystem and also updates the properties on alfres
 
 * Action Jmx Code - Changing to Solr *
 
-domain Alfresco
-bean Alfresco:Type=Configuration,Category=Search,id1=manager
-set sourceBeanName solr
-bean Alfresco:Type=Configuration,Category=Search,id1=managed,id2=solr
-set solr.host ${solrhost}
-set solr.port ${solrport}
-set solr.port.ssl ${solrsslport}
-bean Alfresco:Type=Configuration,Category=Search,id1=manager
-run stop
-run start
+domain Alfresco<br/>
+bean Alfresco:Type=Configuration,Category=Search,id1=manager<br/>
+set sourceBeanName solr<br/>
+bean Alfresco:Type=Configuration,Category=Search,id1=managed,id2=solr<br/>
+set solr.host ${solrhost}<br/>
+set solr.port ${solrport}<br/>
+set solr.port.ssl ${solrsslport}<br/>
+bean Alfresco:Type=Configuration,Category=Search,id1=manager<br/>
+run stop<br/>
+run start<br/>
 
 --------------------------------
 18 - Alfresco License checker
@@ -615,23 +613,22 @@ Description: Checks the alfresco license and generates a report on the DrAlf rep
   
 * Action Jmx Code *
 
-domain Alfresco
-bean Alfresco:Name=License
-bean
-get Subject
-get Days
-get HeartBeatDisabled
-get MaxUsers
-get CloudSyncKeyAvailable
-get LicenseMode
-get Holder
-get ValidUntil
-get RemainingDays
-get MaxDocs
-get Issued
-get Issuer
-quit
-EOF
+domain Alfresco<br/>
+bean Alfresco:Name=License<br/>
+bean<br/>
+get Subject<br/>
+get Days<br/>
+get HeartBeatDisabled<br/>
+get MaxUsers<br/>
+get CloudSyncKeyAvailable<br/>
+get LicenseMode<br/>
+get Holder<br/>
+get ValidUntil<br/>
+get RemainingDays<br/>
+get MaxDocs<br/>
+get Issued<br/>
+get Issuer<br/>
+quit<br/>
 
 --------------------------------
 19 - EVT VALIDATE

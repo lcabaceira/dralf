@@ -718,10 +718,10 @@ echo "< What does your extension does ? >...."<br/>
 cat >./solrScript.jmx<<EOF<br/>
 domain <enter domain name for your target bean><br/>
 bean <enter full bean idenfification here><br/>
-<set><br/>
-<get><br/>
-<execute><br/>
-<info><br/>
+\<set ... \><br/>
+\<get ... \><br/>
+\<execute ...\><br/>
+\<info ... \><br/>
 ....<br/>
 quit<br/>
 EOF<br/>

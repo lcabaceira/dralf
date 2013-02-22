@@ -28,7 +28,6 @@ The other dralfjar module is reserved for future usage as the project grows.
     * Script Name : searchEngineBackupTrigger.sh   
     * Location    : <drAlfInstallDir>/utils
     * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=search.indexBackupTrigger
-    * Bean Type   : MonitoredCronTrigger
     * Jmx Server  : Alfresco application Server   
     * Jmx Domain  : Alfresco   
 
@@ -47,7 +46,6 @@ It executes the same action that you can see on the following jconsole screensho
     * Script Name : hotBackup.sh   
     * Location    : <drAlfInstallDir>/utils
     * Bean Id     : N/A
-    * Bean Type   : N/A
     * Jmx Server  : N/A   
     * Jmx Domain  : N/A  
 
@@ -94,7 +92,6 @@ has added the file too late to be included in a backup.
     * Script Name : coldBackup.sh   
     * Location    : <drAlfInstallDir>/utils
     * Bean Id     : N/A
-    * Bean Type   : N/A
     * Jmx Server  : N/A   
     * Jmx Domain  : N/A   
     
@@ -108,7 +105,6 @@ as the Hot backup with the only difference that it stops alfresco during the bac
     * Script Name : restoreAlfresco.sh   
     * Location    : <drAlfInstallDir>/utils
     * Bean Id     : N/A
-    * Bean Type   : N/A
     * Jmx Server  : N/A   
     * Jmx Domain  : N/A  
 
@@ -128,7 +124,6 @@ Description:  Restoring its all about reverting the Backup Process, so the resto
     * Script Name : readonly.sh   
     * Location    : <drAlfInstallDir>/utils
     * Bean Id     : Alfresco:Type=Configuration,Category=sysAdmin,id1=default
-    * Bean Type   : Configuration
     * Jmx Server  : Alfresco application Server   
     * Jmx Domain  : Alfresco    
 
@@ -148,7 +143,6 @@ quit
     * Script Name : writeMode.sh   
     * Location    : <drAlfInstallDir>/utils
     * Bean Id     : Alfresco:Type=Configuration,Category=sysAdmin,id1=default
-    * Bean Type   : Configuration
     * Jmx Server  : Alfresco application Server   
     * Jmx Domain  : Alfresco  
 
@@ -170,7 +164,6 @@ quit
     * Bean Id     : log4j:logger=org.alfresco.repo.search.impl.lucene.fts.FullTextSearchIndexerImpl
     * Bean Id     : log4j:logger=org.alfresco.repo.search.Indexer
     * Bean Id     : log4j:logger=org.alfresco.repo.search.impl.lucene.index
-    * Bean Type   : Configuration
     * Jmx Server  : Alfresco application Server   
     * Jmx Domain  : Alfresco 
 
@@ -197,7 +190,6 @@ quit
     * Bean Id     : log4j:logger=org.alfresco.repo.search.impl.lucene.fts.FullTextSearchIndexerImpl
     * Bean Id     : log4j:logger=org.alfresco.repo.search.Indexer
     * Bean Id     : log4j:logger=org.alfresco.repo.search.impl.lucene.index
-    * Bean Type   : Configuration
     * Jmx Server  : Alfresco application Server   
     * Jmx Domain  : Alfresco 
 
@@ -212,5 +204,101 @@ bean log4j:logger=org.alfresco.repo.search.impl.lucene.fts.FullTextSearchIndexer
 set priority ERROR<br/>
 bean log4j:logger=org.alfresco.repo.search.impl.lucene.index<br/>
 set priority ERROR<br/>
+quit<br/>
+
+-------------------------------------
+8 - JMX SYSTEM REPORT
+------------------------------------- 
+
+
+    * Script Name : jmxSystemReport.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : bean Alfresco:Name=RepositoryDescriptor,Type=Server
+    * Bean Id     : Alfresco:Name=Runtime
+    * Bean Id     : Alfresco:Name=Authority
+    * Bean Id     : Alfresco:Name=ConnectionPool
+    * Bean Id     : Alfresco:Name=ContentTransformer,Type=ImageMagick
+    * Bean Id     : Alfresco:Name=ContentTransformer,Type=pdf2swf
+    * Bean Id     : Alfresco:Name=LuceneIndexes,Index=workspace/SpacesStore 
+    * Bean Id     : Alfresco:Name=LuceneIndexes,Index=archive/SpacesStore 
+    * Bean Id     : Alfresco:Name=LuceneIndexes,Index=user/alfrescoUserStore
+    
+    * Jmx Server  : Alfresco application Server   
+    * Jmx Domain  : Alfresco 
+
+Description: Generates System Report from the Monitoring Beans targeting specific pre-defined Beans. This report includes the following :
+
+    - Alfresco Edition ( Community | Enterprise )
+    - Alfresco Total Memory
+    - Alfresco Max Memory
+    - Alfresco Free Memory
+    - Number of syncronized Groups
+    - Number of syncronized Users
+    - Active Connections on the Alfresco Connection Pool
+    - Idle Connections on the Alfresco Connection Pool
+    - Initial Size of the the Alfresco Connection Pool
+    - Other relevant Connection Pool metrics
+    - Information on the Content Transformers being used
+    - Information on the Indexes ( # Indexed Documents, etc ) 
+
+* Action Jmx Code *
+    
+domain Alfresco <br/>
+bean Alfresco:Name=RepositoryDescriptor,Type=Server<br/>
+bean<br/>
+get Version<br/>
+get Edition<br/>
+bean Alfresco:Name=Runtime<br/>
+bean<br/>
+get TotalMemory<br/>
+get MaxMemory<br/>
+get FreeMemory<br/>
+bean Alfresco:Name=Authority<br/>
+bean<br/>
+get NumberOfGroups<br/>
+get NumberOfUsers<br/>
+bean Alfresco:Name=ConnectionPool<br/>
+bean<br/>
+get NumActive<br/>
+get NumIdle<br/>
+get InitialSize<br/>
+get MaxActive<br/>
+get MaxIdle<br/>
+get MaxWait<br/>
+bean Alfresco:Name=ContentTransformer,Type=ImageMagick<br/>
+bean<br/>
+get Available<br/>
+get VersionString<br/>
+bean Alfresco:Name=ContentTransformer,Type=pdf2swf<br/>
+bean<br/>
+get Available<br/>
+get VersionString<br/>
+bean Alfresco:Name=LuceneIndexes,Index=workspace/SpacesStore<br/>
+bean<br/>
+get ActualSize<br/>
+get EntryStatus<br/>
+get EventCounts<br/>
+get NumberOfDocuments<br/>
+get NumberOfFields<br/>
+get NumberOfIndexedFields<br/>
+get UsedSize<br/>
+bean Alfresco:Name=LuceneIndexes,Index=archive/SpacesStore<br/>
+bean<br/>
+get ActualSize<br/>
+get EntryStatus<br/>
+get EventCounts<br/>
+get NumberOfDocuments<br/>
+get NumberOfFields<br/>
+get NumberOfIndexedFields<br/>
+get UsedSize<br/>
+bean Alfresco:Name=LuceneIndexes,Index=user/alfrescoUserStore<br/>
+bean<br/>
+get ActualSize<br/>
+get EntryStatus<br/>
+get EventCounts<br/>
+get NumberOfDocuments<br/>
+get NumberOfFields<br/>
+get NumberOfIndexedFields<br/>
+get UsedSize<br/>
 quit<br/>
 

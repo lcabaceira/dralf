@@ -2,6 +2,8 @@
 Dr Alf Technical Details - 0.1
 ------------------------------
 
+This document contains the technical details on each one of the actions exposed by DrAlf.
+
     Project location : https://github.com/lcabaceira/dralf
 
 -----------------
@@ -11,6 +13,13 @@ Target Audience :
     Alfresco Administrators 
     Alfresco developers and Alfresco Students
     A Tool for Alfresco Support Team 
+
+----------------------------
+Maven Multi Module Project :
+----------------------------
+
+DrAlf is released as a multi-module maven project but currently only dralfssh module is being used.
+The other dralfjar module is reserved for future usage as the project grows.
 
 --------------------------------
 0 - SEARCH ENGINE BACKUP TRIGGER
@@ -27,9 +36,9 @@ Description : This script executes the Alfresco indexBackupTrigger schedule Job.
 
     - Trigger the Search Sub System Indexes Backup Scheduled Job
 
-  
-[[foo.jpg]]
-searchEngineBackupTrigger
+It executes the same action that you can see on the following jconsole screenshot.
+
+<img align="left" src="images/IndexBackupTrigger.png" alt="Schedule Task Execution"/> 
 
 ----------------
 1 - HOT BACKUP :

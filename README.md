@@ -158,4 +158,9 @@ About Jmxterm
 Jmxterm is an open source command line based interactive JMX client. It allows you to easily navigate JMX MBeans on remote servers without running 
 a graphical interface or opening a JMX port. It can also be integrated with script languages such as Bash, Perl, Python, Ruby, etc. 
 
+------------------------------------    
+DrAlf Sample Screenshot
+------------------------------------
+
+[[dr_alf_0_1.png]]
 

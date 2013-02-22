@@ -765,8 +765,3 @@ How to Participate and Contribute
 If you are interested in helping out we would be delighted to have you on board.
 Write one email to luis.cabaceira@alfresco.com with your name, contact and ideas and we will go from there.
 
--------------------------------------------------------------------------------------------------------------------------
-OpenSource License 
---------------------------------------------------------------------------------------------------------------------------
-You can use, extend and distribute DrAlf in your projects as long as you commit your extensions to the DrAlf GitHub project
-

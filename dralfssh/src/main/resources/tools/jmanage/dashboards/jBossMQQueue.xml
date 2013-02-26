@@ -1,0 +1,21 @@
+<dashboard id="jBossMQ" name="JBoss MQ" template="/dashboard/jBossMQQueue.jsp" >
+	<qualifications comment="defines what type of applications qualify for this dashboard">
+        <qualifier class="org.jmanage.webui.dashboard.qualifiers.GenericMBeanCheckQualifier">
+            <property name="mbean" value="jboss.system:type=Server"/>
+        </qualifier>
+    </qualifications>
+	<components>
+        <component id="com1" class="org.jmanage.webui.dashboard.components.MBeanAttributeValueTable">
+            <property name="mbeanPattern" value="jboss.mq.destination:*"/>
+            <property name="objectNameFilter" value="service=Queue,name=*"/>
+            <property name="attributes" value="Name|JNDIName|QueueName|StateString|ReceiversCount"/>
+            <property name="displayNames" value="Name|JNDI Name|Queue Name|State String|Receivers Count"/>
+        </component>
+        <component id="com2" class="org.jmanage.webui.dashboard.components.MBeanAttributeValueTable">
+            <property name="mbeanPattern" value="jboss.mq.destination:*"/>
+            <property name="objectNameFilter" value="service=Topic,name=*"/>
+            <property name="attributes" value="Name|JNDIName|StateString|AllMessageCount|AllSubscriptionsCount|DurableMessageCount|NonDurableMessageCount|DurableSubscriptionsCount|NonDurableSubscriptionsCount"/>
+            <property name="displayNames" value="Name|JNDI Name|State String|All Message Count|All Subscriptions Count|Durable Message Count|Non Durable Message Count|Durable Subscriptions Count|Non Durable Subscriptions Count"/>
+        </component>
+    </components>
+</dashboard>

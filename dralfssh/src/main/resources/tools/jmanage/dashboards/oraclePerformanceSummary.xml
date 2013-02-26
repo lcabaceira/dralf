@@ -1,0 +1,25 @@
+<dashboard id="oraclePerformance" name="Performance Summary" template="/dashboard/oraclePerformanceSummary.jsp" >
+	<qualifications comment="defines what type of applications qualify for this dashboard">
+        <qualifier class="org.jmanage.webui.dashboard.qualifiers.GenericMBeanCheckQualifier">
+            <property name="mbean" value="org.jmanage.connector.oracle:name=Performance"/>
+        </qualifier>
+    </qualifications>
+	<components>
+        <component id="blockBufferHitRatio" class="org.jmanage.webui.dashboard.components.MBeanOperationResult" refreshInterval="10000">
+            <property name="mbean" value="org.jmanage.connector.oracle:name=Performance"/>
+            <property name="operation" value="getBlockBufferHitRatio"/>
+        </component>
+        <component id="dictionaryHitRatio" class="org.jmanage.webui.dashboard.components.MBeanOperationResult" refreshInterval="10000">
+            <property name="mbean" value="org.jmanage.connector.oracle:name=Performance"/>
+            <property name="operation" value="getDictionaryHitRatio"/>
+        </component>
+        <component id="sharedSQLPinHitRatio" class="org.jmanage.webui.dashboard.components.MBeanOperationResult" refreshInterval="10000">
+            <property name="mbean" value="org.jmanage.connector.oracle:name=Performance"/>
+            <property name="operation" value="getSharedSQLPinHitRatio"/>
+        </component>
+        <component id="sharedSQLReloadHitRatio" class="org.jmanage.webui.dashboard.components.MBeanOperationResult" refreshInterval="10000">
+            <property name="mbean" value="org.jmanage.connector.oracle:name=Performance"/>
+            <property name="operation" value="getSharedSQLReloadHitRatio"/>
+        </component>
+    </components>
+</dashboard>

@@ -1,0 +1,13 @@
+<dashboard id="topTenQueries" name="Top Ten Queries" template="/dashboard/singleComponent.jsp" >
+	<qualifications comment="defines what type of applications qualify for this dashboard">
+        <qualifier class="org.jmanage.webui.dashboard.qualifiers.GenericMBeanCheckQualifier">
+            <property name="mbean" value="org.jmanage.connector.oracle:name=Performance"/>
+        </qualifier>
+    </qualifications>
+	<components>
+        <component id="com" class="org.jmanage.webui.dashboard.components.MBeanOperationResult" refreshInterval="5000">
+            <property name="mbean" value="org.jmanage.connector.oracle:name=Performance"/>
+            <property name="operation" value="getTopTenExpensiveQueries"/>
+        </component>
+    </components>
+</dashboard>

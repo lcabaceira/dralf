@@ -1,0 +1,39 @@
+<!-- This dashboard is similar to the JConsole "Threads" dashboard -->
+
+<dashboard id="jvmThreads" name="JVM Threads" template="/dashboard/jvmThreads.jsp" >
+	<qualifications comment="defines what type of applications qualify for this dashboard">
+        <qualifier class="org.jmanage.webui.dashboard.qualifiers.Java5DashboardQualifier">
+            <property name="mbean" value="java.lang:type=Runtime"/>
+            <property name="attribute" value="VmVersion"/>
+        </qualifier>
+    </qualifications>
+	<components>
+        <component id="com1" class="org.jmanage.webui.dashboard.components.Graph" name="Number of Threads">
+            <type>XYChart</type>
+            <pollingInterval>10</pollingInterval>
+            <param mbean="java.lang:type=Threading" attribute="ThreadCount" displayName="Live Threads"/>
+            <param mbean="java.lang:type=Threading" attribute="PeakThreadCount" displayName="Peak"/>
+            <param mbean="java.lang:type=Threading" attribute="TotalStartedThreadCount" displayName="Total Started"/>
+        </component>
+        
+        <!-- if a idResolver is specified, the attribute list is treated as id list, otherwise
+        	it is both the id and the name -->
+        <component id="com2" class="org.jmanage.webui.dashboard.components.SelectList" name="Live Threads">
+            <property name="mbean" value="java.lang:type=Threading"/>
+            <property name="attribute" value="AllThreadIds"/>
+            <property name="idType" value="long"/>
+            <property name="idResolverMBean" value="java.lang:type=Threading"/>
+            <property name="idResolverOperation" value="getThreadInfo"/>
+            <property name="idResolverName" value="threadName"/>
+        </component>
+        <component id="com3" class="org.jmanage.webui.dashboard.components.MBeanOperationResult" name="Live Threads">
+			<event source="com2" name="onChange" dataVariable="threadId"/>
+            <property name="mbean" value="java.lang:type=Threading"/>
+            <property name="operation" value="getThreadInfo"/>
+            <property name="param1" value="${threadId}"/>
+   			<property name="type1" value="long"/>
+   			<property name="param2" value="10"/>
+			<property name="type2" value="int"/>
+        </component>
+    </components>
+</dashboard>

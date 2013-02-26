@@ -1,0 +1,34 @@
+<!-- This dashboard is similar to the JConsole "Classes" dashboard -->
+
+<dashboard id="classes" name="Class loading" template="/dashboard/classes.jsp" >
+	<qualifications comment="defines what type of applications qualify for this dashboard">
+        <qualifier class="org.jmanage.webui.dashboard.qualifiers.Java5DashboardQualifier">
+            <property name="mbean" value="java.lang:type=Runtime"/>
+            <property name="attribute" value="VmVersion"/>
+        </qualifier>
+    </qualifications>
+	<components>
+        <component id="com1" class="org.jmanage.webui.dashboard.components.Graph" name="Class loading Details">
+            <type>XYChart</type>
+            <pollingInterval>10</pollingInterval>
+            <param mbean="java.lang:type=ClassLoading" attribute="TotalLoadedClassCount" displayName="Total class loaded"/>            
+            <param mbean="java.lang:type=ClassLoading" attribute="LoadedClassCount" displayName="Current classes loaded"/>
+            <param mbean="java.lang:type=ClassLoading" attribute="UnloadedClassCount" displayName="Total classes unloaded"/>
+        </component>
+        <component id="com2" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue" refreshInterval="5000">
+            <property name="mbean" value="java.lang:type=ClassLoading"/>
+            <property name="attribute" value="LoadedClassCount"/>
+            <property name="displayName" value="Currently loaded classes"/>
+        </component>
+        <component id="com3" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue" refreshInterval="5000">
+            <property name="mbean" value="java.lang:type=ClassLoading"/>
+            <property name="attribute" value="UnloadedClassCount"/>
+            <property name="displayName" value="Total classes unloaded"/>
+        </component>
+        <component id="com4" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue" refreshInterval="5000">
+            <property name="mbean" value="java.lang:type=ClassLoading"/>
+            <property name="attribute" value="TotalLoadedClassCount"/>
+            <property name="displayName" value="Total classes loaded"/>
+        </component>
+    </components>
+</dashboard>

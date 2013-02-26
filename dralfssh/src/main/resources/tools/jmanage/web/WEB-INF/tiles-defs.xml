@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+ <!--
+ tiles-defs.xml contains "definitions" which put common page elements into
+ layout (aka template) files, so that common values for these elements don't
+ need to be copied in each page.
+ -->
+
+<tiles-definitions>
+
+<!-- ========================================================= LAYOUTS ===== -->
+
+    <definition name="layouts.common" path="/layouts/common.jsp">
+        <put name="title" value="jManage Management Console" />
+        <put name="header" value="/common/header.jsp" />
+        <put name="body.header" value="/common/empty.jsp" /> <!-- TODO: remove usage of empty.jsp -rk-->
+        <put name="body.main" value="${body.main}" />
+        <put name="footer" value="/common/footer.jsp" />
+    </definition>
+
+    <definition name="layouts.application" extends="layouts.common">
+        <put name="body.header" value="/app/appHeader.jsp"/>
+    </definition>
+
+<!-- =========================================================== PAGES ===== -->
+
+    <definition name="common.error" extends="layouts.common">
+        <put name="body.main" value="/error.jsp" />
+    </definition>
+
+    <definition name="config.admin" extends="layouts.common">
+        <put name="body.main" value="/config/admin.jsp" />
+    </definition>
+
+    <definition name="auth.configuredUsers" extends="layouts.common">
+        <put name="body.main" value="/auth/configuredUsers.jsp" />
+    </definition>
+    <definition name="auth.editUser" extends="layouts.common">
+        <put name="body.main" value="/auth/editUser.jsp" />
+    </definition>
+    <definition name="auth.addUser" extends="layouts.common">
+        <put name="body.main" value="/auth/addUser.jsp" />
+    </definition>
+
+    <definition name="auth.showLogin" extends="layouts.common">
+        <put name="body.main" value="/auth/showLogin.jsp" />
+    </definition>
+    <definition name="auth.profile" extends="layouts.common">
+        <put name="body.main" value="/auth/profile.jsp" />
+    </definition>
+    <definition name="auth.changePassword" extends="layouts.common">
+        <put name="body.main" value="/auth/changePassword.jsp" />
+    </definition>
+    <definition name="auth.confirmChangePassword" extends="layouts.common">
+        <put name="body.main" value="/auth/confirmChangePassword.jsp" />
+    </definition>
+    <definition name="auth.userActivity" extends="layouts.common">
+        <put name="body.main" value="/auth/userActivity.jsp" />
+    </definition>
+    <definition name="auth.unauthorized" extends="layouts.common">
+        <put name="body.main" value="/auth/unauthorized.jsp" />
+    </definition>
+
+    <definition name="config.managedApplications" extends="layouts.common">
+        <put name="body.main" value="/config/managedApplications.jsp" />
+    </definition>
+    <definition name="config.availableApplications" extends="layouts.application">
+        <put name="body.main" value="/config/availableApplications.jsp" />
+    </definition>
+    <definition name="config.addApplication" extends="layouts.application">
+        <put name="body.main" value="/config/addApplication.jsp" />
+    </definition>
+    <definition name="config.editApplication" extends="layouts.application">
+        <put name="body.main" value="/config/editApplication.jsp" />
+    </definition>
+    <definition name="config.addConnector" extends="layouts.application">
+        <put name="body.main" value="/config/addConnector.jsp" />
+    </definition>
+    <definition name="config.editConnector" extends="layouts.application">
+        <put name="body.main" value="/config/editConnector.jsp" />
+    </definition>    
+    <definition name="config.applicationCluster" extends="layouts.application">
+        <put name="body.main" value="/config/applicationCluster.jsp" />
+    </definition>
+
+    <definition name="app.appView" extends="layouts.application">
+        <put name="body.main" value="/app/appView.jsp" />
+    </definition>
+    <definition name="app.mbeanList" extends="layouts.application">
+        <put name="body.main" value="/app/mbeanList.jsp" />
+    </definition>
+    <definition name="app.mbeanView" extends="layouts.application">
+        <put name="body.main" value="/app/mbeanView.jsp" />
+    </definition>
+    <definition name="app.clusterView" extends="layouts.application">
+        <put name="body.main" value="/app/clusterView.jsp" />
+    </definition>
+    <definition name="app.mbeanOperationResult" extends="layouts.application">
+        <put name="body.main" value="/app/mbeanOperationResult.jsp" />
+    </definition>
+    <definition name="app.connectionFailed" extends="layouts.application">
+        <put name="body.main" value="/app/connectionFailed.jsp" />
+    </definition>
+
+    <definition name="config.configuredAlerts" extends="layouts.common">
+        <put name="body.main" value="/config/configuredAlerts.jsp" />
+    </definition>
+
+    <definition name="config.selectAlertSourceType" extends="layouts.application">
+        <put name="body.main" value="/config/selectAlertSourceType.jsp" />
+    </definition>
+    <definition name="config.selectNotification" extends="layouts.application">
+        <put name="body.main" value="/config/selectNotification.jsp" />
+    </definition>
+
+    <definition name="config.addAlert" extends="layouts.application">
+        <put name="body.main" value="/config/addAlert.jsp" />
+    </definition>
+
+    <definition name="app.graphView" extends="layouts.application">
+        <put name="body.main" value="/app/graphView.jsp" />
+    </definition>
+    <definition name="config.showAddGraph" extends="layouts.application">
+        <put name="body.main" value="/config/addGraph.jsp"/>
+    </definition>
+    <definition name="config.showMBeans" extends="layouts.application">
+        <put name="body.main" value="/config/selectMBeans.jsp"/>
+    </definition>
+    <definition name="config.showConfigMBeans" extends="layouts.application">
+        <put name="body.main" value="/config/addManagedObjects.jsp"/>
+    </definition>
+    <definition name="config.showAttributes" extends="layouts.application">
+        <put name="body.main" value="/config/showAttributes.jsp"/>
+    </definition>
+    <definition name="app.dashboardView" extends="layouts.application">
+        <put name="body.main" value="/config/dashboardContainer.jsp"/>
+    </definition>
+    <definition name="config.showDashboards" extends="layouts.application">
+        <put name="body.main" value="/config/selectDashboards.jsp"/>
+    </definition>
+</tiles-definitions>

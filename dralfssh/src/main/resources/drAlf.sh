@@ -46,7 +46,7 @@ fi
 	fi
 
 function hotBackup {
-    echo "... please wait ... Executing Alfresco cold Backup ..."
+    echo "... please wait ... Executing Alfresco Hot Backup ..."
     ${drAlfDir}/utils/hotBackup.sh > ${drAlfDir}/logs/hotBackup.log 
 }
 
@@ -138,12 +138,6 @@ function endIt {
   exit 0
 }
 
-
-function manageAutenticationChain {
-  clear
-  echo " Managing your authentication Chain Tool .... "
-}
-
 function evtValidate {
   clear
   ${drAlfDir}/evtExecuter.sh
@@ -173,16 +167,15 @@ if [ $searchengine != 'solr' ];
 then
 
 function showOptions {
-    echo "1)  Hot Backup                                              11) Bounce Alfresco"
-    echo "2)  Cold Backup                                             12) Invalidate User Sessions"
-    echo "3)  Restore Alfresco                                        13) Manage Authentication Chain"
-    echo "4)  Set Alfresto to ReadOnly Mode                           14) Manage Scheduler Jobs"
-    echo "5)  Set Alfresco to Write Mode                              15) File Servers Configuration"
-    echo "6)  Troubleshoot Lucene Indexing                            16) OnDemand TroubleShooter"
-    echo "7)  Stop Troubleshoot Indexing                              17) Change Search SubSystem"
-    echo "8)  Jmx System Report                                       18) Alfresco License checker"
-    echo "9)  Database Check                                          19) EvtValidate"                                                       
-    echo "10) Execute Content Store Cleaner                           20) Quit" 
+    echo "1)  Hot Backup                                              10) Bounce Alfresco"
+    echo "2)  Cold Backup                                             11) Invalidate User Sessions"
+    echo "3)  Restore Alfresco                                        12) Manage Scheduler Jobs"
+    echo "4)  Set Alfresto to ReadOnly Mode                           13) File Servers Configuration"
+    echo "5)  Set Alfresco to Write Mode                              14) OnDemand TroubleShooter"
+    echo "6)  Troubleshoot Lucene Indexing                            15) Change Search SubSystem"
+    echo "7)  Stop Troubleshoot Indexing                              16) Alfresco License checker"
+    echo "8)  Jmx System Report                                       17) EvtValidate"
+    echo "9)  Database Check                                          18) Quit"                                                       
     echo ''
     echo "Select an option:"
     echo ''
@@ -191,7 +184,7 @@ function showOptions {
 
 
 function mainMenu {
-    select selection in "Hot Backup" "Cold Backup" "Restore Alfresco" "Set Alfresto to ReadOnly" "Set Alfresco to Write Mode" "Troubleshoot Lucene Indexing" "Stop Troubleshoot Indexing" "Jmx System Report" "Database Check" "Execute Content Store Cleaner" "Bounce Alfresco" "Invalidate User Sessions" "Manage Authentication Chain" "Manage Scheduler Jobs" "File Servers Configuration" "OnDemand TroubleShooter" "Change Search SubSystem" "Alfresco License checker" "EvtValidate" "Quit"; do
+    select selection in "Hot Backup" "Cold Backup" "Restore Alfresco" "Set Alfresto to ReadOnly" "Set Alfresco to Write Mode" "Troubleshoot Lucene Indexing" "Stop Troubleshoot Indexing" "Jmx System Report" "Database Check" "Bounce Alfresco" "Invalidate User Sessions" "Manage Scheduler Jobs" "File Servers Configuration" "OnDemand TroubleShooter" "Change Search SubSystem" "Alfresco License checker" "EvtValidate" "Quit"; do
         case "$selection" in
             "Hot Backup"                     ) hotBackup;;
             "Cold Backup"                    ) coldBackup;;
@@ -202,10 +195,8 @@ function mainMenu {
             "Stop Troubleshoot Indexing"     ) stopDebugIndexing;;
             "Jmx System Report"              ) jmxSystemReport;;
             "Database Check"                 ) databaseCheck;;
-            "Execute Content Store Cleaner"  ) executeContentStoreCleaner;;
             "Bounce Alfresco"                ) bounceAlfresco;;
             "Invalidate User Sessions"       ) invalidateUserSessions;;
-            "Manage Authentication Chain"    ) manageAutenticationChain;;
             "Manage Scheduler Jobs"          ) manageSchedulerJobs;;
             "File Servers Configuration"     ) manageFileServers;;
             "OnDemand TroubleShooter"        ) onDemandTroubleShooter;;
@@ -224,23 +215,22 @@ function mainMenu {
 else
 # WITH SOLR MENU
 function showOptions {
-    echo "1)  Hot Backup                                              11) Bounce Alfresco"
-    echo "2)  Cold Backup                                             12) Invalidate User Sessions"
-    echo "3)  Restore Alfresco                                        13) Manage Authentication Chain"
-    echo "4)  Set Alfresto to ReadOnly Mode                           14) Manage Scheduler Jobs"
-    echo "5)  Set Alfresco to Write Mode                              15) File Servers Configuration"
-    echo "6)  Troubleshoot Solr                                       16) OnDemand TroubleShooter"
-    echo "7)  Rebuild Solr Indexes                                    17) Change Search SubSystem"
-    echo "8)  Jmx System Report                                       18) Alfresco License checker"
-    echo "9)  Database Check                                          19) EvtValidate"                                                       
-    echo "10) Execute Content Store Cleaner                           20) Quit" 
+    echo "1)  Hot Backup                                              10) Bounce Alfresco"
+    echo "2)  Cold Backup                                             11) Invalidate User Sessions"
+    echo "3)  Restore Alfresco                                        12) Manage Scheduler Jobs"
+    echo "4)  Set Alfresto to ReadOnly Mode                           13) File Servers Configuration"
+    echo "5)  Set Alfresco to Write Mode                              14) OnDemand TroubleShooter"
+    echo "6)  Troubleshoot Solr                                       15) Change Search SubSystem"
+    echo "7)  Rebuild Solr Indexes                                    16) Alfresco License checker"
+    echo "8)  Jmx System Report                                       17) EvtValidate"
+    echo "9)  Database Check                                          18) Quit"                                                       
     echo ''
     echo "Select an option:"
     echo ''
 
 }
 function mainMenu {
-    select selection in "Hot Backup" "Cold Backup" "Restore Alfresco" "Set Alfresto to ReadOnly" "Set Alfresco to Write Mode" "Troubleshoot Solr" "Rebuild Solr Indexes" "Jmx System Report" "Database Check" "Execute Content Store Cleaner" "Bounce Alfresco" "Invalidate User Sessions" "Manage Authentication Chain" "Manage Scheduler Jobs" "File Servers Configuration" "OnDemand TroubleShooter" "Change Search SubSystem" "Alfresco License checker" "EvtValidate" "Quit"; do
+    select selection in "Hot Backup" "Cold Backup" "Restore Alfresco" "Set Alfresto to ReadOnly" "Set Alfresco to Write Mode" "Troubleshoot Solr" "Rebuild Solr Indexes" "Jmx System Report" "Database Check"  "Bounce Alfresco" "Invalidate User Sessions" "Manage Scheduler Jobs" "File Servers Configuration" "OnDemand TroubleShooter" "Change Search SubSystem" "Alfresco License checker" "EvtValidate" "Quit"; do
         case "$selection" in
             "Hot Backup"                     ) hotBackup;;
             "Cold Backup"                    ) coldBackup;;
@@ -251,10 +241,8 @@ function mainMenu {
             "Rebuild Solr Indexes"           ) rebuildSolrIndexes;;
             "Jmx System Report"              ) jmxSystemReport;;
             "Database Check"                 ) databaseCheck;;
-            "Execute Content Store Cleaner"  ) executeContentStoreCleaner;;
             "Bounce Alfresco"                ) bounceAlfresco;;
             "Invalidate User Sessions"       ) invalidateUserSessions;;
-            "Manage Authentication Chain"    ) manageAutenticationChain;;
             "Manage Scheduler Jobs"          ) manageSchedulerJobs;;
             "File Servers Configuration"     ) manageFileServers;;
             "OnDemand TroubleShooter"        ) onDemandTroubleShooter;;

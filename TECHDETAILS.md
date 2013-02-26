@@ -281,17 +281,87 @@ bean Alfresco:Name=DatabaseInformation,Tool=SchemaExport<br/>
 run dumpSchemaToXML<br/>
 quit<br/>
 
+
 -------------------------------------
-10 - EXECUTE CONTENT STORE CLEANER
+10 - BOUNCE ALFRESCO
 ------------------------------------- 
 
-    * Script Name : contentCleanUpJobTrigger.sh
+    * Script Name : bounceAlfresco.sh
     * Location    : <drAlfInstallDir>/utils
-    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=contentStoreCleanerTrigger
+    * Bean Id     : N/A
+    * Jmx Server  : N/A   
+    * Jmx Domain  : N/A
+
+Description: Restarts your alfresco application server
+
+* Action Jmx Code *
+    
+N/A
+
+-----------------------------
+11 - INVALIDATE USER SESSIONS
+-----------------------------
+
+    * Script Name : bounceAlfresco.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : Alfresco:Name=RepoServerMgmt
     * Jmx Server  : Alfresco application Server   
     * Jmx Domain  : Alfresco 
 
-Description: Triggers the execution of the Content Store Cleaner Scheduled Job
+Description: Invalidates all current user sessions.
+
+* Action Jmx Code *
+
+domain Alfresco<br/>
+bean Alfresco:Name=RepoServerMgmt<br/>
+run invalidateTicketsAll<br/>
+quit<br/>
+
+
+-----------------------------
+12 - MANAGE SCHEDULER JOBS
+-----------------------------
+
+    * Script Name : scheduleJobsManager.sh
+    * Location    : <drAlfInstallDir>/utils
+    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=contentStoreCleanerTrigger
+    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=nodeServiceCleanupTrigger
+    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=search.alfrescoCoreBackupTrigger
+    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=tempFileCleanerTrigger
+    * Bean Id     : Alfresco:Type=Configuration,Category=Synchronization,id1=default
+    * Jmx Server  : Alfresco application Server   
+    * Jmx Domain  : Alfresco 
+
+
+Description: Allows Immediate control over the execution of the Alfresco common schedule Jobs. It allows the user to execute 
+the content store cleaner, the node service cleaner, the index backup trigger, the temporary files cleaner and to perform the
+ldap user/group synchronization.
+
+- <b>About the Node Service Cleaner</b>
+    
+The Node service cleaner is a scheduled job that runs to tidy up the database. This clean-up job executes every day at 21:00 (bean 'nodeServiceCleanupTrigger')
+leading to bean 'nodeServiceCleanupJobDetail'), and performs the work found inside 'DeletedNodeCleanupWorker'.
+After 30 days from when the 'node_deleted' field was set to '1', this process considers it safe to truly delete the node with a call to the DAO service purge.
+Note: it doesn't use the audit_modifed date, since this wasn't changed when the row was marked for deletion. Instead, it uses the commit_time_ms transaction time 
+from the alf_transaction table. This job also removes old transactions from the alf_transaction table. Transactions are considerd old using the same property as node
+removal work: '30 days'; Defined using the property 'index.tracking.minRecordPurgeAgeDays').
+
+Performs cleanup operations on DM node data, including old deleted nodes and old transactions. In a clustered environment, this job could be enabled on a headless 
+(non-public) node only, which will improve efficiently.
+
+Note : You can debug the Node service cleaner job by enabling log4j.logger.org.alfresco.repo.node.cleanup.NodeCleanupJob=DEBUG
+
+- <b>About the Temporary Files Cleaner</b>
+
+Cleans up all Alfresco temporary files that are older than the given number of hours. Subdirectories are also emptied and all directories below the primary temporary 
+subdirectory are removed. The job data must include the protectHours property, which is the number of hours to protect a temporary file from deletion since its last 
+modification.
+
+- <b>About the Content Store Cleaner</b>
+
+Launches the contentStoreCleaner bean, which identifies, and deletes or purges orphaned content from the content store while the system is running. Content is said 
+to be orphaned when all references to a content binary have been removed from the metadata. By default, this job is triggered at 4:00 am each day. In a clustered 
+environment, this job could be enabled on a headless (non-public) node only, which will improve efficiently.
 
 "Guidelines" 
 
@@ -339,109 +409,6 @@ When orphaned content is located, these listeners are notified. In this example,
 deletedContentStore.Note that this configuration will not actually remove the files from the file system but rather moves them to the designated deletedContentStore,
 usually contentstore.deleted. The files can be removed from the deletedContentStore via script or cron job once an appropriate backup has been performed.
 
-* Action Jmx Code *
-    
-domain Alfresco<br/>
-bean Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=contentStoreCleanerTrigger<br/>
-run executeNow<br/>
-quit<br/>
-
--------------------------------------
-11 - BOUNCE ALFRESCO
-------------------------------------- 
-
-    * Script Name : bounceAlfresco.sh
-    * Location    : <drAlfInstallDir>/utils
-    * Bean Id     : N/A
-    * Jmx Server  : N/A   
-    * Jmx Domain  : N/A
-
-Description: Restarts your alfresco application server
-
-* Action Jmx Code *
-    
-N/A
-
------------------------------
-12 - INVALIDATE USER SESSIONS
------------------------------
-
-    * Script Name : bounceAlfresco.sh
-    * Location    : <drAlfInstallDir>/utils
-    * Bean Id     : Alfresco:Name=RepoServerMgmt
-    * Jmx Server  : Alfresco application Server   
-    * Jmx Domain  : Alfresco 
-
-Description: Invalidates all current user sessions.
-
-* Action Jmx Code *
-
-domain Alfresco<br/>
-bean Alfresco:Name=RepoServerMgmt<br/>
-run invalidateTicketsAll<br/>
-quit<br/>
-
---------------------------------
-13 - MANAGE AUTHENTICATION CHAIN
---------------------------------
-
-    * Script Name : authenticationChainManager.sh
-    * Location    : <drAlfInstallDir>/utils
-    * Bean Id     : 
-    * Jmx Server  : Alfresco application Server   
-    * Jmx Domain  : Alfresco 
-
-Description: Allows the user to manage the authentication chain used by alfresco
-
-* Action Jmx Code *
-
-
-
------------------------------
-14 - MANAGE SCHEDULER JOBS
------------------------------
-
-    * Script Name : scheduleJobsManager.sh
-    * Location    : <drAlfInstallDir>/utils
-    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=contentStoreCleanerTrigger
-    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=nodeServiceCleanupTrigger
-    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=search.alfrescoCoreBackupTrigger
-    * Bean Id     : Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=tempFileCleanerTrigger
-    * Bean Id     : Alfresco:Type=Configuration,Category=Synchronization,id1=default
-    * Jmx Server  : Alfresco application Server   
-    * Jmx Domain  : Alfresco 
-
-
-Description: Allows Immediate control over the execution of the Alfresco common schedule Jobs. It allows the user to execute 
-the content store cleaner, the node service cleaner, the index backup trigger, the temporary files cleaner and to perform the
-ldap user/group synchronization.
-
-- <b>About the Node Service Cleaner</b>
-    
-The Node service cleaner is a scheduled job that runs to tidy up the database. This clean-up job executes every day at 21:00 (bean 'nodeServiceCleanupTrigger')
-leading to bean 'nodeServiceCleanupJobDetail'), and performs the work found inside 'DeletedNodeCleanupWorker'.
-After 30 days from when the 'node_deleted' field was set to '1', this process considers it safe to truly delete the node with a call to the DAO service purge.
-Note: it doesn't use the audit_modifed date, since this wasn't changed when the row was marked for deletion. Instead, it uses the commit_time_ms transaction time 
-from the alf_transaction table. This job also removes old transactions from the alf_transaction table. Transactions are considerd old using the same property as node
-removal work: '30 days'; Defined using the property 'index.tracking.minRecordPurgeAgeDays').
-
-Performs cleanup operations on DM node data, including old deleted nodes and old transactions. In a clustered environment, this job could be enabled on a headless 
-(non-public) node only, which will improve efficiently.
-
-Note : You can debug the Node service cleaner job by enabling log4j.logger.org.alfresco.repo.node.cleanup.NodeCleanupJob=DEBUG
-
-- <b>About the Content Store Cleaner</b>
-
-Launches the contentStoreCleaner bean, which identifies, and deletes or purges orphaned content from the content store while the system is running. Content is said 
-to be orphaned when all references to a content binary have been removed from the metadata. By default, this job is triggered at 4:00 am each day. In a clustered 
-environment, this job could be enabled on a headless (non-public) node only, which will improve efficiently.
-
-- <b>About the Temporary Files Cleaner</b>
-
-Cleans up all Alfresco temporary files that are older than the given number of hours. Subdirectories are also emptied and all directories below the primary temporary 
-subdirectory are removed. The job data must include the protectHours property, which is the number of hours to protect a temporary file from deletion since its last 
-modification.
-
 - <b>About the Index Backup Trigger</b>
 
 Creates a safe backup of the Lucene/Solr directories.
@@ -452,8 +419,15 @@ Triggers a Users/Groups Ldap synchronization
 
 This action compromises several sub-actions depending on the user selections. To see the jmx code used, open the scheduleJobsManager.sh file.
 
+* Action Jmx Code - Sample for ContentStoreCleaner *
+    
+domain Alfresco<br/>
+bean Alfresco:Name=Schedule,Group=DEFAULT,Type=MonitoredCronTrigger,Trigger=contentStoreCleanerTrigger<br/>
+run executeNow<br/>
+quit<br/>
+
 --------------------------------
-15 - FILE SERVERS CONFIGURATION
+13 - FILE SERVERS CONFIGURATION
 --------------------------------
 
     * Script Name : fileServerSubsystemChanger.sh
@@ -473,7 +447,7 @@ run setNFSServerEnabled true <br/>
 quit<br/>
 
 --------------------------------
-16 - ONDEMAND TROUBLESHOOTER
+14 - ONDEMAND TROUBLESHOOTER
 --------------------------------
 
     * Script Name : onDemandTroubleShooter.sh
@@ -524,7 +498,7 @@ set priority DEBUG<br/>
 quit<br/>
 
 --------------------------------
-17 - CHANGE SEARCH SUB-SYSTEM
+15 - CHANGE SEARCH SUB-SYSTEM
 --------------------------------
 
     * Script Name : searchSubSystemChanger.sh
@@ -554,7 +528,7 @@ run stop<br/>
 run start<br/>
 
 --------------------------------
-18 - Alfresco License checker
+16 - Alfresco License checker
 --------------------------------
 
     * Script Name : searchSubSystemChanger.sh
@@ -587,7 +561,7 @@ get Issuer<br/>
 quit<br/>
 
 --------------------------------
-19 - EVT VALIDATE
+17 - EVT VALIDATE
 --------------------------------
 
     * Script Name : evtExecuter.sh
@@ -598,6 +572,33 @@ quit<br/>
 
 Description: Executes the embebed Environment Validation Tool from Alfresco. More details at http://code.google.com/p/alfresco-environment-validation/
 
+
+--------------------------------
+Solr Troubleshooting
+--------------------------------
+
+For Alfresco implementations that use Solr has the search sub-system ( mostly all since version 4 ) DrAlf includes the ability to perform specific 
+troubleshooting focusing just on Solr. 
+
+If you use Solr you will have 2 different options on the DrAlf menu ( 6-Troubleshoot Solr and 7-Rebuild Solr Indexes ). Those 2 options allow the Administrator
+to issue a command to immediately rebuild the Solr Indexes and also to troubleshoot specific components of Solr.
+
+The options available for the troubleshooter are as follows :
+
+    - Generate Index Status Report                    : Generates a report containing information on the Solr Index Status
+    - Generate Status Summary for Alfresco Solr Cores : Generates a report containing the status summary for both Solr Cores ( Alfresco and Archive )
+    - Troubleshoot Solr Tracker                       : Change the Solr Tracker related Logging to DEBUG 
+    - Troubleshoot Solr Parsers                       : Change the Solr Parsing related Logging to DEBUG 
+    - Troubleshoot Solr Timings                       : Change the Solr Timings related Logging to DEBUG 
+    - Stop Troubleshooting                            : Reverts all the Loggers to their default values
+
+This options are handy when you need to perform a quick live troubleshoot of Solr related Topics.
+
+--------------------------------------------------------------------------
+DRALF EXTRAS - Monitorization Framework - Monitoring Solr with Jmanage
+--------------------------------------------------------------------------
+
+[Technical Documentation on Dralf Solr Monitorization ](MONITORINGSOLR.md)
 
 --------------------------------------------------
 Extending and Customizing Dralf for Alfresco Core

@@ -1,0 +1,80 @@
+<dashboard id="jBossAppSummary" name="JBoss Application Summary" template="/dashboard/jBossAppSummary.jsp" >
+	<qualifications comment="defines what type of applications qualify for this dashboard">
+        <qualifier class="org.jmanage.webui.dashboard.qualifiers.GenericMBeanCheckQualifier">
+            <property name="mbean" value="jboss.system:type=Server"/>
+        </qualifier>
+    </qualifications>
+	<components>
+        <component id="com1" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue">
+            <property name="mbean" value="jboss.system:type=Server"/>
+            <property name="attribute" value="Version"/>
+            <property name="displayName" value="JBoss Version"/>
+        </component>
+        <component id="com2" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue">
+            <property name="mbean" value="jboss.system:type=Server"/>
+            <property name="attribute" value="VersionName"/>
+            <property name="displayName" value="Version Name"/>
+        </component>
+        <component id="com3" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue">
+            <property name="mbean" value="jboss.system:type=Server"/>
+            <property name="attribute" value="BuildID"/>
+            <property name="displayName" value="Server Build ID"/>
+        </component>
+        <component id="com4" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue">
+            <property name="mbean" value="jboss.system:type=Server"/>
+            <property name="attribute" value="BuildDate"/>
+            <property name="displayName" value="Server Build Date"/>
+        </component>
+        <component id="com5" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue">
+            <property name="mbean" value="jboss.system:type=Server"/>
+            <property name="attribute" value="StartDate"/>
+            <property name="displayName" value="Server Start Date"/>
+        </component>
+        <component id="com6" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue">
+            <property name="mbean" value="jboss.system:type=ServerInfo"/>
+            <property name="attribute" value="OSName"/>
+            <property name="displayName" value="Operating System"/>
+        </component>
+        <component id="com7" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue">
+            <property name="mbean" value="jboss.system:type=ServerInfo"/>
+            <property name="attribute" value="OSArch"/>
+            <property name="displayName" value="OS Architecture"/>
+        </component>
+        <component id="com8" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue">
+            <property name="mbean" value="jboss.system:type=ServerInfo"/>
+            <property name="attribute" value="JavaVMName"/>
+            <property name="displayName" value="Java VM"/>
+        </component>
+        <component id="com9" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue">
+            <property name="mbean" value="jboss.system:type=ServerInfo"/>
+            <property name="attribute" value="JavaVersion"/>
+            <property name="displayName" value="JVM Version"/>
+        </component>
+        <component id="com10" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue">
+            <property name="mbean" value="jboss.system:type=ServerInfo"/>
+            <property name="attribute" value="JavaVMVendor"/>
+            <property name="displayName" value="JVM Vendor"/>
+        </component>
+        <component id="com11" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue">
+            <property name="mbean" value="jboss.system:type=ServerInfo"/>
+            <property name="attribute" value="AvailableProcessors"/>
+            <property name="displayName" value="Processors"/>
+        </component>
+        <component id="com12" class="org.jmanage.webui.dashboard.components.Graph" name="Memory Usage" refreshInterval="30000">
+            <type>PieChart</type>
+            <pollingInterval>10</pollingInterval>
+            <param mbean="jboss.system:type=ServerInfo" attribute="FreeMemory" displayName="Free memory"/>
+            <param mbean="jboss.system:type=ServerInfo" attribute="TotalMemory" displayName="Used memory" representsWhole="true"/>
+        </component>
+        <component id="com13" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue" refreshInterval="5000">
+            <property name="mbean" value="jboss.system:type=ServerInfo"/>
+            <property name="attribute" value="TotalMemory"/>
+            <property name="displayName" value="Total Memory"/>
+        </component>
+        <component id="com14" class="org.jmanage.webui.dashboard.components.MBeanAttributeValue" refreshInterval="5000">
+            <property name="mbean" value="jboss.system:type=ServerInfo"/>
+            <property name="attribute" value="FreeMemory"/>
+            <property name="displayName" value="Free Memory"/>
+        </component>
+    </components>
+</dashboard>

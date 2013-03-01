@@ -5,10 +5,7 @@
     echo "... Executing Content Store Cleaner ..."
     ${drAlfDir}/utils/contentCleanUpJobTrigger.sh > ${drAlfDir}/logs/contentCleanUpJobTrigger.log
     echo "... Shutting Down alfresco  ..."
-      cd ${alfAppServerBin}
-      ./shutdown.sh
-      cd -
-      # TODO check when alfresco has finished its shutdown processes
+      ${drAlfDir}/utils/alfrescoAgent.sh stop
       sleep 20
     if [ $dbtype != 'mysql' -a $dbtype != 'postgres' ];
     then
@@ -38,20 +35,18 @@
     	fi
     	echo "... Backing Up your repository filesystem  ..."
     	if [ $searchengine != 'lucene' ];
-    	then 
-      			echo "... BackingUp $searchengine Indexes. Lucene is part of alfresco filesystem ..."
-      	    	tar -czvf filesystem.tgz ${alfDataDir}/*
+    	then 			      	    	
+    		echo "... BackingUp $searchengine Indexes  ... Excluding the lucene-indexes Including backed up Solr indexes under the alf_data dir"
+    		tar --exclude "$alfDataDir/lucene-indexes/*" -czvf filesystem.tgz ${alfDataDir}
     	else
-    		echo "... BackingUp $searchengine Indexes  ... Including backed up Solr indexes."
-    		tar -czvf filesystem.tgz ${alfDataDir}/* ${solrRoot}/solrdata/workspace/*
+    		echo "... BackingUp $searchengine Indexes. Excluding the lucene-indexes ..."
+      	    tar --exclude "$alfDataDir/lucene-indexes/*" -czvf filesystem.tgz ${alfDataDir}  
     	fi
-    	
     	echo "... Building your Alfresco backupfile .abk  ..."
-    	tar -cvf ./backups/Backup-$(date +%Y%m%d).abk filesystem.tgz ${targetBackupFile} 
+    	tar -cvf ./backups/Backup-$(date +%Y%m%d%H%M).abk filesystem.tgz ${targetBackupFile} 
     	rm -rf ./filesystem.tgz  ./${dbname}.sql
     	echo "... Cold Backup Complete ... Starting Alfresco ..."
-    	cd ${alfAppServerBin}
-     	./startup.sh
+     	${drAlfDir}/utils/alfrescoAgent.sh start
      	echo "... Alfresco is Starting, press any key to return to DrAlf menu..."
     fi
 

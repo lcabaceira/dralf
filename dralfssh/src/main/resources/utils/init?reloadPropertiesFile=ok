@@ -1,0 +1,3 @@
+This is the Log4JInitServlet<br/>
+Attempting to reload log4j properties file<br/>
+Initializing log4j with: /Users/lcabaceira/Alfresco/Training/ACA/Hands_on_Experience/alfresco1/solr/tomcat/webapps/solr/WEB-INF/classes/log4j.properties<br/>

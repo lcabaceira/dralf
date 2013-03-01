@@ -309,7 +309,7 @@ select yn in "CIFS Debug" "FTP Debug" "Webdav Debug" "File Servers" "Content Mod
         "FTP Debug"  ) ftpDebug; break;;
         "Webdav Debug"  ) webdavDebug; break;;
         "File Servers"  ) fsDebug; break;;
-        "Content Modeling Debug"  ) modelingDebug; break;;
+        "Content Modelling Debug"  ) modelingDebug; break;;
         "Clustering Debug" ) clusterDebug; break;;
         "Forms Engine Debug" ) formsDebug; break;;
         "CMIS Debug" ) cmisDebug; break;;

@@ -8,9 +8,7 @@
 ########################################################################3################
 # source the properties
 . ./dralf.properties
-# TODO1 : If mandatory executables dont exist on the system, prevent DrAlf from running
-# TODO2 : Check if alfresco is stopped and when it has finish starting, better way to kill alfresco
-# TODO3 : RESTORE with SOLR is different than RESTORE with LUCENE
+# TODO1 : If mandatory executables like sed dont exist on the system, prevent DrAlf from running
 
 checkexists() {
     while [ -n "$1" ]; do

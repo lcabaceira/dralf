@@ -8,9 +8,18 @@ function endIt {
          exit 0
 }
 
+# Use the configureAndWatch API to enable the Configurator class to watch for the changes to log4j configuration file. 
+# This API takes a time interval parameter. A separate thread is spawn to check any changes to the Log4j property file at this 
+# configured interval. If the log4j file has been changed, the configuration will be re-loaded. 
+# In this approach, to enable/disable logging, only necessary to change the log4j configuration file.
+
+
+# Now hooking up the server to JConsole or VisualVM will expose the log4j attributes and operations. If one wants to add a new logger simply use the 
+# operations tab to add a new logger and set the appropriate log level. 
+
 function trackerCheck {  
 echo "Adding Search Tracker Debug Options"
-if grep "log4j.logger.org.alfresco.solr.tracker.CoreTracker" ${solrLog4j} ;then
+if grep "q" ${solrLog4j} ;then
     # if found delete the line and write the debug statement 
     sed "/log4j.logger.org.alfresco.solr.tracker.CoreTracker*/d" ${solrLog4j} >tmp.properties
     mv tmp.properties ${solrLog4j}
@@ -28,11 +37,12 @@ else
     # not found , lets add it 
     echo "log4j.logger.org.alfresco.solr.tracker.CoreTrackerJob=DEBUG" >> ${solrLog4j}
 fi
-echo "Stopping Solr...."
-${solrAppServerBin}/shutdown.sh
-sleep 15
-echo "Starting Solr...."
-${solrAppServerBin}/startup.sh
+#echo "Stopping Solr...."
+#${solrAppServerBin}/shutdown.sh
+#sleep 15
+#echo "Starting Solr...."
+#${solrAppServerBin}/startup.sh
+wget --no-check-certificate --certificate=${drAlfDir}/utils/browser.pem https://localhost:6443/solr/init\?reloadPropertiesFile\=ok
 echo "Press any key to return...."
 }
 
@@ -74,11 +84,12 @@ else
     # not found , lets add it 
     echo "log4j.logger.org.alfresco.solr.query.CmisQParserPlugin=DEBUG" >> ${solrLog4j}
 fi
-echo "Stopping Solr...."
-${solrAppServerBin}/shutdown.sh
-sleep 15
-echo "Starting Solr...."
-${solrAppServerBin}/startup.sh
+#echo "Stopping Solr...."
+#${solrAppServerBin}/shutdown.sh
+#sleep 15
+#echo "Starting Solr...."
+#${solrAppServerBin}/startup.sh
+wget --no-check-certificate --certificate=${drAlfDir}/utils/browser.pem https://localhost:6443/solr/init\?reloadPropertiesFile\=ok
 echo "Press any key to return...."
 }
 
@@ -93,11 +104,13 @@ else
     # not found , lets add it 
     echo "log4j.logger.org.apache.solr.core.SolrCore=DEBUG" >> ${solrLog4j}
 fi
-echo "Stopping Solr...."
-${solrAppServerBin}/shutdown.sh
-sleep 15
-echo "Starting Solr...."
-${solrAppServerBin}/startup.sh
+#echo "Stopping Solr...."
+#${solrAppServerBin}/shutdown.sh
+#sleep 15
+#echo "Starting Solr...."
+#${solrAppServerBin}/startup.sh
+# curl https://localhost:6443/solr/init?reloadPropertiesFile=ok 
+wget --no-check-certificate --certificate=${drAlfDir}/utils/browser.pem https://localhost:6443/solr/init\?reloadPropertiesFile\=ok
 echo "Press any key to return...."
 }
 
@@ -142,13 +155,18 @@ if grep "log4j.logger.org.alfresco.solr.tracker.CoreTrackerJob" ${solrLog4j} ;th
     sed "/log4j.logger.org.alfresco.solr.tracker.CoreTrackerJob*/d" ${solrLog4j} >tmp.properties
     mv tmp.properties ${solrLog4j}
 fi
-echo "Stopping Solr...."
-${solrAppServerBin}/shutdown.sh
-sleep 15
-echo "Starting Solr...."
-${solrAppServerBin}/startup.sh
+#echo "Stopping Solr...."
+#${solrAppServerBin}/shutdown.sh
+#sleep 15
+#echo "Starting Solr...."
+#${solrAppServerBin}/startup.sh
+
+# curl https://localhost:6443/solr/init?reloadPropertiesFile=ok 
+wget --no-check-certificate --certificate=${drAlfDir}/utils/browser.pem https://localhost:6443/solr/init\?reloadPropertiesFile\=ok
 echo "Press any key to return...."
 }
+
+
 
 # SOLR MBEANS 
 #
@@ -322,6 +340,7 @@ select yn in "Generate Index Status Report" "Generate Status Summary for Alfresc
     case $yn in
         "Generate Index Status Report" ) indexStatusReport;break;;
         "Generate Status Summary for Alfresco Solr Cores" ) coreStatusSummary;break;;
+        
         "Troubleshoot Solr Tracker" ) trackerCheck;break;;
         "Troubleshoot Solr Parsers" ) parserCheck;break;;
         "Troubleshoot Solr Timings" ) timingsCheck;break;;
